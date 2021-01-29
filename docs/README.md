@@ -1,3 +1,3 @@
-# jasperxu.github.io
+# [jasperxu.com](jasperxu.com)
 
 JasperXu's 笔记本

@@ -1,2 +1,3 @@
-# jasperxu.github.io
-个人博客
+# [jasperxu.com](jasperxu.com)
+
+JasperXu's 笔记本
