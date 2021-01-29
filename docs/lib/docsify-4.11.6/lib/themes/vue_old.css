@@ -1,5 +1,4 @@
-@import url("/lib/googleapis/fonts.css");
-/* https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600 */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600");
 * {
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
@@ -557,7 +556,7 @@ section.cover ul {
   max-width: 500px;
   padding: 0;
 }
-section.cover .cover-main > p a {
+section.cover .cover-main > p:last-child a {
   border-radius: 2rem;
   border: 1px solid var(--theme-color, #42b983);
   box-sizing: border-box;
@@ -570,15 +569,15 @@ section.cover .cover-main > p a {
   text-decoration: none;
   transition: all 0.15s ease;
 }
-/* section.cover .cover-main > p:last-child a:last-child {
+section.cover .cover-main > p:last-child a:last-child {
   background-color: var(--theme-color, #42b983);
   color: #fff;
 }
 section.cover .cover-main > p:last-child a:last-child:hover {
   color: inherit;
   opacity: 0.8;
-} */
-section.cover .cover-main > p a:hover {
+}
+section.cover .cover-main > p:last-child a:hover {
   color: inherit;
 }
 section.cover blockquote > p > a {
