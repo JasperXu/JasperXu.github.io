@@ -17,6 +17,17 @@
         while (el.hasChildNodes()) {
           el.removeChild(el.firstChild);
         }
+
+        const gitalk = new Gitalk({
+          clientID: 'f4138bcafcce8b3e2a62',
+          clientSecret: 'bf3da43a9e862fca8252bf83491d103021eec268',
+          repo: 'jasperxu.github.io',
+          owner: 'jasperxu',
+          admin: ['jasperxu'],
+          id: location.href.substring(location.origin.length+2),
+          // facebook-like distraction free mode
+          distractionFreeMode: false
+        });
       
         // eslint-disable-next-line
         gitalk.render('gitalk-container');
