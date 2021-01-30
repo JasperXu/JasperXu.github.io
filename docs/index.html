@@ -73,13 +73,16 @@
   <script src="lib/docsify-tabs-1.4.4/dist/docsify-tabs.js"></script>
   <script src="lib/docsify-fontawesome-0.0.6/dist/docsify-fontawesome.min.js"></script>
 
+  <script src="lib/blueimp-md5-2.18.0/js/md5.min.js"></script>
+
   <script>
-        const gitalk = new Gitalk({
+      const gitalk = new Gitalk({
         clientID: 'f4138bcafcce8b3e2a62',
         clientSecret: 'bf3da43a9e862fca8252bf83491d103021eec268',
         repo: 'jasperxu.github.io',
         owner: 'jasperxu',
         admin: ['jasperxu'],
+        id: location.href.substring(location.origin.length+2),
         // facebook-like distraction free mode
         distractionFreeMode: false
       });

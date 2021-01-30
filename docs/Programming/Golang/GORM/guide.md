@@ -66,3 +66,7 @@ func main() {
   db.Delete(&product)
 }
 ```
+
+<script>
+  var zzz = "gorm";
+</script>
