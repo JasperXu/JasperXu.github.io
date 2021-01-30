@@ -20,6 +20,7 @@
     window.$docsify = {
       name: 'JasperXu\'s 笔记本',
       repo: 'jasperxu',
+      auto2top: true,
       loadSidebar: true,
       maxLevel: 3,
       subMaxLevel: 3,
@@ -86,10 +87,12 @@
   <script>
     var _hmt = _hmt || [];
     (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
+      if (document.domain != "localhost") {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      }
     })();
   </script>
 </body>

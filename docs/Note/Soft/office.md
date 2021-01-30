@@ -1,5 +1,13 @@
 # 办公软件
 
+:far fa-calendar-alt: {docsify-updated}
+
+## 远程会议
+
+### 腾讯会议
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: :fab fa-android fa-2x: [官网](https://meeting.tencent.com/) 疫情原因开始使用这玩意。
+
 ## Office
 
 <!-- tabs:start -->
@@ -52,6 +60,12 @@
 
 :fab fa-windows fa-2x: :fab fa-apple fa-2x: :fab fa-linux fa-2x: [官网](https://www.typora.io/) 强烈推荐这个。公式啥的都能写。
 
+## 图床工具
+
+### PicGo [Free]
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: :fab fa-linux fa-2x: [官网](https://github.com/Molunerfinn/PicGo) 快速上传图片到图床的工具。
+
 ## 流程图&思维导图
 
 这玩意用的少可以用浏览器的那些，但是图稍微大一点的话就会卡成狗，建议还是搞个本地运行的软件来做。
@@ -99,5 +113,85 @@
 ### Mind Master
 
 :fab fa-windows fa-2x: :fab fa-apple fa-2x: :fab fa-linux fa-2x: [官网](https://www.edrawsoft.cn/) 具体不记得了。
+
+<!-- tabs:end -->
+
+## 界面设计（原型）
+
+<!-- tabs:start -->
+
+<!-- tab:Windows -->
+
+### Balsamiq
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: [官网](https://balsamiq.com/) 非常简单的原型设计工具，手绘风格。非常适合早期设计用。
+
+### Pencil
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: :fab fa-linux fa-2x: [官网](http://pencil.evolus.vn/) 非常简单的原型设计工具，手绘风格。非常适合早期设计用。
+
+### Mockplus 摩客
+
+:fab fa-windows fa-2x: [官网](https://www.mockplus.cn/)
+
+### Axure RP
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: [官网](https://www.axure.com/) 比较不错的一个界面设计软件，但是很古董了。
+
+<!-- tab:macOS -->
+
+### Balsamiq
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: [官网](https://balsamiq.com/) 非常简单的原型设计工具，手绘风格。非常适合早期设计用。
+
+### Pencil
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: :fab fa-linux fa-2x: [官网](http://pencil.evolus.vn/) 非常简单的原型设计工具，手绘风格。非常适合早期设计用。
+
+### Axure RP
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: [官网](https://www.axure.com/) 比较不错的一个界面设计软件，但是很古董了。
+
+<!-- tab:Linux -->
+
+### Pencil
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: :fab fa-linux fa-2x: [官网](http://pencil.evolus.vn/) 非常简单的原型设计工具，手绘风格。非常适合早期设计用。
+
+<!-- tabs:end -->
+
+## 界面设计（Demo）
+
+<!-- tabs:start -->
+
+<!-- tab:Windows -->
+
+### 墨刀
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: :fab fa-linux fa-2x: [官网](https://www.modao.cc/) 基于网页，你懂的。
+
+### Adobe XD
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: [官网](https://www.carettasoftware.com/guidesignstudio/) 没用过，网上比较推荐。
+
+<!-- tab:macOS -->
+
+### 墨刀
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: :fab fa-linux fa-2x: [官网](https://www.modao.cc/) 基于网页，你懂的。
+
+### Adobe XD
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: [官网](https://www.carettasoftware.com/guidesignstudio/) 没用过，网上比较推荐。
+
+### Sketch
+
+:fab fa-apple fa-2x: [官网](https://www.sketch.com/) 大佬，不支持 Windows。
+
+<!-- tab:Linux -->
+
+### 墨刀
+
+:fab fa-windows fa-2x: :fab fa-apple fa-2x: :fab fa-linux fa-2x: [官网](https://www.modao.cc/) 基于网页，你懂的。
 
 <!-- tabs:end -->

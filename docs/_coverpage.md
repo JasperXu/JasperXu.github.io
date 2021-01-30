@@ -9,7 +9,7 @@
 
 **程序设计：**
 [C# 待整理](/Programming/CSharp/ "待整理CSharp")
-[Go 待整理](/Programming/Golang/ "待整理Golang")
+[Go 整理中](/Programming/Golang/ "Golang整理中")
 [Python 待整理](/Programming/Python/ "待整理Python")
 [TypeScript 待整理](/Programming/TypeScript/ "待整理TypeScript")
 

@@ -1,0 +1,15 @@
+<!-- _sidebar -->
+
+- [首页](/)
+- [Golang](rogramming/Golang/)
+- [GORM 中文文档](Programming/Golang/GORM/)
+- [1. 快速开始](Programming/Golang/GORM/guide)
+- [2. 数据库](Programming/Golang/GORM/database)
+- [3. 模型](Programming/Golang/GORM/models)
+- [3.3. 关联](Programming/Golang/GORM/associations)
+- [4. CRUD:读写数据](Programming/Golang/GORM/crud)
+- [5. Callbacks](Programming/Golang/GORM/callbacks)
+- [6. 高级用法](Programming/Golang/GORM/advanced)
+- [7. 开发](Programming/Golang/GORM/development)
+- [8. 更新日志](Programming/Golang/GORM/changelog)
+- [9. 译者日志](Programming/Golang/GORM/log)

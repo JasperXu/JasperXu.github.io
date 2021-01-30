@@ -1,5 +1,7 @@
 # 程序设计
 
+:far fa-calendar-alt: {docsify-updated}
+
 ## 集成开发环境 IDE
 
 <!-- tabs:start -->

@@ -1,4 +1,4 @@
-<!-- docs/_sidebar.md -->
+<!-- _sidebar.md -->
 
 - [首页](/)
 - [常用软件](Note/Soft/)

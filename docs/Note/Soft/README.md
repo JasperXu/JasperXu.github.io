@@ -8,14 +8,8 @@
 
 <!-- tab:Windows -->
 
-这里是 Windows 中能用的软件。
-
 <!-- tab:macOS -->
 
-这里是 macOS 中能用的软件。
-
 <!-- tab:Linux -->
-
-这里是 Linux 中能用的软件。
 
 <!-- tabs:end -->
