@@ -1,7 +1,7 @@
 <!-- _sidebar -->
 
 - [首页](/)
-- [Golang](rogramming/Golang/)
+- [Golang](Programming/Golang/)
 - [GORM 中文文档](Programming/Golang/GORM/)
 - [1. 快速开始](Programming/Golang/GORM/guide)
 - [2. 数据库](Programming/Golang/GORM/database)
