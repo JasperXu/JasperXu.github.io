@@ -18,13 +18,21 @@
           el.removeChild(el.firstChild);
         }
 
+        // 何必gitalk群组。
+        var getID = function(){
+          var idstring = location.href.substring(location.origin.length+2);
+          if (idstring.startsWith('/Note/Soft/')) return "/Note/Soft/";
+          if (idstring.startsWith('/Programming/Golang/GORM/')) return "/Programming/Golang/GORM/";
+          return idstring;
+        };
+
         const gitalk = new Gitalk({
           clientID: 'f4138bcafcce8b3e2a62',
           clientSecret: 'bf3da43a9e862fca8252bf83491d103021eec268',
           repo: 'jasperxu.github.io',
           owner: 'jasperxu',
           admin: ['jasperxu'],
-          id: location.href.substring(location.origin.length+2),
+          id: getID(),
           // facebook-like distraction free mode
           distractionFreeMode: false
         });
