@@ -18,7 +18,7 @@
           el.removeChild(el.firstChild);
         }
 
-        // 何必gitalk群组。
+        // 合并gitalk群组。
         var getID = function(){
           var idstring = location.href.substring(location.origin.length+2);
           if (idstring.startsWith('/Note/Soft/')) return "/Note/Soft/";
