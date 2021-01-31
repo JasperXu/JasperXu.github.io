@@ -1,7 +1,5 @@
 # 图形图像
 
-:far fa-calendar-alt: {docsify-updated}
-
 ## 看图工具
 
 <!-- tabs:start -->

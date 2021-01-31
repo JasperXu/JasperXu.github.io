@@ -1,7 +1,5 @@
 # 其他软件
 
-:far fa-calendar-alt: {docsify-updated}
-
 ## 虚拟机
 
 <!-- tabs:start -->

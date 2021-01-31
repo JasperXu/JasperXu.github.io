@@ -11,9 +11,9 @@
     <!-- <link rel="stylesheet" href="lib/docsify-4.11.6/lib/themes/dark.css" /> -->
     <!-- <link rel="stylesheet" href="lib/docsify-4.11.6/lib/themes/dolphin.css" /> -->
     <!-- <link rel="stylesheet" href="lib/docsify-4.11.6/lib/themes/pure.css" /> -->
-    <link rel="stylesheet" href="lib/docsify-themeable-0.8.4/dist/css/theme-simple-dark.css" />
+    <link rel="stylesheet" href="lib/docsify-themeable-0.8.4/dist/css/theme-simple-dark-change.css" title="moon" disabled />
     <!-- <link rel="stylesheet" href="lib/docsify-themeable-0.8.4/dist/css/theme-defaults.css" /> -->
-    <!-- <link rel="stylesheet" href="lib/docsify-themeable-0.8.4/dist/css/theme-simple-change.css" /> -->
+    <link rel="stylesheet" href="lib/docsify-themeable-0.8.4/dist/css/theme-simple-change.css" title="sun" />
     <link rel="stylesheet" href="lib/gitalk-1.7.0/dist/gitalk.css" />
     <link rel="stylesheet" href="lib/fortawesome-5.15.2/fontawesome-free/css/fontawesome.css" />
     <link rel="stylesheet" href="lib/fortawesome-5.15.2/fontawesome-free/css/brands.css" />
@@ -23,6 +23,7 @@
   </head>
   <body>
     <div id="app"></div>
+    <script src="lib/docsify-edit-on-github-1.0.3/index-change.js"></script>
     <script>
       window.$docsify = {
         name: "JasperXu's 笔记本",
@@ -55,6 +56,7 @@
         jxtoc: {
           headings: "h1, h2, h3, h4, h5, h6",
         },
+        plugins: [EditOnGithubPlugin.create("https://github.com/jasperxu/jasperxu.github.io/blob/main/docs/", null, "<i class='fas fa-edit'></i> 编辑")],
       };
     </script>
     <script type="text/x-mathjax-config">
@@ -63,7 +65,7 @@
       });
     </script>
     <!-- Docsify v4 -->
-    <script src="lib/docsify-4.11.6/lib/docsify.min.js"></script>
+    <script src="lib/docsify-4.11.6/lib/docsify.js"></script>
     <script src="lib/docsify-themeable-0.8.4/dist/js/docsify-themeable.js"></script>
     <script src="lib/docsify-4.11.6/lib/plugins/emoji.min.js"></script>
     <script src="lib/docsify-4.11.6/lib/plugins/zoom-image.min.js"></script>

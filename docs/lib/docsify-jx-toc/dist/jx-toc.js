@@ -109,6 +109,24 @@ var goTopFunction = function(e) {
   scroll();
 };
 
+var sunFunction= function(e) {
+  e.stopPropagation();
+  var sunThemes = Docsify.dom.find('[rel="stylesheet"][title="sun"]');
+  var moonThemes = Docsify.dom.find('[rel="stylesheet"][title="moon"]');
+
+  sunThemes.disabled = false;
+  moonThemes.disabled = true;
+};
+
+var moonFunction= function(e) {
+  e.stopPropagation();
+  var sunThemes = Docsify.dom.find('[rel="stylesheet"][title="sun"]');
+  var moonThemes = Docsify.dom.find('[rel="stylesheet"][title="moon"]');
+
+  sunThemes.disabled = true;
+  moonThemes.disabled = false;
+};
+
 // Docsify plugin functions
 function plugin(hook, vm) {
   var userOptions = vm.config.jxtoc;
@@ -124,6 +142,16 @@ function plugin(hook, vm) {
       jxGoTop.id = "jx-gotop";
       jxGoTop.onclick = goTopFunction;
       window.Docsify.dom.before(content, jxGoTop);
+
+      var jxSun = window.Docsify.dom.create("span", "<i class='fas fa-sun'></i>");
+      jxSun.id = "jx-sun";
+      jxSun.onclick = sunFunction;
+      window.Docsify.dom.before(content, jxSun);
+
+      var jxMoon = window.Docsify.dom.create("span", "<i class='fas fa-moon'></i>");
+      jxMoon.id = "jx-moon";
+      jxMoon.onclick = moonFunction;
+      window.Docsify.dom.before(content, jxMoon);
     }
   });
 
@@ -135,16 +163,16 @@ function plugin(hook, vm) {
     }
     jxtoc.innerHTML = null
 
+    var TocAnchor = document.createElement('i');
+    TocAnchor.setAttribute('class', 'fas fa-list');
+		jxtoc.appendChild(TocAnchor);
+
   	const toc = buildTOC(userOptions);
 
     if (!toc.innerHTML) {
       return;
     }
 
-		var TocAnchor = document.createElement('i');
-    TocAnchor.setAttribute('class', 'fas fa-list');
-
-		jxtoc.appendChild(TocAnchor);
     jxtoc.appendChild(toc);
   });
 }

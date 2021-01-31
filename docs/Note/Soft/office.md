@@ -1,7 +1,5 @@
 # 办公软件
 
-:far fa-calendar-alt: {docsify-updated}
-
 ## 远程会议
 
 ### 腾讯会议

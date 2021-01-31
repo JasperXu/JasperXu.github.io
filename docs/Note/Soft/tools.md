@@ -1,7 +1,5 @@
 # 常用软件
 
-:far fa-calendar-alt: {docsify-updated}
-
 ## 系统补全
 
 <!-- tabs:start -->
