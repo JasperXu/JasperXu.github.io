@@ -20,7 +20,7 @@
 
         // 合并gitalk群组。
         var getID = function(){
-          var idstring = location.href.substring(location.origin.length+2);
+          var idstring = location.href.substring(location.origin.length+2).split("?")[0];
           if (idstring.startsWith('/Note/Soft/Recommend')) return "/Note/Soft/Recommend";
           if (idstring.startsWith('/Programming/Golang/GORM/')) return "/Programming/Golang/GORM/";
           return idstring;
