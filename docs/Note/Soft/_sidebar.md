@@ -10,4 +10,4 @@
   - [其他软件](Note/Soft/Recommend/other.md)
 - [软件指南](Note/Soft/#Guide)
   - [建站类](Note/Soft/#tag1)
-    - [docsify](Note/Soft/Guide/docsify.md)
+    - [docsify 指南](Note/Soft/Guide/docsify.md)

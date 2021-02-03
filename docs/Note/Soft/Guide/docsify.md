@@ -11,6 +11,7 @@
 - [docsify-themeable](https://jhildenbiddle.github.io/docsify-themeable/#/introduction) 一个应用很广泛的样式，提供浅色模式和深色模式。
 - [emoji](https://docsify.js.org/#/zh-cn/plugins?id=emoji) 提供 emoji 支持，需要应用 docsify 中自带的 plugins 中的对应 js 文件。
 - [zoom-image](https://docsify.js.org/#/zh-cn/plugins?id=%e5%9b%be%e7%89%87%e7%bc%a9%e6%94%be-zoom-image) 提供图片的一些显示功能，需要应用 docsify 中自带的 plugins 中的对应 js 文件。
+- [search](https://docsify.js.org/#/zh-cn/plugins?id=%e5%85%a8%e6%96%87%e6%90%9c%e7%b4%a2-search) 提供全文搜索插件。
 - [gitalk](https://docsify.js.org/#/zh-cn/plugins?id=gitalk) 一个页面评论插件，需要配合 docsify 中自带的 plugins 中的对应 js 文件。 **这个文件需要调整！！！**
 - [MathJax](https://www.mathjax.org/) 用于页面显示数学公式的玩意。
 - [prism](https://docsify.js.org/#/zh-cn/language-highlight) 代码高亮。一些语言需要单独应用对应的 js 文件。

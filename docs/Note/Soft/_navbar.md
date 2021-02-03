@@ -9,4 +9,4 @@
   - [常用软件](Note/Soft/Recommend/tools.md)
   - [其他软件](Note/Soft/Recommend/other.md)
 - [软件指南](Note/Soft/#Guide)
-  - [docsify](Note/Soft/Guide/docsify.md)
+  - [docsify 指南](Note/Soft/Guide/docsify.md)
