@@ -12,7 +12,7 @@
   - [Unity](/Framework/Unity/ "待整理Unity")
   - [运维](/Framework/OP/ "待整理Operations")
 - 个人笔记
-  - [常用软件](/Note/Soft/)
+  - [软件和使用](/Note/Soft/)
   - [图片和视频处理](/Note/IP/ "待整理Image Processing")
   - [3D 打印机](/Note/3DPrint/ "待整理3D Print")
 - 娱乐推荐

@@ -1,5 +1,5 @@
 var defaultOptions = {
-  headings: 'h1, h2, h3'
+  headings: 'h1, h2, h3',
 }
 
 var aTag = function(src) {
@@ -109,49 +109,22 @@ var goTopFunction = function(e) {
   scroll();
 };
 
-var sunFunction= function(e) {
-  e.stopPropagation();
-  var sunThemes = Docsify.dom.find('[rel="stylesheet"][title="sun"]');
-  var moonThemes = Docsify.dom.find('[rel="stylesheet"][title="moon"]');
-
-  sunThemes.disabled = false;
-  moonThemes.disabled = true;
-};
-
-var moonFunction= function(e) {
-  e.stopPropagation();
-  var sunThemes = Docsify.dom.find('[rel="stylesheet"][title="sun"]');
-  var moonThemes = Docsify.dom.find('[rel="stylesheet"][title="moon"]');
-
-  sunThemes.disabled = true;
-  moonThemes.disabled = false;
-};
-
 // Docsify plugin functions
 function plugin(hook, vm) {
   var userOptions = vm.config.jxtoc;
 
   hook.mounted(function () {
+    var mainElm = document.querySelector("main");
     var content = window.Docsify.dom.find(".content");
     if (content) {
       var jxtoc = window.Docsify.dom.create("div", "");
       jxtoc.id = "jx-toc"
-      window.Docsify.dom.before(content, jxtoc);
+      window.Docsify.dom.before(mainElm, jxtoc);
 
       var jxGoTop = window.Docsify.dom.create("span", "<i class='fas fa-arrow-up'></i>");
-      jxGoTop.id = "jx-gotop";
+      jxGoTop.id = "jx-toc-gotop";
       jxGoTop.onclick = goTopFunction;
-      window.Docsify.dom.before(content, jxGoTop);
-
-      var jxSun = window.Docsify.dom.create("span", "<i class='fas fa-sun'></i>");
-      jxSun.id = "jx-sun";
-      jxSun.onclick = sunFunction;
-      window.Docsify.dom.before(content, jxSun);
-
-      var jxMoon = window.Docsify.dom.create("span", "<i class='fas fa-moon'></i>");
-      jxMoon.id = "jx-moon";
-      jxMoon.onclick = moonFunction;
-      window.Docsify.dom.before(content, jxMoon);
+      window.Docsify.dom.before(mainElm, jxGoTop);
     }
   });
 

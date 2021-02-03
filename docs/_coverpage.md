@@ -24,7 +24,7 @@
 ---
 
 **个人笔记：**
-[常用软件](/Note/Soft/ "待整理Soft")
+[软件和使用](/Note/Soft/)
 [图片和视频处理 待整理](/Note/IP/ "待整理Image Processing")
 [3D 打印机 待整理](/Note/3DPrint/ "待整理3D Print")
 

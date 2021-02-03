@@ -7,7 +7,7 @@
       var div = dom.create('div');
       div.id = 'gitalk-container';
       var main = dom.getNode('#main');
-      div.style = "width: " + (main.clientWidth) + "px; margin: 0 auto 20px;";
+      div.style = "max-width: " + (main.clientWidth) + "px; margin: 0 auto 20px; padding: 0px 45px;";
       dom.appendTo(dom.find('.content'), div);
     });
 
