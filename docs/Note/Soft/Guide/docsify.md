@@ -4,6 +4,20 @@
 
 什么安装创建什么的去看官网吧，这个写的很详细了。[官网文档](https://docsify.js.org/#/zh-cn/)
 
+> 如果你用的 vscode 写 markdown，并且使用的是 prettier 做代码美化的话，会有下面的问题：
+>
+> 公式： `$ A_{m \times n} * B_{n \times o} = C_{m \times o} $`
+>
+> 会被格式化为： `$ A*{m \times n} \* B*{n \times o} = C\_{m \times o} $`
+>
+> 解决办法：
+>
+> 1. 让 prettier 对下一行不进行格式化，在公式的前加入一行 `<!-- prettier-ignore -->` 即可。
+>
+> 2. 让 prettier 对所有的 markdown 都不格式化，在根目录创建一个文件 `.prettierignore` 加入一行 `*.md` 即可。
+>
+> 3. 给公式加入反引号，将公式写作 $` A_{m \times n} * B_{n \times o} = C_{m \times o} `$ 这里请看源码。
+
 下面是些不一样的东西。
 
 ## 2. 推荐插件
@@ -13,7 +27,6 @@
 - [zoom-image](https://docsify.js.org/#/zh-cn/plugins?id=%e5%9b%be%e7%89%87%e7%bc%a9%e6%94%be-zoom-image) 提供图片的一些显示功能，需要应用 docsify 中自带的 plugins 中的对应 js 文件。
 - [search](https://docsify.js.org/#/zh-cn/plugins?id=%e5%85%a8%e6%96%87%e6%90%9c%e7%b4%a2-search) 提供全文搜索插件。
 - [gitalk](https://docsify.js.org/#/zh-cn/plugins?id=gitalk) 一个页面评论插件，需要配合 docsify 中自带的 plugins 中的对应 js 文件。 **这个文件需要调整！！！**
-- [MathJax](https://www.mathjax.org/) 用于页面显示数学公式的玩意。
 - [prism](https://docsify.js.org/#/zh-cn/language-highlight) 代码高亮。一些语言需要单独应用对应的 js 文件。
 - [docsify-fontawesome](https://github.com/erickjx/docsify-fontawesome#readme) 提供很多小图标的玩意。
 - [docsify-pagination](https://github.com/imyelo/docsify-pagination#readme) 提供上一页和下一页的功能。
@@ -21,6 +34,7 @@
 - [docsify-edit-on-github](https://github.com/njleonzhang/docsify-edit-on-github#readme) 在页面上提供一个连接，如果你有权限的话可以直接跳转到对应的 Github 页面进行页面编辑。
 - [docsify-jx-toc](https://github.com/jasperxu/docsify-jx-toc#readme) 我自己写的提供页面内目录和回到顶部按钮的功能。
 - [docsify-jx-themes-manage](https://github.com/jasperxu/jasperxu.github.io/tree/main/docs/lib/docsify-jx-themes-manage/dist) 我自己写的，在回到顶部按钮下面显示两个按钮，用来切换浅色模式和深色模式的，需要的可以直接在我的代码库里面找。功能很弱就没发布了。
+- [docsify-katex](https://github.com/upupming/docsify-katex#readme) 这个是 docsify 中支持的比较不错的 Tex 的插件。
 
 ## 3. 插件调整
 

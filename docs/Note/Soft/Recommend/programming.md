@@ -154,6 +154,10 @@ IntelliJ IDEA 通过安装对应插件可以支持大量的开发语言。官网
 
 <!-- tab:Windows -->
 
+### PowerShell
+
+:fab fa-windows fa-2x: 系统自带。`ssh username@192.168.199.2` 即可连接。
+
 ### FinalShell [Free]
 
 :fab fa-windows fa-2x: :fab fa-apple fa-2x: :fab fa-linux fa-2x: [官网](http://www.hostbuf.com/) 用来连接 Linux 服务器。

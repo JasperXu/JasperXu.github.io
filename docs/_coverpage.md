@@ -9,7 +9,7 @@
 
 **程序设计：**
 [C# 待整理](/Programming/CSharp/ "待整理CSharp")
-[Go 整理中](/Programming/Golang/ "Golang整理中")
+[Go](/Programming/Golang/ "Golang")
 [Python 待整理](/Programming/Python/ "待整理Python")
 [TypeScript 待整理](/Programming/TypeScript/ "待整理TypeScript")
 
@@ -19,14 +19,15 @@
 [前端 待整理](/Framework/FE/ "待整理Front-End")
 [机器学习 待整理](/Framework/ML/ "待整理Machine Learning")
 [Unity 待整理](/Framework/Unity/ "待整理Unity")
-[运维 待整理](/Framework/OP/ "待整理Operations")
+[运维](/Framework/OP/ "Operations")
 
 ---
 
 **个人笔记：**
-[软件和使用](/Note/Soft/)
-[图片和视频处理 待整理](/Note/IP/ "待整理Image Processing")
+[软件和使用](/Note/Soft/ "Soft")
+[图片和视频处理](/Note/IP/ "Image Processing")
 [3D 打印机 待整理](/Note/3DPrint/ "待整理3D Print")
+[未分类文章](/Note/Other/)
 
 ---
 
