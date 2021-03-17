@@ -9,3 +9,8 @@
   - [镜像设置或代理设置](Note/Other/镜像设置或代理设置)
   - [Win10 共享文件夹](Note/Other/Win10共享文件夹)
   - [矩阵运算速查](Note/Other/矩阵运算速查)
+  - [Mac 程序无法运行](Note/Other/Mac程序无法运行)
+  - [软链和硬链](Note/Other/软链和硬链)
+  - [树莓派 4b(一)安装 OMV](<Note/Other/树莓派4b(一)安装OMV>)
+  - [npm 上传自己的包](Note/Other/npm上传自己的包)
+  - [Excel 第一次打开空白的问题](Note/Other/Excel第一次打开空白的问题)
