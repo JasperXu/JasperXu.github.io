@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JasperXu's 笔记本</title>
+    <meta name="keywords" content="开发环境设置,Windows,定时开关机" />
+    <meta name="description" content="Windows 定时开关机" />
+    <meta name="tags" content="Windows, 定时开关机" />
+    <meta name="categories" content="开发环境设置, 系统设置" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
+    <meta name="description" content="JasperXu's 笔记本" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="/lib/bootstrap-4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free-5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/lib/css/simple.css" />
+    <link rel="stylesheet" href="/lib/prismjs-1.23.0/prism.css" />
+    <link rel="stylesheet" href="/lib/katex-0.13.2/dist/katex.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/lib/gitalk-1.7.2/dist/gitalk.css" />
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        if (document.domain != "localhost") {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="fixed-top">
+      <a class="navbar-brand" href="#">JasperXu's 笔记本</a>
+      <button
+        class="navbar-toggler"
+        style="margin-right: 5.5rem"
+        type="button"
+        data-toggle="collapse"
+        data-target="#top-nav"
+        aria-controls="top-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="top-nav hide-nav" id="top-nav">
+        <!-- <form class="form-inline ml-auto">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </form> -->
+        <!-- _navbar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/#OS">系统设置</a><ul>
+<li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
+<li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
+<li><a href="/Note/Development/OS/软链和硬链.html">软链和硬链</a></li>
+<li><a href="/Note/Development/OS/Mac程序无法运行.html">Mac 程序无法运行</a></li>
+<li><a href="/Note/Development/OS/Win10共享文件夹.html">Win10 共享文件夹</a></li>
+<li><a href="/Note/Development/OS/WinLinux双系统安装指南.html">Win Linux 双系统安装指南</a></li>
+<li><a href="/Note/Development/OS/程序静默运行.html">程序静默运行</a></li>
+<li><a href="/Note/Development/OS/Windows定时开关机.html">Windows 定时开关机</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Environment">环境搭建</a><ul>
+<li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
+<li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <section class="cover d-flex">
+          <div>
+            
+          </div>
+        </section>
+        <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
+          <nav class="side-nav hide-nav" id="side-nav">
+            <!-- _sidebar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/#OS">系统设置</a><ul>
+<li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
+<li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
+<li><a href="/Note/Development/OS/软链和硬链.html">软链和硬链</a></li>
+<li><a href="/Note/Development/OS/Mac程序无法运行.html">Mac 程序无法运行</a></li>
+<li><a href="/Note/Development/OS/Win10共享文件夹.html">Win10 共享文件夹</a></li>
+<li><a href="/Note/Development/OS/WinLinux双系统安装指南.html">Win Linux 双系统安装指南</a></li>
+<li><a href="/Note/Development/OS/程序静默运行.html">程序静默运行</a></li>
+<li><a href="/Note/Development/OS/Windows定时开关机.html">Windows 定时开关机</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Environment">环境搭建</a><ul>
+<li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
+<li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+</ul>
+
+          </nav>
+        </aside>
+        <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
+          <article class="article">
+            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 23:41 </div></div><h1 id='windows-定时开关机' ><a href='#anchor_windows-定时开关机' id='anchor_windows-定时开关机' class='anchor'>Windows 定时开关机</a></h1>
+<h2 id='1-在主板上设置-每天定时开机的时间。' ><a href='#anchor_1-在主板上设置-每天定时开机的时间。' id='anchor_1-在主板上设置-每天定时开机的时间。' class='anchor'>1. 在主板上设置 每天定时开机的时间。</a></h2>
+<p>最好提前 10 分钟。</p>
+<h2 id='2-在-windows-中加入一个开机登陆的计划任务' ><a href='#anchor_2-在-windows-中加入一个开机登陆的计划任务' id='anchor_2-在-windows-中加入一个开机登陆的计划任务' class='anchor'>2. 在 Windows 中加入一个开机登陆的计划任务</a></h2>
+<p>开机登陆-&gt;常规-&gt;安全选项</p>
+<p>运行任务时，请使用下列用户账户：选择要登陆的用户，并输入密码。</p>
+<p>勾选不管用户是否登录都要运行。【不要勾选不存储密码】</p>
+<p>勾选使用最高权限运行。</p>
+<p>配置：您的操作系统，我这里是 Windows 10。</p>
+<p>开机登陆-&gt;触发器</p>
+<p>选择 <code>在系统启动时</code> 。</p>
+<p>开机登陆-&gt;操作</p>
+<p>这里添加两个，如下：即为打开记事本，然后关闭掉记事本。</p>
+<pre><code>启动程序：notepad.exe
+启动程序：TASKKILL 添加参数：/IM notepad.exe
+</code></pre>
+<p>开机登陆-&gt;条件</p>
+<p>勾选唤醒计算机运行此任务</p>
+<h2 id='3-在-windows-中加入一个定时关机的计划任务' ><a href='#anchor_3-在-windows-中加入一个定时关机的计划任务' id='anchor_3-在-windows-中加入一个定时关机的计划任务' class='anchor'>3. 在 Windows 中加入一个定时关机的计划任务</a></h2>
+<p>开机登陆-&gt;常规-&gt;安全选项</p>
+<p>运行任务时，请使用下列用户账户：选择要登陆的用户，并输入密码。</p>
+<p>勾选不管用户是否登录都要运行。【不要勾选不存储密码】</p>
+<p>勾选使用最高权限运行。</p>
+<p>配置：您的操作系统，我这里是 Windows 10。</p>
+<p>开机登陆-&gt;触发器</p>
+<p>选择 <code>每天</code> ，指定时间，例如 19:00。</p>
+<p>开机登陆-&gt;操作</p>
+<p>启动程序：shutdown.exe 添加参数：-s -t 100</p>
+<p>开机登陆-&gt;条件</p>
+<p>勾选唤醒计算机运行此任务</p>
+</article>
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="/lib/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="/lib/prismjs-1.23.0/prism.js"></script>
+    <script src="/lib/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap-dropdown-hover-4.2.0/dist/bootstrap-dropdown-hover-change.js"></script>
+    <script src="/lib/medium-zoom-1.0.6/dist/medium-zoom.min.js"></script>
+
+    <script src="/lib/gitalk-1.7.2/dist/gitalk.min.js"></script>
+    <script src="/lib/js/simple.js"></script>
+  </body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JasperXu's 笔记本</title>
+    <meta name="keywords" content="开发环境设置,镜像,代理" />
+    <meta name="description" content="镜像设置或代理设置" />
+    <meta name="tags" content="镜像, 代理" />
+    <meta name="categories" content="开发环境设置, 系统设置" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
+    <meta name="description" content="JasperXu's 笔记本" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="/lib/bootstrap-4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free-5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/lib/css/simple.css" />
+    <link rel="stylesheet" href="/lib/prismjs-1.23.0/prism.css" />
+    <link rel="stylesheet" href="/lib/katex-0.13.2/dist/katex.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/lib/gitalk-1.7.2/dist/gitalk.css" />
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        if (document.domain != "localhost") {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="fixed-top">
+      <a class="navbar-brand" href="#">JasperXu's 笔记本</a>
+      <button
+        class="navbar-toggler"
+        style="margin-right: 5.5rem"
+        type="button"
+        data-toggle="collapse"
+        data-target="#top-nav"
+        aria-controls="top-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="top-nav hide-nav" id="top-nav">
+        <!-- <form class="form-inline ml-auto">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </form> -->
+        <!-- _navbar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/#OS">系统设置</a><ul>
+<li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
+<li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
+<li><a href="/Note/Development/OS/软链和硬链.html">软链和硬链</a></li>
+<li><a href="/Note/Development/OS/Mac程序无法运行.html">Mac 程序无法运行</a></li>
+<li><a href="/Note/Development/OS/Win10共享文件夹.html">Win10 共享文件夹</a></li>
+<li><a href="/Note/Development/OS/WinLinux双系统安装指南.html">Win Linux 双系统安装指南</a></li>
+<li><a href="/Note/Development/OS/程序静默运行.html">程序静默运行</a></li>
+<li><a href="/Note/Development/OS/Windows定时开关机.html">Windows 定时开关机</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Environment">环境搭建</a><ul>
+<li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
+<li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <section class="cover d-flex">
+          <div>
+            
+          </div>
+        </section>
+        <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
+          <nav class="side-nav hide-nav" id="side-nav">
+            <!-- _sidebar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/#OS">系统设置</a><ul>
+<li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
+<li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
+<li><a href="/Note/Development/OS/软链和硬链.html">软链和硬链</a></li>
+<li><a href="/Note/Development/OS/Mac程序无法运行.html">Mac 程序无法运行</a></li>
+<li><a href="/Note/Development/OS/Win10共享文件夹.html">Win10 共享文件夹</a></li>
+<li><a href="/Note/Development/OS/WinLinux双系统安装指南.html">Win Linux 双系统安装指南</a></li>
+<li><a href="/Note/Development/OS/程序静默运行.html">程序静默运行</a></li>
+<li><a href="/Note/Development/OS/Windows定时开关机.html">Windows 定时开关机</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Environment">环境搭建</a><ul>
+<li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
+<li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+</ul>
+
+          </nav>
+        </aside>
+        <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
+          <article class="article">
+            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:19 </div></div><h1 id='镜像设置或代理设置' ><a href='#anchor_镜像设置或代理设置' id='anchor_镜像设置或代理设置' class='anchor'>镜像设置或代理设置</a></h1>
+<h3 id='1-ubuntu' ><a href='#anchor_1-ubuntu' id='anchor_1-ubuntu' class='anchor'>1. Ubuntu</a></h3>
+<p><code>sudo vi /etc/apt/sources.list</code> 替换 <code>archive.ubuntu.com</code> 为 <code>mirrors.aliyun.com</code> .</p>
+<p><strong>ubuntu 16.04(xenial)</strong></p>
+<pre><code class="language-bash">deb http://mirrors.aliyun.com/ubuntu/ xenial main
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial main
+
+deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main
+
+deb http://mirrors.aliyun.com/ubuntu/ xenial universe
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial universe
+deb http://mirrors.aliyun.com/ubuntu/ xenial-updates universe
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates universe
+
+deb http://mirrors.aliyun.com/ubuntu/ xenial-security main
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main
+deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security universe
+</code></pre>
+<p><strong>ubuntu 18.04(bionic)</strong></p>
+<pre><code class="language-bash">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+</code></pre>
+<h3 id='2-python' ><a href='#anchor_2-python' id='anchor_2-python' class='anchor'>2. Python</a></h3>
+<p><code>sudo vi ~/.pip/pip.conf</code> 中添加或修改，Windows 中为用户目录中创建 <code>pip/pip.ini</code> 文件。</p>
+<pre><code class="language-bash">[global]
+index-url = https://mirrors.aliyun.com/pypi/simple/
+
+[install]
+trusted-host=mirrors.aliyun.com
+</code></pre>
+<h3 id='3-golang' ><a href='#anchor_3-golang' id='anchor_3-golang' class='anchor'>3. Golang</a></h3>
+<p>设置 go 的环境变量：</p>
+<pre><code class="language-bash">$ go env -w GO111MODULE=on
+$ go env -w GOPROXY=https://goproxy.cn,direct
+</code></pre>
+<p>或者设置系统的环境变量：</p>
+<pre><code class="language-bash">C:\> $env:GO111MODULE = "on"
+C:\> $env:GOPROXY = "https://goproxy.cn"
+</code></pre>
+<pre><code class="language-bash">$ echo "export GO111MODULE=on" >> ~/.profile
+$ echo "export GOPROXY=https://goproxy.cn" >> ~/.profile
+$ source ~/.profile
+</code></pre>
+<h3 id='4-node' ><a href='#anchor_4-node' id='anchor_4-node' class='anchor'>4. Node</a></h3>
+<h4 id='41-npm' ><a href='#anchor_41-npm' id='anchor_41-npm' class='anchor'>4.1. npm</a></h4>
+<p>直接安装 cnpm 然后用其替代 npm</p>
+<pre><code class="language-bash">npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre>
+<p>或者直接通过添加 <code>npm</code> 参数 <code>alias</code> 一个新命令:</p>
+<pre><code class="language-bash">alias cnpm="npm --registry=https://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npm.taobao.org/dist \
+--userconfig=$HOME/.cnpmrc"
+
+# Or alias it in .bashrc or .zshrc 或者在rc文件中给它起个别名
+$ echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npm.taobao.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npm.taobao.org/dist \
+  --userconfig=$HOME/.cnpmrc"' >> ~/.zshrc && source ~/.zshrc
+</code></pre>
+<h4 id='42-yarn' ><a href='#anchor_42-yarn' id='anchor_42-yarn' class='anchor'>4.2. yarn</a></h4>
+<pre><code class="language-bash"># 安装yarn
+cnpm install -g yarn
+# 查看当前源
+yarn config get registry
+# 切换到淘宝源
+yarn config set registry https://registry.npm.taobao.org
+# 切换回默认源
+yarn config set registry https://registry.yarnpkg.com
+</code></pre>
+</article>
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="/lib/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="/lib/prismjs-1.23.0/prism.js"></script>
+    <script src="/lib/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap-dropdown-hover-4.2.0/dist/bootstrap-dropdown-hover-change.js"></script>
+    <script src="/lib/medium-zoom-1.0.6/dist/medium-zoom.min.js"></script>
+
+    <script src="/lib/gitalk-1.7.2/dist/gitalk.min.js"></script>
+    <script src="/lib/js/simple.js"></script>
+  </body>
+</html>

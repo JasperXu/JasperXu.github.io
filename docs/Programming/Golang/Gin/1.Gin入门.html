@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JasperXu's 笔记本</title>
+    <meta name="keywords" content="Go,Golang,Gin" />
+    <meta name="description" content="Gin入门" />
+    <meta name="tags" content="Golang, Gin" />
+    <meta name="categories" content="编程语言, Golang, Gin" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
+    <meta name="description" content="JasperXu's 笔记本" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="/lib/bootstrap-4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free-5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/lib/css/simple.css" />
+    <link rel="stylesheet" href="/lib/prismjs-1.23.0/prism.css" />
+    <link rel="stylesheet" href="/lib/katex-0.13.2/dist/katex.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/lib/gitalk-1.7.2/dist/gitalk.css" />
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        if (document.domain != "localhost") {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="fixed-top">
+      <a class="navbar-brand" href="#">JasperXu's 笔记本</a>
+      <button
+        class="navbar-toggler"
+        style="margin-right: 5.5rem"
+        type="button"
+        data-toggle="collapse"
+        data-target="#top-nav"
+        aria-controls="top-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="top-nav hide-nav" id="top-nav">
+        <!-- <form class="form-inline ml-auto">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </form> -->
+        <!-- _navbar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Programming/Golang/">Golang</a></li>
+<li><a href="/Programming/Golang/GORM/">GORM 中文文档</a></li>
+<li>单章<ul>
+<li><a href="/Programming/Golang/go执行sql语句.html">go 执行 sql 语句</a></li>
+<li><a href="/Programming/Golang/GogRPC指南.html">Go gRPC 指南</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <section class="cover d-flex">
+          <div>
+            
+          </div>
+        </section>
+        <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
+          <nav class="side-nav hide-nav" id="side-nav">
+            <!-- _sidebar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Programming/Golang/">Golang</a></li>
+<li><a href="/Programming/Golang/GORM/">GORM 中文文档</a></li>
+<li>单章<ul>
+<li><a href="/Programming/Golang/go执行sql语句.html">go 执行 sql 语句</a></li>
+<li><a href="/Programming/Golang/GogRPC指南.html">Go gRPC 指南</a></li>
+</ul>
+</li>
+</ul>
+
+          </nav>
+        </aside>
+        <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
+          <article class="article">
+            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-25 16:14 </div></div><h1 id='1-gin-入门' ><a href='#anchor_1-gin-入门' id='anchor_1-gin-入门' class='anchor'>1. Gin 入门</a></h1>
+<h2 id='11-安装' ><a href='#anchor_11-安装' id='anchor_11-安装' class='anchor'>1.1. 安装</a></h2>
+<p>要安装 Gin 软件包，需要先安装 Go 并设置 Go 工作区。</p>
+<ul>
+<li>首先需要安装<a href="https://golang.org/" target="_blank" >Go</a>（需要<strong>1.12+版本</strong>），然后可以使用下面的 Go 命令安装 Gin。</li>
+</ul>
+<pre><code class="language-bash">$ go get -u github.com/gin-gonic/gin
+</code></pre>
+<ul>
+<li>在项目中引用</li>
+</ul>
+<pre><code class="language-go">import "github.com/gin-gonic/gin"
+</code></pre>
+<ul>
+<li>(可选) 如需使用 <code>http.StatusOK</code> 之类的常量，则需要引入 <code>net/http</code> 包：</li>
+</ul>
+<pre><code class="language-go">import "net/http"
+</code></pre>
+<h2 id='12-快速开始' ><a href='#anchor_12-快速开始' id='anchor_12-快速开始' class='anchor'>1.2. 快速开始</a></h2>
+<p>创建文件 <code>example.go</code> 内容如下：</p>
+<pre><code class="language-go">package main
+
+import "github.com/gin-gonic/gin"
+
+func main() {
+    r := gin.Default()
+    r.GET("/ping", func(c *gin.Context) {
+        c.JSON(200, gin.H{
+            "message": "pong",
+        })
+    })
+    r.Run() // 监听并启动服务 0.0.0.0:8080 (windows "localhost:8080")
+}
+</code></pre>
+<p>然后执行如下命令运行服务：，打开浏览器浏览 <code>0.0.0.0:8080/ping</code> windows 浏览 <code>localhost:8080/ping</code></p>
+<pre><code class="language-bash">$ go run example.go
+</code></pre>
+<p>打开浏览器输入 <code>0.0.0.0:8080/ping</code> windows 为 <code>localhost:8080/ping</code> 。</p>
+<h2 id='13-使用-jsoniter' ><a href='#anchor_13-使用-jsoniter' id='anchor_13-使用-jsoniter' class='anchor'>1.3. 使用 Jsoniter</a></h2>
+<p>Gin 默认使用 <code>encoding/json</code> 编译 json，但是你也可以在编译中使用标签将其修改为 <a href="https://github.com/json-iterator/go" target="_blank" >Jsoniter</a></p>
+<pre><code class="language-bash">$ go build -tags=jsoniter .
+</code></pre>
+<p>性能大约提升 5~40 倍。</p>
+</article>
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="/lib/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="/lib/prismjs-1.23.0/prism.js"></script>
+    <script src="/lib/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap-dropdown-hover-4.2.0/dist/bootstrap-dropdown-hover-change.js"></script>
+    <script src="/lib/medium-zoom-1.0.6/dist/medium-zoom.min.js"></script>
+
+    <script src="/lib/gitalk-1.7.2/dist/gitalk.min.js"></script>
+    <script src="/lib/js/simple.js"></script>
+  </body>
+</html>

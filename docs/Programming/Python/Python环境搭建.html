@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JasperXu's 笔记本</title>
+    <meta name="keywords" content="Python,环境搭建" />
+    <meta name="description" content="Python 环境搭建" />
+    <meta name="tags" content="Python, 环境搭建" />
+    <meta name="categories" content="编程语言, Python, 单章" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
+    <meta name="description" content="JasperXu's 笔记本" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="/lib/bootstrap-4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free-5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/lib/css/simple.css" />
+    <link rel="stylesheet" href="/lib/prismjs-1.23.0/prism.css" />
+    <link rel="stylesheet" href="/lib/katex-0.13.2/dist/katex.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/lib/gitalk-1.7.2/dist/gitalk.css" />
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        if (document.domain != "localhost") {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="fixed-top">
+      <a class="navbar-brand" href="#">JasperXu's 笔记本</a>
+      <button
+        class="navbar-toggler"
+        style="margin-right: 5.5rem"
+        type="button"
+        data-toggle="collapse"
+        data-target="#top-nav"
+        aria-controls="top-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="top-nav hide-nav" id="top-nav">
+        <!-- <form class="form-inline ml-auto">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </form> -->
+        <!-- _navbar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Programming/Python/">Python</a></li>
+<li>单章<ul>
+<li><a href="/Programming/Python/Python环境搭建.html">Python 环境搭建</a></li>
+<li><a href="/Programming/Python/Virtualenv使用指南.html">Virtualenv 使用指南</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <section class="cover d-flex">
+          <div>
+            
+          </div>
+        </section>
+        <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
+          <nav class="side-nav hide-nav" id="side-nav">
+            <!-- _sidebar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Programming/Python/">Python</a></li>
+<li>单章<ul>
+<li><a href="/Programming/Python/Python环境搭建.html">Python 环境搭建</a></li>
+<li><a href="/Programming/Python/Virtualenv使用指南.html">Virtualenv 使用指南</a></li>
+</ul>
+</li>
+</ul>
+
+          </nav>
+        </aside>
+        <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
+          <article class="article">
+            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 23:12 </div></div><h1 id='python-环境搭建' ><a href='#anchor_python-环境搭建' id='anchor_python-环境搭建' class='anchor'>Python 环境搭建</a></h1>
+<h3 id='1-下载并安装' ><a href='#anchor_1-下载并安装' id='anchor_1-下载并安装' class='anchor'>1. 下载并安装</a></h3>
+<p><a href="https://www.python.org/downloads/windows/" target="_blank" >下载页面</a> 下载对应的版本。<strong>默认下载为 x86，请手动选择 x64 版本</strong></p>
+<p>安装时：</p>
+<ul>
+<li>勾选 <code>Add Python 3.x to PATH</code> 。</li>
+<li>并选择自定义安装位置。</li>
+<li>勾选 <code>Install for all users</code> 。</li>
+<li>选择需要的安装位置。</li>
+<li>点击安装。</li>
+</ul>
+<p>设置镜像【有些时候镜像会有问题，则需要清除对应文件。】：</p>
+<p><code>sudo vi ~/.pip/pip.conf</code> 中添加或修改，Windows 中为用户目录中创建 <code>pip/pip.ini</code> 文件。</p>
+<pre><code>[global]
+index-url = https://mirrors.aliyun.com/pypi/simple/
+
+[install]
+trusted-host=mirrors.aliyun.com
+</code></pre>
+<h3 id='2-安装常用库' ><a href='#anchor_2-安装常用库' id='anchor_2-安装常用库' class='anchor'>2. 安装常用库</a></h3>
+<p>更新 <code>pip</code> 执行： <code>c:\tools\python38\python.exe -m pip install --upgrade pip</code></p>
+<pre><code class="language-bash">virtualenv
+wheel
+yapf
+</code></pre>
+<h3 id='3-使用-virtualenv' ><a href='#anchor_3-使用-virtualenv' id='anchor_3-使用-virtualenv' class='anchor'>3. 使用 virtualenv</a></h3>
+<p>进入项目的根目录，执行 <code>virtualenv venv</code> 创建虚拟环境。</p>
+<p>mac 脚本：<code>/path/venv.sh</code></p>
+<pre><code class="language-bash">echo 进入Machine Learning虚拟环境目录
+cd /Users/jasper/vpythons/ml
+echo 进入虚拟环境
+source bin/activate
+echo 目录地址：/Users/jasper/vpythons/ml
+</code></pre>
+<p>mac 执行：<code>. /venv.sh</code></p>
+<hr>
+<p>Linux 脚本：<code>/path/venv.sh</code> ，末尾需要加入<code>$SHELL</code> 否则执行完毕后会回到起始状态。</p>
+<pre><code class="language-bash">echo 进入Machine Learning虚拟环境目录
+cd /Users/jasper/vpythons/ml
+echo 进入虚拟环境
+source bin/activate
+echo 目录地址：/Users/jasper/vpythons/ml
+$SHELL
+</code></pre>
+<p>Linux 执行：<code>./venv.sh</code></p>
+<hr>
+<p>windows CMD 脚本：<code>C:\path\venv.bat</code></p>
+<pre><code class="language-bash">cd C:\vpythons\ml
+.\Scripts\activate
+:: @cmd /k
+</code></pre>
+<p>windows CMD 执行：<code>.\venv.bat</code> 或 <code>venv.bat</code></p>
+<hr>
+<p>windows Powershell 脚本：<code>C:\path\venv.ps1</code></p>
+<pre><code class="language-bash">cd C:\vpythons\ml
+.\Scripts\activate
+:: @cmd /k
+</code></pre>
+<p>windows Powershell 执行：<code>.\venv.ps1</code> 或 <code>.\\venv.ps1</code></p>
+</article>
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="/lib/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="/lib/prismjs-1.23.0/prism.js"></script>
+    <script src="/lib/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap-dropdown-hover-4.2.0/dist/bootstrap-dropdown-hover-change.js"></script>
+    <script src="/lib/medium-zoom-1.0.6/dist/medium-zoom.min.js"></script>
+
+    <script src="/lib/gitalk-1.7.2/dist/gitalk.min.js"></script>
+    <script src="/lib/js/simple.js"></script>
+  </body>
+</html>

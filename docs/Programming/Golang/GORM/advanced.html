@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JasperXu's 笔记本</title>
+    <meta name="keywords" content="Go,Golang,GORM,高级用法" />
+    <meta name="description" content="GORM 6. 高级用法" />
+    <meta name="tags" content="Golang, ORM" />
+    <meta name="categories" content="编程语言, Golang, GORM" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
+    <meta name="description" content="JasperXu's 笔记本" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="/lib/bootstrap-4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free-5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/lib/css/simple.css" />
+    <link rel="stylesheet" href="/lib/prismjs-1.23.0/prism.css" />
+    <link rel="stylesheet" href="/lib/katex-0.13.2/dist/katex.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/lib/gitalk-1.7.2/dist/gitalk.css" />
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        if (document.domain != "localhost") {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="fixed-top">
+      <a class="navbar-brand" href="#">JasperXu's 笔记本</a>
+      <button
+        class="navbar-toggler"
+        style="margin-right: 5.5rem"
+        type="button"
+        data-toggle="collapse"
+        data-target="#top-nav"
+        aria-controls="top-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="top-nav hide-nav" id="top-nav">
+        <!-- <form class="form-inline ml-auto">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </form> -->
+        <!-- _navbar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Programming/Golang/">Golang</a></li>
+<li><a href="/Programming/Golang/GORM/">GORM 中文文档</a></li>
+<li>单章<ul>
+<li><a href="/Programming/Golang/go执行sql语句.html">go 执行 sql 语句</a></li>
+<li><a href="/Programming/Golang/GogRPC指南.html">Go gRPC 指南</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <section class="cover d-flex">
+          <div>
+            
+          </div>
+        </section>
+        <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
+          <nav class="side-nav hide-nav" id="side-nav">
+            <!-- _sidebar -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Programming/Golang/">Golang</a></li>
+<li><a href="/Programming/Golang/GORM/">GORM 中文文档</a></li>
+<li><a href="/Programming/Golang/GORM/guide.html">1. 快速开始</a></li>
+<li><a href="/Programming/Golang/GORM/database.html">2. 数据库</a><ul>
+<li><a href="/Programming/Golang/GORM/database.html#dbc">2.1. 数据库连接</a></li>
+<li><a href="/Programming/Golang/GORM/database.html#m">2.2. 迁移</a></li>
+</ul>
+</li>
+<li><a href="/Programming/Golang/GORM/models.html">3. 模型</a><ul>
+<li><a href="/Programming/Golang/GORM/models.html#md">3.1. 模型定义</a></li>
+<li><a href="/Programming/Golang/GORM/models.html#c">3.2. 约定</a></li>
+<li><a href="/Programming/Golang/GORM/associations.html">3.3. 关联</a><ul>
+<li><a href="/Programming/Golang/GORM/associations.html#bt">3.3.1 属于</a></li>
+<li><a href="/Programming/Golang/GORM/associations.html#ho">3.3.2 包含一个</a></li>
+<li><a href="/Programming/Golang/GORM/associations.html#hm">3.3.3 包含多个</a></li>
+<li><a href="/Programming/Golang/GORM/associations.html#mtm">3.3.4 多对多</a></li>
+<li><a href="/Programming/Golang/GORM/associations.html#p">3.3.5 多种包含</a></li>
+<li><a href="/Programming/Golang/GORM/associations.html#am">3.3.6 关联模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/Programming/Golang/GORM/crud.html">4. CRUD:读写数据</a><ul>
+<li><a href="/Programming/Golang/GORM/crud.html#c">4.1 创建</a></li>
+<li><a href="/Programming/Golang/GORM/crud.html#q">4.2 查询</a></li>
+<li><a href="/Programming/Golang/GORM/crud.html#p">4.3 预加载</a></li>
+<li><a href="/Programming/Golang/GORM/crud.html#u">4.4 更新</a></li>
+<li><a href="/Programming/Golang/GORM/crud.html#d">4.5 删除/软删除</a></li>
+<li><a href="/Programming/Golang/GORM/crud.html#a">4.6 关联</a></li>
+</ul>
+</li>
+<li><a href="/Programming/Golang/GORM/callbacks.html">5. Callbacks</a></li>
+<li><a href="/Programming/Golang/GORM/advanced.html">6. 高级用法</a><ul>
+<li><a href="/Programming/Golang/GORM/advanced.html#eh">6.1. 错误处理</a></li>
+<li><a href="/Programming/Golang/GORM/advanced.html#t">6.2. 事务</a></li>
+<li><a href="/Programming/Golang/GORM/advanced.html#sb">6.3. SQL 构建</a></li>
+<li><a href="/Programming/Golang/GORM/advanced.html#g">6.4. 通用数据库接口 sql.DB</a></li>
+<li><a href="/Programming/Golang/GORM/advanced.html#cpk">6.5. 复合主键</a></li>
+<li><a href="/Programming/Golang/GORM/advanced.html#l">6.6. 日志</a></li>
+</ul>
+</li>
+<li><a href="/Programming/Golang/GORM/development.html">7. 开发</a><ul>
+<li><a href="/Programming/Golang/GORM/development.html#a">7.1 架构</a></li>
+<li><a href="/Programming/Golang/GORM/development.html#w">7.2 写插件</a></li>
+</ul>
+</li>
+<li><a href="/Programming/Golang/GORM/changelog.html">8. 更新日志</a></li>
+<li><a href="/Programming/Golang/GORM/log.html">9. 译者日志</a></li>
+</ul>
+
+          </nav>
+        </aside>
+        <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
+          <article class="article">
+            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-23 19:30 </div></div><h1 id='6-高级用法' ><a href='#anchor_6-高级用法' id='anchor_6-高级用法' class='anchor'>6. 高级用法</a></h1>
+<h2 id='eh' ><a href='#anchor_eh' id='anchor_eh' class='anchor'>6.1. 错误处理</a></h2>
+<p>执行任何操作后，如果发生任何错误，GORM 将其设置为<code>*DB</code>的<code>Error</code>字段</p>
+<pre><code class="language-go">if err := db.Where("name = ?", "jinzhu").First(&user).Error; err != nil {
+    // 错误处理...
+}
+
+// 如果有多个错误发生，用`GetErrors`获取所有的错误，它返回`[]error`
+db.First(&user).Limit(10).Find(&users).GetErrors()
+
+// 检查是否返回RecordNotFound错误
+db.Where("name = ?", "hello world").First(&user).RecordNotFound()
+
+if db.Model(&user).Related(&credit_card).RecordNotFound() {
+    // 没有信用卡被发现处理...
+}
+</code></pre>
+<h2 id='t' ><a href='#anchor_t' id='anchor_t' class='anchor'>6.2. 事务</a></h2>
+<p>要在事务中执行一组操作，一般流程如下。</p>
+<pre><code class="language-go">// 开始事务
+tx := db.Begin()
+
+// 在事务中做一些数据库操作（从这一点使用'tx'，而不是'db'）
+tx.Create(...)
+
+// ...
+
+// 发生错误时回滚事务
+tx.Rollback()
+
+// 或提交事务
+tx.Commit()
+</code></pre>
+<h3 id='621-一个具体的例子' ><a href='#anchor_621-一个具体的例子' id='anchor_621-一个具体的例子' class='anchor'>6.2.1. 一个具体的例子</a></h3>
+<pre><code class="language-go">func CreateAnimals(db *gorm.DB) err {
+  tx := db.Begin()
+  // 注意，一旦你在一个事务中，使用tx作为数据库句柄
+
+  if err := tx.Create(&Animal{Name: "Giraffe"}).Error; err != nil {
+     tx.Rollback()
+     return err
+  }
+
+  if err := tx.Create(&Animal{Name: "Lion"}).Error; err != nil {
+     tx.Rollback()
+     return err
+  }
+
+  tx.Commit()
+  return nil
+}
+</code></pre>
+<h2 id='sb' ><a href='#anchor_sb' id='anchor_sb' class='anchor'>6.3. SQL 构建</a></h2>
+<h3 id='631-执行原生-sql' ><a href='#anchor_631-执行原生-sql' id='anchor_631-执行原生-sql' class='anchor'>6.3.1. 执行原生 SQL</a></h3>
+<pre><code class="language-go">db.Exec("DROP TABLE users;")
+db.Exec("UPDATE orders SET shipped_at=? WHERE id IN (?)", time.Now, []int64{11,22,33})
+
+// Scan
+type Result struct {
+    Name string
+    Age  int
+}
+
+var result Result
+db.Raw("SELECT name, age FROM users WHERE name = ?", 3).Scan(&result)
+</code></pre>
+<h3 id='632-sqlrow--sqlrows' ><a href='#anchor_632-sqlrow--sqlrows' id='anchor_632-sqlrow--sqlrows' class='anchor'>6.3.2. sql.Row &amp; sql.Rows</a></h3>
+<p>获取查询结果为<code>*sql.Row</code>或<code>*sql.Rows</code></p>
+<pre><code class="language-go">row := db.Table("users").Where("name = ?", "jinzhu").Select("name, age").Row() // (*sql.Row)
+row.Scan(&name, &age)
+
+rows, err := db.Model(&User{}).Where("name = ?", "jinzhu").Select("name, age, email").Rows() // (*sql.Rows, error)
+defer rows.Close()
+for rows.Next() {
+    ...
+    rows.Scan(&name, &age, &email)
+    ...
+}
+
+// Raw SQL
+rows, err := db.Raw("select name, age, email from users where name = ?", "jinzhu").Rows() // (*sql.Rows, error)
+defer rows.Close()
+for rows.Next() {
+    ...
+    rows.Scan(&name, &age, &email)
+    ...
+}
+</code></pre>
+<h3 id='633-迭代中使用-sqlrows-的-scan' ><a href='#anchor_633-迭代中使用-sqlrows-的-scan' id='anchor_633-迭代中使用-sqlrows-的-scan' class='anchor'>6.3.3. 迭代中使用 sql.Rows 的 Scan</a></h3>
+<pre><code class="language-go">rows, err := db.Model(&User{}).Where("name = ?", "jinzhu").Select("name, age, email").Rows() // (*sql.Rows, error)
+defer rows.Close()
+
+for rows.Next() {
+  var user User
+  db.ScanRows(rows, &user)
+  // do something
+}
+</code></pre>
+<h2 id='g' ><a href='#anchor_g' id='anchor_g' class='anchor'>6.4. 通用数据库接口 sql.DB</a></h2>
+<p>从<code>*gorm.DB</code>连接获取通用数据库接口<a href="http://golang.org/pkg/database/sql/#DB" target="_blank" >*sql.DB</a></p>
+<pre><code class="language-go">// 获取通用数据库对象`*sql.DB`以使用其函数
+db.DB()
+
+// Ping
+db.DB().Ping()
+</code></pre>
+<h3 id='641-连接池' ><a href='#anchor_641-连接池' id='anchor_641-连接池' class='anchor'>6.4.1. 连接池</a></h3>
+<pre><code class="language-go">db.DB().SetMaxIdleConns(10)
+db.DB().SetMaxOpenConns(100)
+</code></pre>
+<h2 id='cpk' ><a href='#anchor_cpk' id='anchor_cpk' class='anchor'>6.5. 复合主键</a></h2>
+<p>将多个字段设置为主键以启用复合主键</p>
+<pre><code class="language-go">type Product struct {
+    ID           string `gorm:"primary_key"`
+    LanguageCode string `gorm:"primary_key"`
+}
+</code></pre>
+<h2 id='l' ><a href='#anchor_l' id='anchor_l' class='anchor'>6.6. 日志</a></h2>
+<p>Gorm 有内置的日志记录器支持，默认情况下，它会打印发生的错误</p>
+<pre><code class="language-go">// 启用Logger，显示详细日志
+db.LogMode(true)
+
+// 禁用日志记录器，不显示任何日志
+db.LogMode(false)
+
+// 调试单个操作，显示此操作的详细日志
+db.Debug().Where("name = ?", "jinzhu").First(&User{})
+</code></pre>
+<h3 id='661-自定义日志' ><a href='#anchor_661-自定义日志' id='anchor_661-自定义日志' class='anchor'>6.6.1. 自定义日志</a></h3>
+<p>参考 GORM 的默认记录器如何自定义它<a href="https://github.com/jinzhu/gorm/blob/master/logger.go" target="_blank" >https://github.com/jinzhu/gorm/blob/master/logger.go</a></p>
+<pre><code class="language-go">db.SetLogger(gorm.Logger{revel.TRACE})
+db.SetLogger(log.New(os.Stdout, "\r\n", 0))
+</code></pre>
+</article>
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="/lib/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="/lib/prismjs-1.23.0/prism.js"></script>
+    <script src="/lib/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap-dropdown-hover-4.2.0/dist/bootstrap-dropdown-hover-change.js"></script>
+    <script src="/lib/medium-zoom-1.0.6/dist/medium-zoom.min.js"></script>
+
+    <script src="/lib/gitalk-1.7.2/dist/gitalk.min.js"></script>
+    <script src="/lib/js/simple.js"></script>
+  </body>
+</html>

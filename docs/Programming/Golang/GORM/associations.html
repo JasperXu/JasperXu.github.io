@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JasperXu's 笔记本</title>
+    <meta name="keywords" content="Go,Golang,GORM,关联" />
+    <meta name="description" content="GORM 3.3. 关联" />
+    <meta name="tags" content="Golang, ORM" />
+    <meta name="categories" content="编程语言, Golang, GORM" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
+    <meta name="description" content="JasperXu's 笔记本" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="/lib/bootstrap-4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free-5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/lib/css/simple.css" />
+    <link rel="stylesheet" href="/lib/prismjs-1.23.0/prism.css" />
+    <link rel="stylesheet" href="/lib/katex-0.13.2/dist/katex.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/lib/gitalk-1.7.2/dist/gitalk.css" />
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        if (document.domain != "localhost") {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="fixed-top">
+      <a class="navbar-brand" href="#">JasperXu's 笔记本</a>
+      <button
+        class="navbar-toggler"
+        style="margin-right: 5.5rem"
+        type="button"
+        data-toggle="collapse"
+        data-target="#top-nav"
+        aria-controls="top-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="top-nav hide-nav" id="top-nav">
+        <!-- <form class="form-inline ml-auto">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </form> -->
+        <!-- _navbar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Programming/Golang/">Golang</a></li>
+<li><a href="/Programming/Golang/GORM/">GORM 中文文档</a></li>
+<li>单章<ul>
+<li><a href="/Programming/Golang/go执行sql语句.html">go 执行 sql 语句</a></li>
+<li><a href="/Programming/Golang/GogRPC指南.html">Go gRPC 指南</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <section class="cover d-flex">
+          <div>
+            
+          </div>
+        </section>
+        <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
+          <nav class="side-nav hide-nav" id="side-nav">
+            <!-- _sidebar -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Programming/Golang/">Golang</a></li>
+<li><a href="/Programming/Golang/GORM/">GORM 中文文档</a></li>
+<li><a href="/Programming/Golang/GORM/guide.html">1. 快速开始</a></li>
+<li><a href="/Programming/Golang/GORM/database.html">2. 数据库</a><ul>
+<li><a href="/Programming/Golang/GORM/database.html#dbc">2.1. 数据库连接</a></li>
+<li><a href="/Programming/Golang/GORM/database.html#m">2.2. 迁移</a></li>
+</ul>
+</li>
+<li><a href="/Programming/Golang/GORM/models.html">3. 模型</a><ul>
+<li><a href="/Programming/Golang/GORM/models.html#md">3.1. 模型定义</a></li>
+<li><a href="/Programming/Golang/GORM/models.html#c">3.2. 约定</a></li>
+<li><a href="/Programming/Golang/GORM/associations.html">3.3. 关联</a><ul>
+<li><a href="/Programming/Golang/GORM/associations.html#bt">3.3.1 属于</a></li>
+<li><a href="/Programming/Golang/GORM/associations.html#ho">3.3.2 包含一个</a></li>
+<li><a href="/Programming/Golang/GORM/associations.html#hm">3.3.3 包含多个</a></li>
+<li><a href="/Programming/Golang/GORM/associations.html#mtm">3.3.4 多对多</a></li>
+<li><a href="/Programming/Golang/GORM/associations.html#p">3.3.5 多种包含</a></li>
+<li><a href="/Programming/Golang/GORM/associations.html#am">3.3.6 关联模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/Programming/Golang/GORM/crud.html">4. CRUD:读写数据</a><ul>
+<li><a href="/Programming/Golang/GORM/crud.html#c">4.1 创建</a></li>
+<li><a href="/Programming/Golang/GORM/crud.html#q">4.2 查询</a></li>
+<li><a href="/Programming/Golang/GORM/crud.html#p">4.3 预加载</a></li>
+<li><a href="/Programming/Golang/GORM/crud.html#u">4.4 更新</a></li>
+<li><a href="/Programming/Golang/GORM/crud.html#d">4.5 删除/软删除</a></li>
+<li><a href="/Programming/Golang/GORM/crud.html#a">4.6 关联</a></li>
+</ul>
+</li>
+<li><a href="/Programming/Golang/GORM/callbacks.html">5. Callbacks</a></li>
+<li><a href="/Programming/Golang/GORM/advanced.html">6. 高级用法</a><ul>
+<li><a href="/Programming/Golang/GORM/advanced.html#eh">6.1. 错误处理</a></li>
+<li><a href="/Programming/Golang/GORM/advanced.html#t">6.2. 事务</a></li>
+<li><a href="/Programming/Golang/GORM/advanced.html#sb">6.3. SQL 构建</a></li>
+<li><a href="/Programming/Golang/GORM/advanced.html#g">6.4. 通用数据库接口 sql.DB</a></li>
+<li><a href="/Programming/Golang/GORM/advanced.html#cpk">6.5. 复合主键</a></li>
+<li><a href="/Programming/Golang/GORM/advanced.html#l">6.6. 日志</a></li>
+</ul>
+</li>
+<li><a href="/Programming/Golang/GORM/development.html">7. 开发</a><ul>
+<li><a href="/Programming/Golang/GORM/development.html#a">7.1 架构</a></li>
+<li><a href="/Programming/Golang/GORM/development.html#w">7.2 写插件</a></li>
+</ul>
+</li>
+<li><a href="/Programming/Golang/GORM/changelog.html">8. 更新日志</a></li>
+<li><a href="/Programming/Golang/GORM/log.html">9. 译者日志</a></li>
+</ul>
+
+          </nav>
+        </aside>
+        <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
+          <article class="article">
+            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-23 19:30 </div></div><h1 id='33-关联' ><a href='#anchor_33-关联' id='anchor_33-关联' class='anchor'>3.3. 关联</a></h1>
+<h2 id='bt' ><a href='#anchor_bt' id='anchor_bt' class='anchor'>3.3.1. 属于</a></h2>
+<pre><code class="language-go">// `User`属于`Profile`, `ProfileID`为外键
+type User struct {
+  gorm.Model
+  Profile   Profile
+  ProfileID int
+}
+
+type Profile struct {
+  gorm.Model
+  Name string
+}
+
+db.Model(&user).Related(&profile)
+//// SELECT * FROM profiles WHERE id = 111; // 111是user的外键ProfileID
+</code></pre>
+<p>指定外键</p>
+<pre><code class="language-go">type Profile struct {
+    gorm.Model
+    Name string
+}
+
+type User struct {
+    gorm.Model
+    Profile      Profile `gorm:"ForeignKey:ProfileRefer"` // 使用ProfileRefer作为外键
+    ProfileRefer int
+}
+</code></pre>
+<p>指定外键和关联外键</p>
+<pre><code class="language-go">type Profile struct {
+    gorm.Model
+    Refer string
+    Name  string
+}
+
+type User struct {
+    gorm.Model
+    Profile   Profile `gorm:"ForeignKey:ProfileID;AssociationForeignKey:Refer"`
+    ProfileID int
+}
+</code></pre>
+<h2 id='ho' ><a href='#anchor_ho' id='anchor_ho' class='anchor'>3.3.2. 包含一个</a></h2>
+<pre><code class="language-go">// User 包含一个 CreditCard, UserID 为外键
+type User struct {
+    gorm.Model
+    CreditCard   CreditCard
+}
+
+type CreditCard struct {
+    gorm.Model
+    UserID   uint
+    Number   string
+}
+
+var card CreditCard
+db.Model(&user).Related(&card, "CreditCard")
+//// SELECT * FROM credit_cards WHERE user_id = 123; // 123 is user's primary key
+// CreditCard是user的字段名称，这意味着获得user的CreditCard关系并将其填充到变量
+// 如果字段名与变量的类型名相同，如上例所示，可以省略，如：
+db.Model(&user).Related(&card)
+</code></pre>
+<p>指定外键</p>
+<pre><code class="language-go">type Profile struct {
+  gorm.Model
+  Name      string
+  UserRefer uint
+}
+
+type User struct {
+  gorm.Model
+  Profile Profile `gorm:"ForeignKey:UserRefer"`
+}
+</code></pre>
+<p>指定外键和关联外键</p>
+<pre><code class="language-go">type Profile struct {
+  gorm.Model
+  Name   string
+  UserID uint
+}
+
+type User struct {
+  gorm.Model
+  Refer   string
+  Profile Profile `gorm:"ForeignKey:UserID;AssociationForeignKey:Refer"`
+}
+</code></pre>
+<h2 id='hm' ><a href='#anchor_hm' id='anchor_hm' class='anchor'>3.3.3. 包含多个</a></h2>
+<pre><code class="language-go">// User 包含多个 emails, UserID 为外键
+type User struct {
+    gorm.Model
+    Emails   []Email
+}
+
+type Email struct {
+    gorm.Model
+    Email   string
+    UserID  uint
+}
+
+db.Model(&user).Related(&emails)
+//// SELECT * FROM emails WHERE user_id = 111; // 111 是 user 的主键
+</code></pre>
+<p>指定外键</p>
+<pre><code class="language-go">type Profile struct {
+  gorm.Model
+  Name      string
+  UserRefer uint
+}
+
+type User struct {
+  gorm.Model
+  Profiles []Profile `gorm:"ForeignKey:UserRefer"`
+}
+</code></pre>
+<p>指定外键和关联外键</p>
+<pre><code class="language-go">type Profile struct {
+  gorm.Model
+  Name   string
+  UserID uint
+}
+
+type User struct {
+  gorm.Model
+  Refer   string
+  Profiles []Profile `gorm:"ForeignKey:UserID;AssociationForeignKey:Refer"`
+}
+</code></pre>
+<h2 id='mtm' ><a href='#anchor_mtm' id='anchor_mtm' class='anchor'>3.3.4. 多对多</a></h2>
+<pre><code class="language-go">// User 包含并属于多个 languages, 使用 `user_languages` 表连接
+type User struct {
+    gorm.Model
+    Languages         []Language `gorm:"many2many:user_languages;"`
+}
+
+type Language struct {
+    gorm.Model
+    Name string
+}
+
+db.Model(&user).Related(&languages, "Languages")
+//// SELECT * FROM "languages" INNER JOIN "user_languages" ON "user_languages"."language_id" = "languages"."id" WHERE "user_languages"."user_id" = 111
+</code></pre>
+<p>指定外键和关联外键</p>
+<pre><code class="language-go">type CustomizePerson struct {
+  IdPerson string             `gorm:"primary_key:true"`
+  Accounts []CustomizeAccount `gorm:"many2many:PersonAccount;ForeignKey:IdPerson;AssociationForeignKey:IdAccount"`
+}
+
+type CustomizeAccount struct {
+  IdAccount string `gorm:"primary_key:true"`
+  Name      string
+}
+</code></pre>
+<p>译者注：这里设置好像缺失一部分</p>
+<h2 id='p' ><a href='#anchor_p' id='anchor_p' class='anchor'>3.3.5. 多种包含</a></h2>
+<p>支持多种的包含一个和包含多个的关联</p>
+<pre><code class="language-go">type Cat struct {
+    Id    int
+    Name  string
+    Toy   Toy `gorm:"polymorphic:Owner;"`
+  }
+
+  type Dog struct {
+    Id   int
+    Name string
+    Toy  Toy `gorm:"polymorphic:Owner;"`
+  }
+
+  type Toy struct {
+    Id        int
+    Name      string
+    OwnerId   int
+    OwnerType string
+  }
+</code></pre>
+<p>注意：多态属性和多对多显式不支持，并且会抛出错误。</p>
+<h2 id='am' ><a href='#anchor_am' id='anchor_am' class='anchor'>3.3.6. 关联模式</a></h2>
+<p>关联模式包含一些帮助方法来处理关系事情很容易。</p>
+<pre><code class="language-go">// 开始关联模式
+var user User
+db.Model(&user).Association("Languages")
+// `user`是源，它需要是一个有效的记录（包含主键）
+// `Languages`是关系中源的字段名。
+// 如果这些条件不匹配，将返回一个错误，检查它：
+// db.Model(&user).Association("Languages").Error
+
+
+// Query - 查找所有相关关联
+db.Model(&user).Association("Languages").Find(&languages)
+
+
+// Append - 添加新的many2many, has_many关联, 会替换掉当前 has_one, belongs_to关联
+db.Model(&user).Association("Languages").Append([]Language{languageZH, languageEN})
+db.Model(&user).Association("Languages").Append(Language{Name: "DE"})
+
+
+// Delete - 删除源和传递的参数之间的关系，不会删除这些参数
+db.Model(&user).Association("Languages").Delete([]Language{languageZH, languageEN})
+db.Model(&user).Association("Languages").Delete(languageZH, languageEN)
+
+
+// Replace - 使用新的关联替换当前关联
+db.Model(&user).Association("Languages").Replace([]Language{languageZH, languageEN})
+db.Model(&user).Association("Languages").Replace(Language{Name: "DE"}, languageEN)
+
+
+// Count - 返回当前关联的计数
+db.Model(&user).Association("Languages").Count()
+
+
+// Clear - 删除源和当前关联之间的关系，不会删除这些关联
+db.Model(&user).Association("Languages").Clear()
+</code></pre>
+</article>
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="/lib/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="/lib/prismjs-1.23.0/prism.js"></script>
+    <script src="/lib/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap-dropdown-hover-4.2.0/dist/bootstrap-dropdown-hover-change.js"></script>
+    <script src="/lib/medium-zoom-1.0.6/dist/medium-zoom.min.js"></script>
+
+    <script src="/lib/gitalk-1.7.2/dist/gitalk.min.js"></script>
+    <script src="/lib/js/simple.js"></script>
+  </body>
+</html>

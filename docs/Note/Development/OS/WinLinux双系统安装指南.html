@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JasperXu's 笔记本</title>
+    <meta name="keywords" content="开发环境设置,Win,Linux,双系统" />
+    <meta name="description" content="Win Linux 双系统安装指南" />
+    <meta name="tags" content="Win, Linux, 双系统" />
+    <meta name="categories" content="开发环境设置, 系统设置" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
+    <meta name="description" content="JasperXu's 笔记本" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="/lib/bootstrap-4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free-5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/lib/css/simple.css" />
+    <link rel="stylesheet" href="/lib/prismjs-1.23.0/prism.css" />
+    <link rel="stylesheet" href="/lib/katex-0.13.2/dist/katex.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/lib/gitalk-1.7.2/dist/gitalk.css" />
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        if (document.domain != "localhost") {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="fixed-top">
+      <a class="navbar-brand" href="#">JasperXu's 笔记本</a>
+      <button
+        class="navbar-toggler"
+        style="margin-right: 5.5rem"
+        type="button"
+        data-toggle="collapse"
+        data-target="#top-nav"
+        aria-controls="top-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="top-nav hide-nav" id="top-nav">
+        <!-- <form class="form-inline ml-auto">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </form> -->
+        <!-- _navbar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/#OS">系统设置</a><ul>
+<li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
+<li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
+<li><a href="/Note/Development/OS/软链和硬链.html">软链和硬链</a></li>
+<li><a href="/Note/Development/OS/Mac程序无法运行.html">Mac 程序无法运行</a></li>
+<li><a href="/Note/Development/OS/Win10共享文件夹.html">Win10 共享文件夹</a></li>
+<li><a href="/Note/Development/OS/WinLinux双系统安装指南.html">Win Linux 双系统安装指南</a></li>
+<li><a href="/Note/Development/OS/程序静默运行.html">程序静默运行</a></li>
+<li><a href="/Note/Development/OS/Windows定时开关机.html">Windows 定时开关机</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Environment">环境搭建</a><ul>
+<li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
+<li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <section class="cover d-flex">
+          <div>
+            
+          </div>
+        </section>
+        <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
+          <nav class="side-nav hide-nav" id="side-nav">
+            <!-- _sidebar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/#OS">系统设置</a><ul>
+<li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
+<li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
+<li><a href="/Note/Development/OS/软链和硬链.html">软链和硬链</a></li>
+<li><a href="/Note/Development/OS/Mac程序无法运行.html">Mac 程序无法运行</a></li>
+<li><a href="/Note/Development/OS/Win10共享文件夹.html">Win10 共享文件夹</a></li>
+<li><a href="/Note/Development/OS/WinLinux双系统安装指南.html">Win Linux 双系统安装指南</a></li>
+<li><a href="/Note/Development/OS/程序静默运行.html">程序静默运行</a></li>
+<li><a href="/Note/Development/OS/Windows定时开关机.html">Windows 定时开关机</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Environment">环境搭建</a><ul>
+<li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
+<li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+</ul>
+
+          </nav>
+        </aside>
+        <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
+          <article class="article">
+            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:20 </div></div><h1 id='win-linux-双系统安装指南' ><a href='#anchor_win-linux-双系统安装指南' id='anchor_win-linux-双系统安装指南' class='anchor'>Win Linux 双系统安装指南</a></h1>
+<h2 id='环境说明' ><a href='#anchor_环境说明' id='anchor_环境说明' class='anchor'>环境说明</a></h2>
+<p>硬件：一块 240G NVMe，一块 240G SSD，一块 2T 的 HDD。</p>
+<p>系统：Linux Mint 18.2，Windows 10 Enterprise Version 1703 Update June 2017</p>
+<p>分配：由于工作原因，我的主系统为 Linux Mint 所以我的分配方式如下：</p>
+<p>Mint 安装在 NVMe 上，Win10 安装在 SSD 上。</p>
+<p>HDD 分成两个 1T 的盘一个 NTFS 一个 Ext4。</p>
+<p>安装顺序：先装 Win10，再装 Mint</p>
+<h2 id='安装-win10' ><a href='#anchor_安装-win10' id='anchor_安装-win10' class='anchor'>安装 Win10</a></h2>
+<p>进入系统安装后，首先在 NVMe 上新建分区，会提示需要自动建立几个分区。点继续。</p>
+<p>之后再顺次将 SSD 和 HDD 都建立分区。最后分区如下。</p>
+<p>NVMe：MSR 分区(16M)，恢复分区(450M)，EFI 分区(100M)，一个主分区</p>
+<p>SSD：MSR 分区(16M)，主分区</p>
+<p>HDD：MSR 分区(16M)，主分区</p>
+<p>建立好之后，选择 SSD 主分区，继续安装。</p>
+<p>进入系统后，进磁盘管理，将 HDD 上的分区删除，再建立一个 1T 的分区格式化。</p>
+<h2 id='安装-mint' ><a href='#anchor_安装-mint' id='anchor_安装-mint' class='anchor'>安装 Mint</a></h2>
+<p>进入系统安装后，选择自定义分区。建立主分区，不要建立逻辑分区！</p>
+<p>在 NVMe 上将 200G 的分区删除，然后建立一个 2G 的分区挂载 Swap，再建立一个最大分区挂载/。</p>
+<p>这里 Swap 分区可以和内存一样大，如果内存较大则可以只建立很小的 swap 即可。</p>
+<p>可以将 HDD 挂载到你喜欢的目录，我这里直接挂载到/data 目录。</p>
+<p><strong>安装引导区 记得选 NVMe 上的引导区 好像是 EFI 分区</strong></p>
+<h2 id='其他说明和调整' ><a href='#anchor_其他说明和调整' id='anchor_其他说明和调整' class='anchor'>其他说明和调整</a></h2>
+<ul>
+<li><p>硬盘设置问题，所有硬盘必须使用 GTP 分区。否则会有读取不正常状态，默认为 MBR 分区方式。</p>
+</li>
+<li><p>文件系统问题，Win10 使用 NTFS，Mint 必须使用主分区模式的 Ext4。否则无法相互读写。</p>
+</li>
+<li><p>Mint 驱动问题，直接在驱动管理器中选择新的驱动即可。</p>
+</li>
+<li><p>时间问题，双系统切换导致时间不正确。解决办法：调整 Win 的注册表，使其使用硬件时间为 UTC 时间。</p>
+<pre><code>Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
+</code></pre>
+</li>
+<li><p>Mint 读写 NTFS 文件，必须关闭 Win 的快速启动，否则提示权限问题无法读写。并使用 ntfs-3g 挂载 ntfs 盘。</p>
+</li>
+</ul>
+<p>挂载分区</p>
+<pre><code class="language-bash">mount -t ntfs /dev/sdb2 /mnt/D -o iocharset=utf8,umask=0
+</code></pre>
+<p>卸载分区</p>
+<pre><code class="language-bash">unmount /dev/sdb2
+</code></pre>
+<p>启动自动挂载<br>打开/etc/fstab 文件，在文件末尾加上</p>
+<pre><code class="language-bash">/dev/sdb2 /mnt/D ntfs utf8,umask=0
+</code></pre>
+<ul>
+<li>Win 读写 Ext4 文件，需要安装 Ext2Fsd 软件。</li>
+</ul>
+</article>
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="/lib/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="/lib/prismjs-1.23.0/prism.js"></script>
+    <script src="/lib/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap-dropdown-hover-4.2.0/dist/bootstrap-dropdown-hover-change.js"></script>
+    <script src="/lib/medium-zoom-1.0.6/dist/medium-zoom.min.js"></script>
+
+    <script src="/lib/gitalk-1.7.2/dist/gitalk.min.js"></script>
+    <script src="/lib/js/simple.js"></script>
+  </body>
+</html>

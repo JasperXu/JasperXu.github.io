@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JasperXu's 笔记本</title>
+    <meta name="keywords" content="其他文章,npm,包" />
+    <meta name="description" content="npm 上传自己的包" />
+    <meta name="tags" content="npm, 包" />
+    <meta name="categories" content="其他文章" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
+    <meta name="description" content="JasperXu's 笔记本" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="/lib/bootstrap-4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free-5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/lib/css/simple.css" />
+    <link rel="stylesheet" href="/lib/prismjs-1.23.0/prism.css" />
+    <link rel="stylesheet" href="/lib/katex-0.13.2/dist/katex.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/lib/gitalk-1.7.2/dist/gitalk.css" />
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        if (document.domain != "localhost") {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="fixed-top">
+      <a class="navbar-brand" href="#">JasperXu's 笔记本</a>
+      <button
+        class="navbar-toggler"
+        style="margin-right: 5.5rem"
+        type="button"
+        data-toggle="collapse"
+        data-target="#top-nav"
+        aria-controls="top-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="top-nav hide-nav" id="top-nav">
+        <!-- <form class="form-inline ml-auto">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </form> -->
+        <!-- _navbar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Other/">其他文章</a><ul>
+<li><a href="/Note/Other/矩阵运算速查.html">矩阵运算速查</a></li>
+<li><a href="/Note/Other/树莓派4b(一)安装OMV.html">树莓派 4b(一)安装 OMV</a></li>
+<li><a href="/Note/Other/npm上传自己的包.html">npm 上传自己的包</a></li>
+<li><a href="/Note/Other/Excel第一次打开空白的问题.html">Excel 第一次打开空白的问题</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <section class="cover d-flex">
+          <div>
+            
+          </div>
+        </section>
+        <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
+          <nav class="side-nav hide-nav" id="side-nav">
+            <!-- _sidebar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Other/">其他文章</a><ul>
+<li><a href="/Note/Other/矩阵运算速查.html">矩阵运算速查</a></li>
+<li><a href="/Note/Other/树莓派4b(一)安装OMV.html">树莓派 4b(一)安装 OMV</a></li>
+<li><a href="/Note/Other/npm上传自己的包.html">npm 上传自己的包</a></li>
+<li><a href="/Note/Other/Excel第一次打开空白的问题.html">Excel 第一次打开空白的问题</a></li>
+</ul>
+</li>
+</ul>
+
+          </nav>
+        </aside>
+        <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
+          <article class="article">
+            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:13 </div></div><h1 id='npm-上传自己的包' ><a href='#anchor_npm-上传自己的包' id='anchor_npm-上传自己的包' class='anchor'>npm 上传自己的包</a></h1>
+<h2 id='1-新建项目' ><a href='#anchor_1-新建项目' id='anchor_1-新建项目' class='anchor'>1. 新建项目</a></h2>
+<pre><code class="language-bash">npm init
+</code></pre>
+<p>中间会让你填写一些东西，自己填就行了。</p>
+<h2 id='2-登陆-npm' ><a href='#anchor_2-登陆-npm' id='anchor_2-登陆-npm' class='anchor'>2. 登陆 npm</a></h2>
+<pre><code class="language-bash"># 设置到原始的npm源，如果你改了国内源就需要这个
+npm config set registry http://registry.npmjs.org
+# 登陆
+npm login
+Username:这里填你的npm用户名
+Password：这里填你的npm密码
+Email：(this IS public)这里填你的邮箱
+Logged xxxxxxxxxxxxx
+</code></pre>
+<h2 id='3-发布' ><a href='#anchor_3-发布' id='anchor_3-发布' class='anchor'>3. 发布</a></h2>
+<pre><code class="language-bash">npm publish
+</code></pre>
+<h2 id='4-维护' ><a href='#anchor_4-维护' id='anchor_4-维护' class='anchor'>4. 维护</a></h2>
+<p>下次使用 publish 必须要修改版本号。</p>
+<p>X.Y.Z 分别代表主版本号、次版本号和补丁版本号。</p>
+<ul>
+<li>Z：只修改了 bug</li>
+<li>Y：新增了功能，但是向下兼容。</li>
+<li>X：大改动，且不向下兼容。</li>
+</ul>
+<p>删除和撤销已发布的包</p>
+<pre><code class="language-bash">npm unpublish 包名            //撤销已发布的包 
+npm unpublish 包名 --force    //强制撤销
+npm unpublish 包名@1.0.0    //可以撤销指定版本 
+</code></pre>
+<h2 id='5-通过-cdn-访问' ><a href='#anchor_5-通过-cdn-访问' id='anchor_5-通过-cdn-访问' class='anchor'>5. 通过 CDN 访问</a></h2>
+<h3 id='jsdelivr' ><a href='#anchor_jsdelivr' id='anchor_jsdelivr' class='anchor'>jsdelivr</a></h3>
+<pre><code>https://cdn.jsdelivr.net/npm/包名@1.0.0/dist/文件名.min.js
+</code></pre>
+<h3 id='unpkg' ><a href='#anchor_unpkg' id='anchor_unpkg' class='anchor'>unpkg</a></h3>
+<pre><code>https://unpkg.com/npm/包名@1.0.0/dist/文件名.min.js
+</code></pre>
+</article>
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="/lib/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="/lib/prismjs-1.23.0/prism.js"></script>
+    <script src="/lib/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap-dropdown-hover-4.2.0/dist/bootstrap-dropdown-hover-change.js"></script>
+    <script src="/lib/medium-zoom-1.0.6/dist/medium-zoom.min.js"></script>
+
+    <script src="/lib/gitalk-1.7.2/dist/gitalk.min.js"></script>
+    <script src="/lib/js/simple.js"></script>
+  </body>
+</html>

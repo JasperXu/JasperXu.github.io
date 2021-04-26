@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JasperXu's 笔记本</title>
+    <meta name="keywords" content="软件指南,软件使用指南,OBS" />
+    <meta name="description" content="OBS 的一些设置" />
+    <meta name="tags" content="软件, OBS" />
+    <meta name="categories" content="软件指南, 指南" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
+    <meta name="description" content="JasperXu's 笔记本" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="/lib/bootstrap-4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free-5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/lib/css/simple.css" />
+    <link rel="stylesheet" href="/lib/prismjs-1.23.0/prism.css" />
+    <link rel="stylesheet" href="/lib/katex-0.13.2/dist/katex.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/lib/gitalk-1.7.2/dist/gitalk.css" />
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        if (document.domain != "localhost") {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="fixed-top">
+      <a class="navbar-brand" href="#">JasperXu's 笔记本</a>
+      <button
+        class="navbar-toggler"
+        style="margin-right: 5.5rem"
+        type="button"
+        data-toggle="collapse"
+        data-target="#top-nav"
+        aria-controls="top-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="top-nav hide-nav" id="top-nav">
+        <!-- <form class="form-inline ml-auto">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </form> -->
+        <!-- _navbar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/SoftGuide/">软件指南</a></li>
+<li><a href="/Note/SoftGuide/#image">图形图像</a><ul>
+<li><a href="/Note/SoftGuide/Image/OBS的一些设置.html">OBS 的一些设置</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <section class="cover d-flex">
+          <div>
+            
+          </div>
+        </section>
+        <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
+          <nav class="side-nav hide-nav" id="side-nav">
+            <!-- _sidebar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/SoftGuide/">软件指南</a></li>
+<li><a href="/Note/SoftGuide/#image">图形图像</a><ul>
+<li><a href="/Note/SoftGuide/Image/OBS的一些设置.html">OBS 的一些设置</a></li>
+</ul>
+</li>
+</ul>
+
+          </nav>
+        </aside>
+        <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
+          <article class="article">
+            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 01:45 </div></div><h1 id='obs-的一些设置' ><a href='#anchor_obs-的一些设置' id='anchor_obs-的一些设置' class='anchor'>OBS 的一些设置</a></h1>
+<h2 id='1-录像设置' ><a href='#anchor_1-录像设置' id='anchor_1-录像设置' class='anchor'>1. 录像设置</a></h2>
+<h3 id='11-nvidia-新编码器设置推荐' ><a href='#anchor_11-nvidia-新编码器设置推荐' id='anchor_11-nvidia-新编码器设置推荐' class='anchor'>1.1. NVIDIA 新编码器设置(推荐)</a></h3>
+<pre><code>编码器：NVENC H.264 (new)
+速率控制：VBR
+比特率：20000kbps
+最大比特率：60000kbps
+【速率控制：CQP 如果有VBR兼容问题，建议用此设置】
+【CQ 级别：15 越小质量越好】
+关键帧间隔(秒，0=自动)：2
+预设 Preset：最高质量 或 质量
+配置 Profile：high
+向前考虑 Look-ahead：勾选
+心里视觉调整：勾选
+最大 B 帧：设为 4。如果您取消选中“Look-ahead”（前向考虑）选项，请将 B 帧数量从 4 降至 2。
+-----------
+音频编码：AAC
+音频比特率：320kbps
+声道：2
+采样率：48000
+</code></pre>
+<h3 id='12-cpu-编码器设置' ><a href='#anchor_12-cpu-编码器设置' id='anchor_12-cpu-编码器设置' class='anchor'>1.2. CPU 编码器设置</a></h3>
+<pre><code>编码器：x264
+速率控制：VBR
+比特率：20000kbps
+CRF：23默认值
+关键帧间隔(秒，0=自动)：2
+CPU 使用预设：[Very Show] / Shower / Show / Medium
+预设 Preset：最高质量 或 质量
+配置 Profile：默认 Main，推荐 High （节约 10%码率）
+微调 Tune：无
+-----------
+音频编码：AAC
+音频比特率：320kbps
+声道：2
+采样率：48000
+</code></pre>
+<h2 id='2-直播串流设置' ><a href='#anchor_2-直播串流设置' id='anchor_2-直播串流设置' class='anchor'>2. 直播串流设置</a></h2>
+<h3 id='11-nvidia-新编码器设置推荐-1' ><a href='#anchor_11-nvidia-新编码器设置推荐-1' id='anchor_11-nvidia-新编码器设置推荐-1' class='anchor'>1.1. NVIDIA 新编码器设置(推荐)</a></h3>
+<pre><code>编码器：NVENC H.264 (new)
+速率控制：CBR
+比特率：6000kbps【视平台而定】
+关键帧间隔(秒，0=自动)：2
+预设 Preset：最高质量 或 质量
+配置 Profile：high
+向前考虑 Look-ahead：不勾选，最大B帧填2。勾选，最大B帧填4，占用CUDA。建议不勾选。
+心里视觉调整：勾选
+最大 B 帧：设为 4。如果您取消选中“Look-ahead”（前向考虑）选项，请将 B 帧数量从 4 降至 2。
+-----------
+音频编码：AAC
+音频比特率：320kbps
+声道：2
+采样率：48000
+</code></pre>
+<h3 id='12-cpu-编码器设置-1' ><a href='#anchor_12-cpu-编码器设置-1' id='anchor_12-cpu-编码器设置-1' class='anchor'>1.2. CPU 编码器设置</a></h3>
+<pre><code>编码器：x264
+速率控制：CBR
+比特率：6000kbps【视平台而定】
+关键帧间隔(秒，0=自动)：2
+CPU 使用预设：fast（9900k 占用 45%），faster（8700k），veryfast（不能比这个更低）
+配置 Profile：High
+微调 Tune：无
+-----------
+音频编码：AAC
+音频比特率：320kbps
+声道：2
+采样率：48000
+</code></pre>
+<p><strong>级别 Level</strong>：4.2（1080@60），5.0（2k@30，1080@72），<strong>5.1（4k@30，2k@51，1080@120）</strong>，5.2（4k@60，2k@108，1080@172）</p>
+<p>GOP：【间隔时间*帧率：例如：B 站至少 10 秒 1 个则设置为 600 以下】</p>
+<p><strong>软件</strong>：MediaCoder</p>
+<pre><code>B站视频预设：
+H.264，VBR，2次，基准5900Kbps，最高23000Kbps
+Profile【High】，Level【5.1】，Preset【Very Show】
+GOP【1~600】
+</code></pre>
+<h2 id='3其他' ><a href='#anchor_3其他' id='anchor_3其他' class='anchor'>3.其他</a></h2>
+<p>采集卡，OBS 中直接设置分辨率和帧率即可。Preset【Medium】</p>
+<p>Voicemeeter 做声音分流，否则采集卡无声音。</p>
+<pre><code>h.264参数命令：
+--profile high --level 51 --preset veryshow --bitrate 5900 --vbv-maxrate 23000 --keyint 600 --min-keyint 1
+</code></pre>
+<p>6000 码率，veryfast ，VBR</p>
+<p>吃鸡，直播，NVENC （8400 和 1660Ti 都带不动，2060 可使用 NVENC）</p>
+<p>怪物猎人，单机大作 D 加密，x264（9700k 带不动，需用 NVENC）</p>
+<p>守望先锋，优化好的 fps 游戏，x264</p>
+<h4 id='32-码率' ><a href='#anchor_32-码率' id='anchor_32-码率' class='anchor'>3.2. 码率</a></h4>
+<p>speedtest.net 进行测速。 推荐 6000 码率。</p>
+<p>B 站：无码率限制</p>
+<p>斗鱼：普通 3Mbps，签约 4Mbps，头牌主播 10Mbps</p>
+<p>Twitch：6Mbps</p>
+<p>5M 以下：720@60 或者 1080@30</p>
+<p>5M 以上：1080@60</p>
+<p>CBR：码率稳定，简单场景清晰，复杂场景模糊。【适合直播，流量稳定】</p>
+<p>VBR：可变码率，简单场景低码率，复杂场景高码率。【适合视频，瞬间流量可能很大】【选择二次渲染】</p>
+<h4 id='33-速率控制' ><a href='#anchor_33-速率控制' id='anchor_33-速率控制' class='anchor'>3.3. 速率控制</a></h4>
+<p>CBR：固定码率，全程码率恒定，文件大小可预期，编码压力小，主要用于直播</p>
+<p>VBR：可变码率，按需分配；简单场景低码率，复杂场景高码率。2-pass 更加精准。</p>
+<p>CRF：固定质量模式，CRF 值越低，视频质量越高，也是动态码率。</p>
+<p>ABR：平均码率，相当于码率波动更小的 VBR。</p>
+<p>CQP：固定量化参数，相当于低级的 CRF。</p>
+<p>直播使用：CBR</p>
+<p>有码率限制使用：VBR</p>
+<p>无码率限优先使用：CRF</p>
+<h4 id='34-预设-cpu' ><a href='#anchor_34-预设-cpu' id='anchor_34-预设-cpu' class='anchor'>3.4. 预设 CPU</a></h4>
+<p>直播使用：Very Fast 或 Fast （9600k 以上 cpu 可选 Fast）</p>
+<p>做视频：Very Slow，Slower，Slow，Medium 都可以建议前面 2 个选项</p>
+<h4 id='35-上传视频的压缩' ><a href='#anchor_35-上传视频的压缩' id='anchor_35-上传视频的压缩' class='anchor'>3.5. 上传视频的压缩</a></h4>
+<p>软件：MediaCoder</p>
+<p>码率模式：VBR 2 次编码模式</p>
+<p>视频码率：比限制少 100 即可，19900Kbps</p>
+<p>最高码率：比限制少 1000 即可，59000Kbps</p>
+<p>规格：High</p>
+<p>级别：5.1</p>
+<p>预设：Very Slow</p>
+<p>优化：看视频内容，默认 Normal 也可以。</p>
+<p>GOP：1~600</p>
+<h4 id='36-帧基础知识' ><a href='#anchor_36-帧基础知识' id='anchor_36-帧基础知识' class='anchor'>3.6. 帧基础知识</a></h4>
+<p>I 帧，完整帧</p>
+<p>P 帧，预测帧比 I 节约一半</p>
+<p>B 帧，双向预测帧比 P 节约一半</p>
+<h4 id='37-显卡编码' ><a href='#anchor_37-显卡编码' id='anchor_37-显卡编码' class='anchor'>3.7. 显卡编码</a></h4>
+<p>NVENC new &gt; Fast &gt; Very Fast</p>
+<p>分辨率：1080p@60</p>
+<p>编码器：NVENC H.264 (new)</p>
+<p>速率控制：CBR</p>
+<p>比特率：6000Kbps</p>
+<p>关键帧间隔（秒，0=自动）：2</p>
+<p>预设：最高质量</p>
+<p>配置 Profile：high</p>
+<h4 id='38-cpu-编码' ><a href='#anchor_38-cpu-编码' id='anchor_38-cpu-编码' class='anchor'>3.8. CPU 编码</a></h4>
+<p>分辨率：1080p@60</p>
+<p>编码器：x264</p>
+<p>速率控制：CBR</p>
+<p>比特率：6000Kbps</p>
+<p>关键帧间隔（秒，0=自动）：2</p>
+<p>预设：Very Fast 或 Fast(9600k 最高只能选到 Fast)</p>
+<p>配置 Profile：high</p>
+</article>
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="/lib/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="/lib/prismjs-1.23.0/prism.js"></script>
+    <script src="/lib/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap-dropdown-hover-4.2.0/dist/bootstrap-dropdown-hover-change.js"></script>
+    <script src="/lib/medium-zoom-1.0.6/dist/medium-zoom.min.js"></script>
+
+    <script src="/lib/gitalk-1.7.2/dist/gitalk.min.js"></script>
+    <script src="/lib/js/simple.js"></script>
+  </body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JasperXu's 笔记本</title>
+    <meta name="keywords" content="开发环境设置,程序静默运行" />
+    <meta name="description" content="程序静默运行" />
+    <meta name="tags" content="程序静默运行" />
+    <meta name="categories" content="开发环境设置, 系统设置" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
+    <meta name="description" content="JasperXu's 笔记本" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="/lib/bootstrap-4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free-5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/lib/css/simple.css" />
+    <link rel="stylesheet" href="/lib/prismjs-1.23.0/prism.css" />
+    <link rel="stylesheet" href="/lib/katex-0.13.2/dist/katex.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/lib/gitalk-1.7.2/dist/gitalk.css" />
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        if (document.domain != "localhost") {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="fixed-top">
+      <a class="navbar-brand" href="#">JasperXu's 笔记本</a>
+      <button
+        class="navbar-toggler"
+        style="margin-right: 5.5rem"
+        type="button"
+        data-toggle="collapse"
+        data-target="#top-nav"
+        aria-controls="top-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="top-nav hide-nav" id="top-nav">
+        <!-- <form class="form-inline ml-auto">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </form> -->
+        <!-- _navbar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/#OS">系统设置</a><ul>
+<li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
+<li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
+<li><a href="/Note/Development/OS/软链和硬链.html">软链和硬链</a></li>
+<li><a href="/Note/Development/OS/Mac程序无法运行.html">Mac 程序无法运行</a></li>
+<li><a href="/Note/Development/OS/Win10共享文件夹.html">Win10 共享文件夹</a></li>
+<li><a href="/Note/Development/OS/WinLinux双系统安装指南.html">Win Linux 双系统安装指南</a></li>
+<li><a href="/Note/Development/OS/程序静默运行.html">程序静默运行</a></li>
+<li><a href="/Note/Development/OS/Windows定时开关机.html">Windows 定时开关机</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Environment">环境搭建</a><ul>
+<li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
+<li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <section class="cover d-flex">
+          <div>
+            
+          </div>
+        </section>
+        <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
+          <nav class="side-nav hide-nav" id="side-nav">
+            <!-- _sidebar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/#OS">系统设置</a><ul>
+<li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
+<li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
+<li><a href="/Note/Development/OS/软链和硬链.html">软链和硬链</a></li>
+<li><a href="/Note/Development/OS/Mac程序无法运行.html">Mac 程序无法运行</a></li>
+<li><a href="/Note/Development/OS/Win10共享文件夹.html">Win10 共享文件夹</a></li>
+<li><a href="/Note/Development/OS/WinLinux双系统安装指南.html">Win Linux 双系统安装指南</a></li>
+<li><a href="/Note/Development/OS/程序静默运行.html">程序静默运行</a></li>
+<li><a href="/Note/Development/OS/Windows定时开关机.html">Windows 定时开关机</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Environment">环境搭建</a><ul>
+<li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
+<li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+</ul>
+
+          </nav>
+        </aside>
+        <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
+          <article class="article">
+            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 23:40 </div></div><h1 id='程序静默运行' ><a href='#anchor_程序静默运行' id='anchor_程序静默运行' class='anchor'>程序静默运行</a></h1>
+<h2 id='1-静默执行' ><a href='#anchor_1-静默执行' id='anchor_1-静默执行' class='anchor'>1. 静默执行</a></h2>
+<h3 id='11-windows' ><a href='#anchor_11-windows' id='anchor_11-windows' class='anchor'>1.1. Windows</a></h3>
+<p>编译时调整为<code>go build - ldflags=&quot;-H windows&quot;</code></p>
+<p>或使用 <a href="https://github.com/jasperxu/NotificationTool" target="_blank" >NotificationTool</a> 包一次。</p>
+<h3 id='12-linux' ><a href='#anchor_12-linux' id='anchor_12-linux' class='anchor'>1.2. Linux</a></h3>
+<pre><code class="language-bash"># 静默启动，日志保存到app.log
+nohup ./app > app.log 2>&1 &
+</code></pre>
+<h2 id='2-以服务方式随系统启动' ><a href='#anchor_2-以服务方式随系统启动' id='anchor_2-以服务方式随系统启动' class='anchor'>2. 以服务方式随系统启动</a></h2>
+<h3 id='21-windows' ><a href='#anchor_21-windows' id='anchor_21-windows' class='anchor'>2.1. Windows</a></h3>
+<p>使用 <a href="https://github.com/winsw/winsw" target="_blank" >WinSW</a> 包一次。</p>
+<pre><code class="language-bash"># 安装服务
+WinSW install
+
+# 卸载服务器
+WinSW uninstall
+</code></pre>
+<p>下面是一个 go 程序的运行示例：</p>
+<pre><code class="language-xml"><configuration>
+  <!-- ID of the service. It should be unique accross the Windows system-->
+  <id>jx_ahmri_shenzhen</id>
+  <!-- Display name of the service -->
+  <name>JasperXu ahmri_shenzhen Service (powered by WinSW)</name>
+  <!-- Service description -->
+  <description>This service is a service for ahmri_shenzhen. Port:10247</description>
+
+  <!-- Path to the executable, which should be started -->
+  <executable>%BASE%\vp.exe</executable>
+  <arguments></arguments>
+  <logmode>reset</logmode>
+  <workingdirectory>%BASE%</workingdirectory>
+</configuration>
+</code></pre>
+<h3 id='22-linux' ><a href='#anchor_22-linux' id='anchor_22-linux' class='anchor'>2.2. Linux</a></h3>
+<p>示例中服务为 <code>gofs</code> ，路径为 <code>/data/gofs</code> ， 执行文件名为 <code>gofs_linux_amd64</code> 。</p>
+<pre><code class="language-bash"># 编辑启动文件
+sudo vi /etc/init.d/gofs
+# 增加执行权限
+sudo chmod +x /etc/init.d/gofs
+# 加载启动脚本， defaults后还可以加数字，表示启动顺序号，多个服务依赖时有效。
+sudo update-rc.d gofs defaults
+# 使用
+sudo service gofs { start | restart | stop | status }
+# 查看
+ps -ef | grep gofs
+</code></pre>
+<pre><code class="language-bash"># 卸载启动脚本
+sudo update-rc.d -f gofs remove
+</code></pre>
+<p><code>/etc/init.d/gofs</code> 文件内容如下：</p>
+<pre><code class="language-bash">#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          gofs
+# Required-Start:    $network $local_fs $remote_fs $syslog $time
+# Required-Stop:     $network $local_fs $remote_fs $syslog $time
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: start/restart/stop/status ahmri_xiamen
+# Description:       start | restart | stop | status the ahmri_xiamen service
+### END INIT INFO
+
+# Conifg 配置服务名，路径，文件名，文件名带后缀
+APP_NAME="gofs"
+APP_PATH="/data/gofs"
+APP_FILE="gofs_linux_amd64"
+# PID文件和Log文件配置，默认即可。
+APP_PID="/var/run/$APP_NAME.pid"
+APP_LOG="$APP_PATH/$APP_NAME.log"
+# 配置启动前缀和启动参数：例如APP_PRE_OPTION="java -jar"
+APP_PRE_OPTION=""
+APP_ARGS_OPTION=""
+
+# 不能修改的配置
+TMP_FILE="/tmp/status_$APP_NAME"
+
+checkpid() {
+    STATUS=9
+
+    if [ -f $APP_PID ] ;
+    then
+        #echo "Is Running if you can see next line with $APP_NAME"
+        ps -Fp `cat $APP_PID` | grep $APP_FILE > $TMP_FILE
+        if [ -f $TMP_FILE -a -s $TMP_FILE ] ;
+        then
+            STATUS=0    #"Is Running (PID `cat $APP_PID`)"
+        else
+            STATUS=2    #"Stopped incorrectly"
+        fi
+
+        ## Clean after yourself
+        rm -f $TMP_FILE
+    else
+        STATUS=1
+        #"Not Running"
+    fi
+
+    return $STATUS
+}
+
+statusit() {
+    checkpid
+    STATUS=$?
+
+    EXITSTATUS=""
+    if [ $STATUS -eq 0 ] ;
+    then
+        EXITSTATUS="Is Running (PID `cat $APP_PID`)"
+    fi
+    if [ $STATUS -eq 1 ] ;
+    then
+        EXITSTATUS="Not Running"
+    fi
+    if [ $STATUS -eq 2 ] ;
+    then
+        EXITSTATUS="Stopped incorrectly"
+    fi
+    if [ $STATUS -eq 9 ] ;
+    then
+        EXITSTATUS="Default Status, should not be seen"
+    fi
+
+    echo $APP_NAME - $EXITSTATUS
+}
+
+start() {
+    checkpid
+    STATUS=$?
+
+    if [ $STATUS -ne 0 ] ;
+    then
+        echo "Starting $APP_NAME..."
+        nohup $APP_PRE_OPTION $APP_PATH/$APP_FILE $APP_ARGS_OPTION > $APP_LOG 2>&1 &
+        echo PID $!
+        echo $! > $APP_PID
+        statusit
+    else
+        echo "$APP_NAME Already Running"
+    fi
+}
+
+stop() {
+    checkpid
+    STATUS=$?
+
+    if [ $STATUS -eq 0 ] ;
+    then
+        echo "Stopping $APP_NAME..."
+        kill `cat $APP_PID`
+        rm $APP_PID
+        statusit
+        #echo "Done"
+    else
+        echo "$APP_NAME - Already killed"
+    fi
+}
+
+case "$1" in
+start)
+    start
+    ;;
+stop)
+    stop
+    ;;
+restart)
+    stop
+    start
+    ;;
+status)
+    statusit
+    ;;
+*)
+    echo "Usage: $0 { start | restart | stop | status }"
+    exit 1
+    ;;
+esac
+exit 0
+</code></pre>
+</article>
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="/lib/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="/lib/prismjs-1.23.0/prism.js"></script>
+    <script src="/lib/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap-dropdown-hover-4.2.0/dist/bootstrap-dropdown-hover-change.js"></script>
+    <script src="/lib/medium-zoom-1.0.6/dist/medium-zoom.min.js"></script>
+
+    <script src="/lib/gitalk-1.7.2/dist/gitalk.min.js"></script>
+    <script src="/lib/js/simple.js"></script>
+  </body>
+</html>

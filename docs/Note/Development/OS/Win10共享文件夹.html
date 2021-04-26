@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JasperXu's 笔记本</title>
+    <meta name="keywords" content="开发环境设置,Win10,共享文件夹" />
+    <meta name="description" content="Win10 共享文件夹" />
+    <meta name="tags" content="Win10, 共享文件夹" />
+    <meta name="categories" content="开发环境设置, 系统设置" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
+    <meta name="description" content="JasperXu's 笔记本" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="/lib/bootstrap-4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free-5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/lib/css/simple.css" />
+    <link rel="stylesheet" href="/lib/prismjs-1.23.0/prism.css" />
+    <link rel="stylesheet" href="/lib/katex-0.13.2/dist/katex.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/lib/gitalk-1.7.2/dist/gitalk.css" />
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        if (document.domain != "localhost") {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="fixed-top">
+      <a class="navbar-brand" href="#">JasperXu's 笔记本</a>
+      <button
+        class="navbar-toggler"
+        style="margin-right: 5.5rem"
+        type="button"
+        data-toggle="collapse"
+        data-target="#top-nav"
+        aria-controls="top-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="top-nav hide-nav" id="top-nav">
+        <!-- <form class="form-inline ml-auto">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </form> -->
+        <!-- _navbar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/#OS">系统设置</a><ul>
+<li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
+<li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
+<li><a href="/Note/Development/OS/软链和硬链.html">软链和硬链</a></li>
+<li><a href="/Note/Development/OS/Mac程序无法运行.html">Mac 程序无法运行</a></li>
+<li><a href="/Note/Development/OS/Win10共享文件夹.html">Win10 共享文件夹</a></li>
+<li><a href="/Note/Development/OS/WinLinux双系统安装指南.html">Win Linux 双系统安装指南</a></li>
+<li><a href="/Note/Development/OS/程序静默运行.html">程序静默运行</a></li>
+<li><a href="/Note/Development/OS/Windows定时开关机.html">Windows 定时开关机</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Environment">环境搭建</a><ul>
+<li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
+<li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <section class="cover d-flex">
+          <div>
+            
+          </div>
+        </section>
+        <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
+          <nav class="side-nav hide-nav" id="side-nav">
+            <!-- _sidebar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/#OS">系统设置</a><ul>
+<li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
+<li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
+<li><a href="/Note/Development/OS/软链和硬链.html">软链和硬链</a></li>
+<li><a href="/Note/Development/OS/Mac程序无法运行.html">Mac 程序无法运行</a></li>
+<li><a href="/Note/Development/OS/Win10共享文件夹.html">Win10 共享文件夹</a></li>
+<li><a href="/Note/Development/OS/WinLinux双系统安装指南.html">Win Linux 双系统安装指南</a></li>
+<li><a href="/Note/Development/OS/程序静默运行.html">程序静默运行</a></li>
+<li><a href="/Note/Development/OS/Windows定时开关机.html">Windows 定时开关机</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Environment">环境搭建</a><ul>
+<li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
+<li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+</ul>
+
+          </nav>
+        </aside>
+        <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
+          <article class="article">
+            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:20 </div></div><h1 id='win10-共享文件夹' ><a href='#anchor_win10-共享文件夹' id='anchor_win10-共享文件夹' class='anchor'>Win10 共享文件夹</a></h1>
+<h3 id='1-服务器设置' ><a href='#anchor_1-服务器设置' id='anchor_1-服务器设置' class='anchor'>1. 服务器设置</a></h3>
+<h4 id='11-高级共享设置' ><a href='#anchor_11-高级共享设置' id='anchor_11-高级共享设置' class='anchor'>1.1. 高级共享设置</a></h4>
+<p>打开 <code>网络和Internet设置 》 更改高级共享设置</code></p>
+<ul>
+<li>在专用和公用网络中都勾选 <code>启用文件和打印机共享</code> 。</li>
+<li>在所有网络中勾选 <code>无密码保护的共享</code> 。</li>
+</ul>
+<h4 id='12-共享文件夹' ><a href='#anchor_12-共享文件夹' id='anchor_12-共享文件夹' class='anchor'>1.2. 共享文件夹</a></h4>
+<p>点击要共享的文件夹，右键 <code>属性</code></p>
+<p>添加共享权限： <code>共享 》 高级共享 》 权限</code> 添加 <code>Everyone</code> 。添加完全控制。</p>
+<p>添加读写权限： <code>安全 》 编辑 》 添加 </code> 添加 <code>Everyone</code> 。添加完全控制。</p>
+<h4 id='13-其他问题' ><a href='#anchor_13-其他问题' id='anchor_13-其他问题' class='anchor'>1.3. 其他问题</a></h4>
+<ul>
+<li>Guest 账户未启用</li>
+</ul>
+<p><code>此电脑</code> 右键 <code>管理</code> ，<code>计算机管理-&gt;系统工具-&gt;本地用户和组-&gt;用户</code> 启用 Guest。</p>
+<ul>
+<li>低版本 Win 无法访问</li>
+</ul>
+<p>右下角 <code>所有设置 》 应用 》 程序和功能 》 启用或关闭Windows功能</code> 将下面几项都勾选安装</p>
+<pre><code>SMB 1.0/CIFS 文件共享支持
+    SMB 1.0/CIFS 服务器
+    SMB 1.0/CIFS 客户端
+    SMB 1.0/CIFS 自动删除
+SMB Direct
+</code></pre>
+<ul>
+<li>无法在客户端机器的网络中直接显示</li>
+</ul>
+<p>打开 <code>网络和Internet设置 》 更改连接属性</code> 选择 <code>专用</code> 。</p>
+<p>注：客户端机器也需要改为 <code>专用</code> 网络。</p>
+<h3 id='2-客户端设置' ><a href='#anchor_2-客户端设置' id='anchor_2-客户端设置' class='anchor'>2. 客户端设置</a></h3>
+<ul>
+<li>打开 <code>网络和Internet设置 》 网络和共享中心 》 更改高级共享设置</code> ，在专用和公用网络中都勾选 <code>启用网络发现</code> 。</li>
+<li><code>Win+R</code> 输入 <code>gpedit.msc</code> 。<code>计算机配置 &gt; 管理模板 &gt; 网络 &gt; Lanman工作站 &gt; 启用不安全的来宾登录</code> 启用该设置。</li>
+<li>打开注册表<code>Win+R</code> 输入<code>regedit</code> 。 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters</code> 右侧创建新的项目 <code>DWORD值（32位）</code> 名称为 <code>AllowInsecureGuestAuth</code> 值为 <code>1</code> 。</li>
+</ul>
+</article>
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="/lib/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="/lib/prismjs-1.23.0/prism.js"></script>
+    <script src="/lib/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap-dropdown-hover-4.2.0/dist/bootstrap-dropdown-hover-change.js"></script>
+    <script src="/lib/medium-zoom-1.0.6/dist/medium-zoom.min.js"></script>
+
+    <script src="/lib/gitalk-1.7.2/dist/gitalk.min.js"></script>
+    <script src="/lib/js/simple.js"></script>
+  </body>
+</html>
