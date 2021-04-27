@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JasperXu's 笔记本</title>
+    <meta name="keywords" content="Development,Debian,gogs,安装" />
+    <meta name="description" content="Debian 安装 gogs" />
+    <meta name="tags" content="Debian, gogs, 安装" />
+    <meta name="categories" content="Development, 服务器" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
+    <meta name="description" content="JasperXu's 笔记本" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="/lib/bootstrap-4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free-5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/lib/css/simple.css" />
+    <link rel="stylesheet" href="/lib/prismjs-1.23.0/prism.css" />
+    <link rel="stylesheet" href="/lib/katex-0.13.2/dist/katex.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/lib/gitalk-1.7.2/dist/gitalk.css" />
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        if (document.domain != "localhost") {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?ba2da28ca00435302909ee9426bcadab";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="fixed-top">
+      <a class="navbar-brand" href="#">JasperXu's 笔记本</a>
+      <button
+        class="navbar-toggler"
+        style="margin-right: 5.5rem"
+        type="button"
+        data-toggle="collapse"
+        data-target="#top-nav"
+        aria-controls="top-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="top-nav hide-nav" id="top-nav">
+        <!-- <form class="form-inline ml-auto">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </form> -->
+        <!-- _navbar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
+<li><a href="/Note/Development/#OS">系统设置</a><ul>
+<li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
+<li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
+<li><a href="/Note/Development/OS/软链和硬链.html">软链和硬链</a></li>
+<li><a href="/Note/Development/OS/Mac程序无法运行.html">Mac 程序无法运行</a></li>
+<li><a href="/Note/Development/OS/Win10共享文件夹.html">Win10 共享文件夹</a></li>
+<li><a href="/Note/Development/OS/WinLinux双系统安装指南.html">Win Linux 双系统安装指南</a></li>
+<li><a href="/Note/Development/OS/程序静默运行.html">程序静默运行</a></li>
+<li><a href="/Note/Development/OS/Windows定时开关机.html">Windows 定时开关机</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Environment">环境搭建</a><ul>
+<li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
+<li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
+<li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
+</ul>
+</li>
+</ul>
+
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <section class="cover d-flex">
+          <div>
+            
+          </div>
+        </section>
+        <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
+          <nav class="side-nav hide-nav" id="side-nav">
+            <!-- _sidebar.md -->
+
+<ul>
+<li><a href="/">首页</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
+<li><a href="/Note/Development/#OS">系统设置</a><ul>
+<li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
+<li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
+<li><a href="/Note/Development/OS/软链和硬链.html">软链和硬链</a></li>
+<li><a href="/Note/Development/OS/Mac程序无法运行.html">Mac 程序无法运行</a></li>
+<li><a href="/Note/Development/OS/Win10共享文件夹.html">Win10 共享文件夹</a></li>
+<li><a href="/Note/Development/OS/WinLinux双系统安装指南.html">Win Linux 双系统安装指南</a></li>
+<li><a href="/Note/Development/OS/程序静默运行.html">程序静默运行</a></li>
+<li><a href="/Note/Development/OS/Windows定时开关机.html">Windows 定时开关机</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Environment">环境搭建</a><ul>
+<li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
+<li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
+<li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
+</ul>
+</li>
+</ul>
+
+          </nav>
+        </aside>
+        <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
+          <article class="article">
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-27 17:51 </div></div><a class="hiddenanchor" id="debian-安装-gogs"></a><h1 id='debian-安装-gogs' ><a href='#debian-安装-gogs'>Debian 安装 gogs</a></h1>
+<a class="hiddenanchor" id="1-安装-mysql"></a><h2 id='1-安装-mysql' ><a href='#1-安装-mysql'>1. 安装 MySQL</a></h2>
+<pre><code class="language-bash">sudo apt update
+sudo apt install git
+</code></pre>
+<p>下载 Linux 对应的存储库 <a href="https://dev.mysql.com/downloads/" target="_blank" >下载页面</a> 。</p>
+<pre><code>wget https://repo.mysql.com/mysql-apt-config_0.8.16-1_all.deb
+sudo dpkg -i mysql-apt-config_0.8.16-1_all.deb
+</code></pre>
+<p>直接选择 ok 即可。</p>
+<p>需要重选使用命令 <code>sudo dpkg-reconfigure mysql-apt-config</code> .</p>
+<p>开始安装：</p>
+<pre><code class="language-bash">sudo apt update
+sudo apt install mysql-server
+</code></pre>
+<ul>
+<li>输入 root 密码</li>
+<li>选择加密方式</li>
+</ul>
+<p>初始化命令：</p>
+<pre><code class="language-bash"># 启动服务
+sudo systemctl restart mysql.service
+# 进行初始化设置
+sudo mysql_secure_installation
+
+# 输入root密码。
+# 输入 y 选择启用密码验证组件。
+# 输入 0 选择密码强度Low。
+# 输入 n 选择不更改root密码。
+# 输入 y 选择删除匿名账户。
+# 输入 n 选择允许远程root登陆。 如果是服务器环境请禁止，只允许localhost登陆。
+# 输入 y 选择删除测试数据库。
+# 输入 y 选择重新加载特权表。
+# 完成配置。
+</code></pre>
+<p>连接 mysql</p>
+<pre><code class="language-bash">mysql -u root -p
+# 查看版本
+> select version();
+
+# 查看字符集。
+> SHOW VARIABLES LIKE 'character%';
+# utf8 :三字节utf8【过时】
+# utf8mb4 ：四字节【默认值】
+
+# 查看排序规则
+> SHOW VARIABLES LIKE 'collation_%';
+# utf8mb4_general_ci ：非精确匹配，大小写不敏感。【过时】
+# utf8mb4_unicode_ci ：精确匹配，大小写不敏感。
+# utf8mb4_0900_ai_ci ：非精确匹配，大小写不敏感。【默认值】
+# utf8mb4_0900_as_ci ：精确匹配，大小写不敏感。
+# utf8mb4_0900_ai_cs ：非精确匹配，区分大小写。
+# utf8mb4_0900_as_cs ：精确匹配，区分大小写。
+</code></pre>
+<a class="hiddenanchor" id="13-增加-mysql-配置设置排序规则"></a><h3 id='13-增加-mysql-配置设置排序规则' ><a href='#13-增加-mysql-配置设置排序规则'>1.3. 增加 mysql 配置设置排序规则</a></h3>
+<p>修改 <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code> 增加 collation-server 行。</p>
+<pre><code>[mysqld]
+collation-server = utf8mb4_0900_ai_ci
+</code></pre>
+<a class="hiddenanchor" id="14-允许-mysql-登录范围"></a><h3 id='14-允许-mysql-登录范围' ><a href='#14-允许-mysql-登录范围'>1.4. 允许 MySQL 登录范围</a></h3>
+<p>修改 <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code> 注释掉 <code>bind-address</code> 行</p>
+<pre><code>[mysqld]
+# bind-address = 127.0.0.1
+</code></pre>
+<a class="hiddenanchor" id="15-设置允许-root-登录范围"></a><h3 id='15-设置允许-root-登录范围' ><a href='#15-设置允许-root-登录范围'>1.5. 设置允许 root 登录范围</a></h3>
+<ul>
+<li>任何 IP 都允许 root 登录</li>
+</ul>
+<pre><code class="language-mysql">$ mysql -u root -p
+grant all on *.* to root@'%' identified by '你的密码' with grant option;
+FLUSH PRIVILEGES;
+quit
+</code></pre>
+<ul>
+<li>允许 192.168.1.199 和 172.17.0.1~255 用 root 登录</li>
+</ul>
+<pre><code class="language-mysql">$ mysql -u root -p
+grant all on *.* to root@'192.168.1.199' identified by '你的密码' with grant option;
+grant all on *.* to root@'172.17.0.%' identified by '你的密码' with grant option;
+FLUSH PRIVILEGES;
+quit
+</code></pre>
+<a class="hiddenanchor" id="16-加密模式由-caching_sha2_password-改为-mysql_native_password"></a><h3 id='16-加密模式由-caching_sha2_password-改为-mysql_native_password' ><a href='#16-加密模式由-caching_sha2_password-改为-mysql_native_password'>1.6. 加密模式由 caching_sha2_password 改为 mysql_native_password</a></h3>
+<pre><code class="language-mysql">$ mysql -u root -p
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '你的密码';
+FLUSH PRIVILEGES;
+</code></pre>
+<p>修改 <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code> 添加 <code>default_authentication_plugin</code></p>
+<pre><code>[mysqld]
+default_authentication_plugin = mysql_native_password
+</code></pre>
+<p>重启 mysql 服务</p>
+<pre><code>systemctl restart mysql.service
+</code></pre>
+<a class="hiddenanchor" id="2-安装-gogs"></a><h2 id='2-安装-gogs' ><a href='#2-安装-gogs'>2. 安装 gogs</a></h2>
+<p>服务器地址：<code>192.168.31.12</code></p>
+<p>准备使用的端口：<code>8080</code></p>
+<p>准备使用的域名（设置 host 也行）：<code>git.jasperxu.com</code></p>
+<p>请适当替换上面的个性化设置。</p>
+<a class="hiddenanchor" id="21-创建数据库-gogs"></a><h3 id='21-创建数据库-gogs' ><a href='#21-创建数据库-gogs'>2.1. 创建数据库 gogs</a></h3>
+<pre><code class="language-bash">$ mysql -u root -p
+mysql> create database gogs default character set utf8mb4 collate utf8mb4_0900_ai_ci;
+</code></pre>
+<a class="hiddenanchor" id="22-下载-gogs-并运行"></a><h3 id='22-下载-gogs-并运行' ><a href='#22-下载-gogs-并运行'>2.2. 下载 Gogs 并运行</a></h3>
+<pre><code class="language-bash">wget https://dl.gogs.io/0.12.3/gogs_0.12.3_linux_amd64.tar.gz
+tar -zxvf gogs_0.12.3_linux_amd64.tar.gz
+cd gogs
+./gogs web
+</code></pre>
+<p>然后打开浏览器输入 <code>http://192.168.31.12:3000</code> 。</p>
+<a class="hiddenanchor" id="23-设置域名解析"></a><h3 id='23-设置域名解析' ><a href='#23-设置域名解析'>2.3. 设置域名解析</a></h3>
+<p>将 <code>git.jasperxu.com</code> 域名解析设置为 <code>192.168.31.12</code> 。</p>
+<a class="hiddenanchor" id="24-设置-nginx"></a><h3 id='24-设置-nginx' ><a href='#24-设置-nginx'>2.4. 设置 nginx</a></h3>
+<p>创建新的配置文件 <code>/etc/nginx/conf.d/gogs.conf</code></p>
+<pre><code>server {
+    listen      80;
+    server_name git.jasperxu.com;
+    return         301 https://git.jasperxu.com$request_uri;
+}
+
+server {
+    listen      443;
+    ssl         on;
+    server_name git.jasperxu.com;
+
+    ssl_certificate     /etc/nginx/conf.d/gogs.pem;
+    ssl_certificate_key /etc/nginx/conf.d/gogs.key;
+
+    ssl_session_timeout 5m;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+
+    location / {
+        proxy_pass_header   Server;
+        proxy_pass          http://localhost:8080;
+        proxy_read_timeout  90;
+
+        proxy_set_header    Host $host;
+        proxy_set_header    X-Real-IP $remote_addr;
+        proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header    X-Forwarded-Proto $scheme;
+
+        proxy_redirect off;
+    }
+}
+</code></pre>
+<p>上传对应的 <code>gogs.pem</code> 和 <code>gogs.key</code></p>
+<pre><code class="language-bash">scp gogs.pem root@192.168.31.12:/etc/nginx/conf.d/
+scp gogs.key root@192.168.31.12:/etc/nginx/conf.d/
+</code></pre>
+<p>在 nginx 的配置文件 <code>/etc/nginx/nginx.conf</code> 中的 http 节点最后增加下面两句：</p>
+<pre><code>    server_names_hash_bucket_size 64;
+    client_max_body_size 10240M;
+</code></pre>
+<p>nginx 重新加载配置文件：</p>
+<pre><code># 检查语法
+nginx -t
+# 重新加载
+nginx -s reload
+</code></pre>
+<a class="hiddenanchor" id="设置-gogs-自动启动"></a><h2 id='设置-gogs-自动启动' ><a href='#设置-gogs-自动启动'>设置 gogs 自动启动</a></h2>
+<p>创建服务文件 <code>/etc/init.d/gogs</code></p>
+<pre><code class="language-bash">#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          gogs
+# Required-Start:    $syslog $network
+# Required-Stop:     $syslog
+# Should-Start:      mysql postgresql
+# Should-Stop:       mysql postgresql
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: A self-hosted Git service written in Go.
+# Description:       A self-hosted Git service written in Go.
+### END INIT INFO
+
+# Author: Danny Boisvert
+
+# Do NOT "set -e"
+
+# PATH should only include /usr/* if it runs after the mountnfs.sh script
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+DESC="Gogs"
+NAME=gogs
+SERVICEVERBOSE=yes
+PIDFILE=/var/run/$NAME.pid
+SCRIPTNAME=/etc/init.d/$NAME
+WORKINGDIR=/root/gogs
+DAEMON=$WORKINGDIR/$NAME
+DAEMON_ARGS="web"
+USER=root
+
+# Read configuration variable file if it is present
+[ -r /etc/default/$NAME ] && . /etc/default/$NAME
+
+# Exit if the package is not installed
+[ -x "$DAEMON" ] || exit 0
+
+# Load the VERBOSE setting and other rcS variables
+. /lib/init/vars.sh
+
+# Define LSB log_* functions.
+# Depend on lsb-base (>= 3.2-14) to ensure that this file is present
+# and status_of_proc is working.
+. /lib/lsb/init-functions
+
+#
+# Function that starts the daemon/service
+#
+do_start()
+{
+  # Return
+  #   0 if daemon has been started
+  #   1 if daemon was already running
+  #   2 if daemon could not be started
+  sh -c "USER=$USER start-stop-daemon --start --quiet --pidfile $PIDFILE --make-pidfile \\
+      --test --chdir $WORKINGDIR --chuid $USER \\
+      --exec $DAEMON -- $DAEMON_ARGS > /dev/null \\
+      || return 1"
+  sh -c "USER=$USER start-stop-daemon --start --quiet --pidfile $PIDFILE --make-pidfile \\
+      --background --chdir $WORKINGDIR --chuid $USER \\
+      --exec $DAEMON -- $DAEMON_ARGS \\
+      || return 2"
+}
+
+#
+# Function that stops the daemon/service
+#
+do_stop()
+{
+  # Return
+  #   0 if daemon has been stopped
+  #   1 if daemon was already stopped
+  #   2 if daemon could not be stopped
+  #   other if a failure occurred
+  start-stop-daemon --stop --quiet --retry=TERM/1/KILL/5 --pidfile $PIDFILE --name $NAME
+  RETVAL="$?"
+  [ "$RETVAL" = 2 ] && return 2
+  start-stop-daemon --stop --quiet --oknodo --retry=0/1/KILL/5 --exec $DAEMON
+  [ "$?" = 2 ] && return 2
+  # Many daemons don't delete their pidfiles when they exit.
+  rm -f $PIDFILE
+  return "$RETVAL"
+}
+
+
+case "$1" in
+  start)
+  [ "$SERVICEVERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
+  do_start
+  case "$?" in
+    0|1) [ "$SERVICEVERBOSE" != no ] && log_end_msg 0 ;;
+    2) [ "$SERVICEVERBOSE" != no ] && log_end_msg 1 ;;
+  esac
+  ;;
+  stop)
+  [ "$SERVICEVERBOSE" != no ] && log_daemon_msg "Stopping $DESC" "$NAME"
+  do_stop
+  case "$?" in
+    0|1) [ "$SERVICEVERBOSE" != no ] && log_end_msg 0 ;;
+    2) [ "$SERVICEVERBOSE" != no ] && log_end_msg 1 ;;
+  esac
+  ;;
+  status)
+  status_of_proc "$DAEMON" "$NAME" && exit 0 || exit $?
+  ;;
+  restart|force-reload)
+  log_daemon_msg "Restarting $DESC" "$NAME"
+  do_stop
+  case "$?" in
+    0|1)
+    do_start
+    case "$?" in
+      0) log_end_msg 0 ;;
+      1) log_end_msg 1 ;; # Old process is still running
+      *) log_end_msg 1 ;; # Failed to start
+    esac
+    ;;
+    *)
+    # Failed to stop
+    log_end_msg 1
+    ;;
+    esac
+  ;;
+  *)
+    echo "Usage: $SCRIPTNAME {start|stop|status|restart|force-reload}" >&2
+    exit 3
+    ;;
+esac
+</code></pre>
+<p>然后执行如下命令：</p>
+<pre><code class="language-bash">sudo chmod +x /etc/init.d/gogs
+cd /etc/init.d/
+sudo update-rc.d gogs defaults
+</code></pre>
+<p>使用方式</p>
+<pre><code class="language-bash">systemctl start gogs
+systemctl restart gogs
+systemctl stop gogs
+systemctl status gogs
+</code></pre>
+
+          </article>
+        </section>
+      </div>
+    </main>
+    <script src="/lib/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="/lib/prismjs-1.23.0/prism.js"></script>
+    <script src="/lib/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap-dropdown-hover-4.2.0/dist/bootstrap-dropdown-hover-change.js"></script>
+    <script src="/lib/medium-zoom-1.0.6/dist/medium-zoom.min.js"></script>
+
+    <script src="/lib/gitalk-1.7.2/dist/gitalk.min.js"></script>
+    <script src="/lib/js/simple.js"></script>
+  </body>
+</html>

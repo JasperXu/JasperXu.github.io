@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>JasperXu's 笔记本</title>
-    <meta name="keywords" content="开发环境设置,Win10,共享文件夹" />
+    <meta name="keywords" content="Development,Win10,共享文件夹" />
     <meta name="description" content="Win10 共享文件夹" />
     <meta name="tags" content="Win10, 共享文件夹" />
-    <meta name="categories" content="开发环境设置, 系统设置" />
+    <meta name="categories" content="Development, 系统" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
     <meta name="description" content="JasperXu's 笔记本" />
@@ -59,7 +59,7 @@
 
 <ul>
 <li><a href="/">首页</a></li>
-<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
 <li><a href="/Note/Development/#OS">系统设置</a><ul>
 <li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
 <li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
@@ -75,9 +75,15 @@
 <li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
 </ul>
 </li>
-<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
 <li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
 <li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
 </ul>
 </li>
 </ul>
@@ -97,7 +103,7 @@
 
 <ul>
 <li><a href="/">首页</a></li>
-<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
 <li><a href="/Note/Development/#OS">系统设置</a><ul>
 <li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
 <li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
@@ -113,9 +119,15 @@
 <li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
 </ul>
 </li>
-<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
 <li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
 <li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
 </ul>
 </li>
 </ul>
@@ -124,19 +136,19 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:20 </div></div><h1 id='win10-共享文件夹' ><a href='#anchor_win10-共享文件夹' id='anchor_win10-共享文件夹' class='anchor'>Win10 共享文件夹</a></h1>
-<h3 id='1-服务器设置' ><a href='#anchor_1-服务器设置' id='anchor_1-服务器设置' class='anchor'>1. 服务器设置</a></h3>
-<h4 id='11-高级共享设置' ><a href='#anchor_11-高级共享设置' id='anchor_11-高级共享设置' class='anchor'>1.1. 高级共享设置</a></h4>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-27 17:52 </div></div><a class="hiddenanchor" id="win10-共享文件夹"></a><h1 id='win10-共享文件夹' ><a href='#win10-共享文件夹'>Win10 共享文件夹</a></h1>
+<a class="hiddenanchor" id="1-服务器设置"></a><h3 id='1-服务器设置' ><a href='#1-服务器设置'>1. 服务器设置</a></h3>
+<a class="hiddenanchor" id="11-高级共享设置"></a><h4 id='11-高级共享设置' ><a href='#11-高级共享设置'>1.1. 高级共享设置</a></h4>
 <p>打开 <code>网络和Internet设置 》 更改高级共享设置</code></p>
 <ul>
 <li>在专用和公用网络中都勾选 <code>启用文件和打印机共享</code> 。</li>
 <li>在所有网络中勾选 <code>无密码保护的共享</code> 。</li>
 </ul>
-<h4 id='12-共享文件夹' ><a href='#anchor_12-共享文件夹' id='anchor_12-共享文件夹' class='anchor'>1.2. 共享文件夹</a></h4>
+<a class="hiddenanchor" id="12-共享文件夹"></a><h4 id='12-共享文件夹' ><a href='#12-共享文件夹'>1.2. 共享文件夹</a></h4>
 <p>点击要共享的文件夹，右键 <code>属性</code></p>
 <p>添加共享权限： <code>共享 》 高级共享 》 权限</code> 添加 <code>Everyone</code> 。添加完全控制。</p>
 <p>添加读写权限： <code>安全 》 编辑 》 添加 </code> 添加 <code>Everyone</code> 。添加完全控制。</p>
-<h4 id='13-其他问题' ><a href='#anchor_13-其他问题' id='anchor_13-其他问题' class='anchor'>1.3. 其他问题</a></h4>
+<a class="hiddenanchor" id="13-其他问题"></a><h4 id='13-其他问题' ><a href='#13-其他问题'>1.3. 其他问题</a></h4>
 <ul>
 <li>Guest 账户未启用</li>
 </ul>
@@ -156,13 +168,13 @@ SMB Direct
 </ul>
 <p>打开 <code>网络和Internet设置 》 更改连接属性</code> 选择 <code>专用</code> 。</p>
 <p>注：客户端机器也需要改为 <code>专用</code> 网络。</p>
-<h3 id='2-客户端设置' ><a href='#anchor_2-客户端设置' id='anchor_2-客户端设置' class='anchor'>2. 客户端设置</a></h3>
+<a class="hiddenanchor" id="2-客户端设置"></a><h3 id='2-客户端设置' ><a href='#2-客户端设置'>2. 客户端设置</a></h3>
 <ul>
 <li>打开 <code>网络和Internet设置 》 网络和共享中心 》 更改高级共享设置</code> ，在专用和公用网络中都勾选 <code>启用网络发现</code> 。</li>
 <li><code>Win+R</code> 输入 <code>gpedit.msc</code> 。<code>计算机配置 &gt; 管理模板 &gt; 网络 &gt; Lanman工作站 &gt; 启用不安全的来宾登录</code> 启用该设置。</li>
 <li>打开注册表<code>Win+R</code> 输入<code>regedit</code> 。 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters</code> 右侧创建新的项目 <code>DWORD值（32位）</code> 名称为 <code>AllowInsecureGuestAuth</code> 值为 <code>1</code> 。</li>
 </ul>
-</article>
+
           </article>
         </section>
       </div>

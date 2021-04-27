@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>JasperXu's 笔记本</title>
-    <meta name="keywords" content="开发环境设置,vscode,region" />
+    <meta name="keywords" content="Development,vscode,region" />
     <meta name="description" content="让 vs code 支持 region 和 endregion" />
     <meta name="tags" content="vscode, region" />
-    <meta name="categories" content="开发环境设置, 工具设置" />
+    <meta name="categories" content="Development, 工具" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
     <meta name="description" content="JasperXu's 笔记本" />
@@ -59,7 +59,7 @@
 
 <ul>
 <li><a href="/">首页</a></li>
-<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
 <li><a href="/Note/Development/#OS">系统设置</a><ul>
 <li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
 <li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
@@ -75,9 +75,15 @@
 <li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
 </ul>
 </li>
-<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
 <li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
 <li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
 </ul>
 </li>
 </ul>
@@ -97,7 +103,7 @@
 
 <ul>
 <li><a href="/">首页</a></li>
-<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
 <li><a href="/Note/Development/#OS">系统设置</a><ul>
 <li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
 <li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
@@ -113,9 +119,15 @@
 <li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
 </ul>
 </li>
-<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
 <li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
 <li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
 </ul>
 </li>
 </ul>
@@ -124,7 +136,7 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:21 </div></div><h1 id='让-vs-code-支持-region-和-endregion' ><a href='#anchor_让-vs-code-支持-region-和-endregion' id='anchor_让-vs-code-支持-region-和-endregion' class='anchor'>让 vs code 支持 region 和 endregion</a></h1>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-27 17:52 </div></div><a class="hiddenanchor" id="让-vs-code-支持-region-和-endregion"></a><h1 id='让-vs-code-支持-region-和-endregion' ><a href='#让-vs-code-支持-region-和-endregion'>让 vs code 支持 region 和 endregion</a></h1>
 <p>在 <code>Microsoft VS Code\resources\app\extensions/XXX/language-configuration.json</code> 文件的最后一个 <code>}</code> 前加入如下内容：</p>
 <pre><code class="language-json">,
     "folding": {
@@ -139,7 +151,7 @@
 <p>这里的示例语言是使用 <code>//</code> 作为注释的。</p>
 <p>开始部分使用<code>//region</code>或<code>//#region</code> ，结束部分使用<code>//endregion</code>或<code>//#endregion</code> 。</p>
 <p>如果使用语言不是使用 <code>//</code> 作为注释，则替换为对应的注释即可。</p>
-</article>
+
           </article>
         </section>
       </div>

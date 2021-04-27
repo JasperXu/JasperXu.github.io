@@ -27,9 +27,6 @@
       // 修复侧边栏的链接
       fixAside2Bootstrap();
 
-      // 修复文章中的锚点链接
-      fixAnchor();
-
       //为文章添加评论功能，延迟1秒执行，避免执行过多卡顿
       // addGitalk();
       setTimeout(addGitalk, 1000);
@@ -40,6 +37,9 @@
       $(window).scroll(() => {
         scrollAddActiveNav();
       });
+
+      // 为锚点增加滚动动画
+      fixAnchor();
 
       // 增加图片的缩放功能
       mediumZoom("article.article img", {
@@ -192,13 +192,6 @@
           wrapElm.appendChild(element.childNodes[0]);
         }
       }
-
-      // let a = $(">a", element);
-      // a.addClass("collapsed");
-      // a.attr({ "data-toggle": "collapse", "data-target": "#sidenavul" + index });
-      // let ul = $(">ul", element);
-      // ul.attr("id", "sidenavul" + index);
-      // ul.addClass("collapse");
     });
 
     nav.removeClass("hide-nav");
@@ -210,12 +203,12 @@
    */
   function fixAnchor() {
     // 修复tabs的a标签加上后会导致不工作
-    // $("a[href*='#']").click(function () {
-    $("header a[href*='#'], aside.aside a[href*='#'], #jx-toc a[href*='#'], article.article a.anchor").click(function () {
-      let IDNameList = $(this).attr("href").split("#");
-      let IDName = "#" + IDNameList[IDNameList.length - 1];
-      $("html, body").animate({ scrollTop: $(IDName)[0].offsetTop }, 300);
-      addActiveNav(IDName.replace("anchor_", ""));
+    $("header a[href*='#'], aside.aside a[href*='#'], #jx-toc a[href*='#'], article.article :header a[href*='#']").click(function () {
+      if ($(this.hash) != null) {
+        $("html, body").animate({ scrollTop: $(this.hash).offset().top }, 300);
+      }
+      // 启用滚动事件后可以不使用下面这行代码。
+      //addActiveNav(IDName);
       return false;
     });
   }
@@ -282,14 +275,15 @@
     let activeEle;
 
     // 查找当前滚动条最近的锚点
-    $("a.anchor[href*='#']").each(function (index, domEle) {
+    $("a.hiddenanchor").each(function (index, domEle) {
       let alink = $(domEle);
-      let tempTop = alink[0].offsetTop; //alink.offset().top;
-      if (tempTop > minSet && tempTop < scrollTop) {
+      // let tempTop = alink[0].offsetTop; //alink.offset().top;
+      let tempTop = alink.offset().top; //alink.offset().top;
+      if (tempTop > minSet && tempTop <= scrollTop) {
         minSet = tempTop;
         minEle = alink;
       }
-      if (maxSet == 0 && tempTop > scrollTop) {
+      if (maxSet == 0 && tempTop >= scrollTop) {
         maxSet = tempTop;
         maxEle = alink;
       }
@@ -301,9 +295,7 @@
     }
 
     if (activeEle != undefined) {
-      let IDNameList = activeEle.attr("href").split("#");
-      let IDName = "#" + IDNameList[IDNameList.length - 1];
-      addActiveNav(IDName.replace("anchor_", ""));
+      addActiveNav("#" + activeEle.attr("id"));
     }
   }
 
@@ -343,8 +335,6 @@
       if (level <= maxLevel) {
         $("a", h)
           .clone()
-          .removeAttr("id")
-          .removeClass("anchor")
           .css({ "margin-left": level * 16 + "px" })
           .appendTo(toc);
       }

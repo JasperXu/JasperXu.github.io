@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>JasperXu's 笔记本</title>
-    <meta name="keywords" content="Development,Mac,无法运行" />
-    <meta name="description" content="Mac 程序无法运行" />
-    <meta name="tags" content="Mac, 无法运行" />
-    <meta name="categories" content="Development, 系统" />
+    <meta name="keywords" content="Development,Debian,git,安装" />
+    <meta name="description" content="Debian 安装新版的 Git" />
+    <meta name="tags" content="Debian, git, 安装" />
+    <meta name="categories" content="Development, 服务器" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
     <meta name="description" content="JasperXu's 笔记本" />
@@ -136,17 +136,65 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-27 17:52 </div></div><a class="hiddenanchor" id="mac-程序无法运行"></a><h1 id='mac-程序无法运行' ><a href='#mac-程序无法运行'>Mac 程序无法运行</a></h1>
-<a class="hiddenanchor" id="mac-文件损坏处理"></a><h2 id='mac-文件损坏处理' ><a href='#mac-文件损坏处理'>Mac 文件损坏处理</a></h2>
-<p>原因：系统偏好设置-&gt;安全性与饮食-&gt;通用-&gt;允许从以下位置下载的应用 需要设置为 任何来源 。新系统中隐藏了该选项。</p>
-<p>解决方法：打开 Mac 终端，输入以下代码回车。</p>
-<pre><code class="language-bash">sudo spctl --master-disable
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-27 17:50 </div></div><a class="hiddenanchor" id="debian-安装新版的-git"></a><h1 id='debian-安装新版的-git' ><a href='#debian-安装新版的-git'>Debian 安装新版的 Git</a></h1>
+<a class="hiddenanchor" id="1-安装所需依赖项"></a><h3 id='1-安装所需依赖项' ><a href='#1-安装所需依赖项'>1. 安装所需依赖项</a></h3>
+<pre><code class="language-bash">$ sudo apt install dh-autoreconf libcurl4-gnutls-dev libexpat1-dev \
+  gettext libz-dev libssl-dev
 </code></pre>
-<a class="hiddenanchor" id="应用程序不能打开"></a><h2 id='应用程序不能打开' ><a href='#应用程序不能打开'>应用程序不能打开</a></h2>
-<p>原因：执行程序丢失了执行权限。</p>
-<p>解决方法：右键对应的执行文件-&gt;显示包内容-&gt;进入到 Contents/MacOS 文件夹中，这里会看到一个文件，给该文件添加执行权限即可。打开 终端 输入<br><code>chmod +x </code>将文件拖入然后回车。</p>
-<a class="hiddenanchor" id="例如："></a><h1 id='例如：' ><a href='#例如：'>例如：</a></h1>
-<pre><code class="language-bash">chmod +x /Applications/Xcode.app/Contents/MacOS/Xcode
+<a class="hiddenanchor" id="2-安装文档依赖项"></a><h3 id='2-安装文档依赖项' ><a href='#2-安装文档依赖项'>2. 安装文档依赖项</a></h3>
+<pre><code class="language-bash">$ sudo apt install asciidoc xmlto docbook2x
+</code></pre>
+<a class="hiddenanchor" id="3-安装-install-info-依赖项"></a><h3 id='3-安装-install-info-依赖项' ><a href='#3-安装-install-info-依赖项'>3. 安装 install-info 依赖项</a></h3>
+<pre><code class="language-bash">$ sudo apt install install-info
+</code></pre>
+<a class="hiddenanchor" id="4-下载并构建最新的-git-版本"></a><h3 id='4-下载并构建最新的-git-版本' ><a href='#4-下载并构建最新的-git-版本'>4. 下载并构建最新的 Git 版本</a></h3>
+<p><a href="https://github.com/git/git/releases" target="_blank" >仓库地址</a></p>
+<pre><code>$ wget https://github.com/git/git/archive/v2.30.1.tar.gz
+$ mv v2.30.1.tar.gz git-2.30.1.tar.gz
+$ tar -zxf git-2.30.1.tar.gz
+$ cd git-2.30.1
+$ make configure
+$ ./configure --prefix=/usr
+$ make all doc info
+$ sudo make install install-doc install-html install-info
+</code></pre>
+<p>运行下面命令检查</p>
+<pre><code>$ git --version
+</code></pre>
+<a class="hiddenanchor" id="5-配置-git"></a><h3 id='5-配置-git' ><a href='#5-配置-git'>5. 配置 Git</a></h3>
+<pre><code>$ git config --global user.name "JasperXu"
+$ git config --global user.email "sorex@163.com"
+$ git config --global init.defaultBranch "main"
+$ git config --list
+</code></pre>
+<p>另：设置了默认分支名称为 main 后，gogs<code>0.12.3</code>创建仓库会失败，作为服务器请设置为 master，创建成功后使用下面的方式修改为 main。</p>
+<a class="hiddenanchor" id="6-将-master-改为-main"></a><h3 id='6-将-master-改为-main' ><a href='#6-将-master-改为-main'>6. 将 master 改为 main</a></h3>
+<p>管理员如此操作：</p>
+<pre><code class="language-bash">git branch -m master main
+git push -u origin main
+# 先到远程去设置默认分支为main，然后再执行下面的语句删除master分支
+git push origin --delete master
+# 更改 "origin/HEAD" 的连接到 "origin/main"
+git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
+</code></pre>
+<p>本地有代码的其他人操作：</p>
+<pre><code># 切换到 "master" 分支:
+$ git checkout master
+
+# 改名为 "main":
+$ git branch -m master main
+
+# 从远程获取最新的提交和分支:
+$ git fetch
+
+# 移除现有的 "origin/master" 跟踪连接:
+$ git branch --unset-upstream
+
+# 用新的 "origin/main" 分支创建一个新的跟踪连接:
+$ git branch -u origin/main
+
+# 更改 "origin/HEAD" 的连接到 "origin/main"
+$ git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
 </code></pre>
 
           </article>

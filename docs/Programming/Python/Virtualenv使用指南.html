@@ -94,15 +94,15 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 23:13 </div></div><h1 id='virtualenv-使用指南' ><a href='#anchor_virtualenv-使用指南' id='anchor_virtualenv-使用指南' class='anchor'>Virtualenv 使用指南</a></h1>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 23:13 </div></div><a class="hiddenanchor" id="virtualenv-使用指南"></a><h1 id='virtualenv-使用指南' ><a href='#virtualenv-使用指南'>Virtualenv 使用指南</a></h1>
 <ul>
 <li>Mac 中建议先安装 Python3 <code>brew install python3</code> 并 <code>brew linkapps python3</code></li>
 </ul>
-<h3 id='1-安装-virtualenv' ><a href='#anchor_1-安装-virtualenv' id='anchor_1-安装-virtualenv' class='anchor'>1. 安装 Virtualenv</a></h3>
+<a class="hiddenanchor" id="1-安装-virtualenv"></a><h3 id='1-安装-virtualenv' ><a href='#1-安装-virtualenv'>1. 安装 Virtualenv</a></h3>
 <pre><code class="language-bash">pip install --user virtualenv #不加--user安装到全局，加了安装到个人
 virtualenv --version
 </code></pre>
-<h3 id='2-创建一个虚拟环境' ><a href='#anchor_2-创建一个虚拟环境' id='anchor_2-创建一个虚拟环境' class='anchor'>2. 创建一个虚拟环境</a></h3>
+<a class="hiddenanchor" id="2-创建一个虚拟环境"></a><h3 id='2-创建一个虚拟环境' ><a href='#2-创建一个虚拟环境'>2. 创建一个虚拟环境</a></h3>
 <pre><code class="language-bash">cd my_project_dir
 virtualenv venv # 创建系统Python版本的环境
 </code></pre>
@@ -110,7 +110,7 @@ virtualenv venv # 创建系统Python版本的环境
 <p>还可以创建其他版本的虚拟环境（本地必须安装了指定的版本）</p>
 <pre><code class="language-bash">virtualenv -p python3 venv # 创建Python3的环境
 </code></pre>
-<h3 id='3-进入退出虚拟环境' ><a href='#anchor_3-进入退出虚拟环境' id='anchor_3-进入退出虚拟环境' class='anchor'>3. 进入/退出虚拟环境</a></h3>
+<a class="hiddenanchor" id="3-进入退出虚拟环境"></a><h3 id='3-进入退出虚拟环境' ><a href='#3-进入退出虚拟环境'>3. 进入/退出虚拟环境</a></h3>
 <p>Windows PowerShell 中需先执行 <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned</code> 修改权限。</p>
 <pre><code class="language-bash">source venv/bin/activate    # 进入环境 Linux 或 MacOS
 venv/Scripts/activate        # 进入环境 Windows CMD
@@ -118,7 +118,7 @@ venv/Scripts/activate        # 进入环境 Windows CMD
 
 deactivate                    # 退出环境
 </code></pre>
-<h3 id='4-运行脚本' ><a href='#anchor_4-运行脚本' id='anchor_4-运行脚本' class='anchor'>4. 运行脚本</a></h3>
+<a class="hiddenanchor" id="4-运行脚本"></a><h3 id='4-运行脚本' ><a href='#4-运行脚本'>4. 运行脚本</a></h3>
 <p>mac 脚本：<code>/path/venv.sh</code></p>
 <pre><code class="language-bash">echo 进入Machine Learning虚拟环境目录
 cd /Users/jasper/vpythons/ml
@@ -151,7 +151,7 @@ $SHELL
 :: @cmd /k
 </code></pre>
 <p>windows Powershell 执行：<code>.\venv.ps1</code> 或 <code>.\\venv.ps1</code></p>
-</article>
+
           </article>
         </section>
       </div>

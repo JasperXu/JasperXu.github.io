@@ -137,8 +137,8 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-23 19:30 </div></div><h1 id='33-关联' ><a href='#anchor_33-关联' id='anchor_33-关联' class='anchor'>3.3. 关联</a></h1>
-<h2 id='bt' ><a href='#anchor_bt' id='anchor_bt' class='anchor'>3.3.1. 属于</a></h2>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-23 19:30 </div></div><a class="hiddenanchor" id="33-关联"></a><h1 id='33-关联' ><a href='#33-关联'>3.3. 关联</a></h1>
+<a class="hiddenanchor" id="bt"></a><h2 id='bt' ><a href='#bt'>3.3.1. 属于</a></h2>
 <pre><code class="language-go">// `User`属于`Profile`, `ProfileID`为外键
 type User struct {
   gorm.Model
@@ -179,7 +179,7 @@ type User struct {
     ProfileID int
 }
 </code></pre>
-<h2 id='ho' ><a href='#anchor_ho' id='anchor_ho' class='anchor'>3.3.2. 包含一个</a></h2>
+<a class="hiddenanchor" id="ho"></a><h2 id='ho' ><a href='#ho'>3.3.2. 包含一个</a></h2>
 <pre><code class="language-go">// User 包含一个 CreditCard, UserID 为外键
 type User struct {
     gorm.Model
@@ -224,7 +224,7 @@ type User struct {
   Profile Profile `gorm:"ForeignKey:UserID;AssociationForeignKey:Refer"`
 }
 </code></pre>
-<h2 id='hm' ><a href='#anchor_hm' id='anchor_hm' class='anchor'>3.3.3. 包含多个</a></h2>
+<a class="hiddenanchor" id="hm"></a><h2 id='hm' ><a href='#hm'>3.3.3. 包含多个</a></h2>
 <pre><code class="language-go">// User 包含多个 emails, UserID 为外键
 type User struct {
     gorm.Model
@@ -265,7 +265,7 @@ type User struct {
   Profiles []Profile `gorm:"ForeignKey:UserID;AssociationForeignKey:Refer"`
 }
 </code></pre>
-<h2 id='mtm' ><a href='#anchor_mtm' id='anchor_mtm' class='anchor'>3.3.4. 多对多</a></h2>
+<a class="hiddenanchor" id="mtm"></a><h2 id='mtm' ><a href='#mtm'>3.3.4. 多对多</a></h2>
 <pre><code class="language-go">// User 包含并属于多个 languages, 使用 `user_languages` 表连接
 type User struct {
     gorm.Model
@@ -292,7 +292,7 @@ type CustomizeAccount struct {
 }
 </code></pre>
 <p>译者注：这里设置好像缺失一部分</p>
-<h2 id='p' ><a href='#anchor_p' id='anchor_p' class='anchor'>3.3.5. 多种包含</a></h2>
+<a class="hiddenanchor" id="p"></a><h2 id='p' ><a href='#p'>3.3.5. 多种包含</a></h2>
 <p>支持多种的包含一个和包含多个的关联</p>
 <pre><code class="language-go">type Cat struct {
     Id    int
@@ -314,7 +314,7 @@ type CustomizeAccount struct {
   }
 </code></pre>
 <p>注意：多态属性和多对多显式不支持，并且会抛出错误。</p>
-<h2 id='am' ><a href='#anchor_am' id='anchor_am' class='anchor'>3.3.6. 关联模式</a></h2>
+<a class="hiddenanchor" id="am"></a><h2 id='am' ><a href='#am'>3.3.6. 关联模式</a></h2>
 <p>关联模式包含一些帮助方法来处理关系事情很容易。</p>
 <pre><code class="language-go">// 开始关联模式
 var user User
@@ -351,7 +351,7 @@ db.Model(&user).Association("Languages").Count()
 // Clear - 删除源和当前关联之间的关系，不会删除这些关联
 db.Model(&user).Association("Languages").Clear()
 </code></pre>
-</article>
+
           </article>
         </section>
       </div>

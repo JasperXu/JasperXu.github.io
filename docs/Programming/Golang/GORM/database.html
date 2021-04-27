@@ -137,8 +137,8 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-23 19:32 </div></div><h1 id='2-数据库' ><a href='#anchor_2-数据库' id='anchor_2-数据库' class='anchor'>2. 数据库</a></h1>
-<h2 id='dbc' ><a href='#anchor_dbc' id='anchor_dbc' class='anchor'>2.1. 连接数据库</a></h2>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-23 19:32 </div></div><a class="hiddenanchor" id="2-数据库"></a><h1 id='2-数据库' ><a href='#2-数据库'>2. 数据库</a></h1>
+<a class="hiddenanchor" id="dbc"></a><h2 id='dbc' ><a href='#dbc'>2.1. 连接数据库</a></h2>
 <p>要连接到数据库首先要导入驱动程序。例如</p>
 <pre><code class="language-go">import _ "github.com/go-sql-driver/mysql"
 </code></pre>
@@ -148,7 +148,7 @@
 // import _ "github.com/jinzhu/gorm/dialects/sqlite"
 // import _ "github.com/jinzhu/gorm/dialects/mssql"
 </code></pre>
-<h3 id='211-mysql' ><a href='#anchor_211-mysql' id='anchor_211-mysql' class='anchor'>2.1.1. MySQL</a></h3>
+<a class="hiddenanchor" id="211-mysql"></a><h3 id='211-mysql' ><a href='#211-mysql'>2.1.1. MySQL</a></h3>
 <p>注：为了处理<code>time.Time</code>，您需要包括<code>parseTime</code>作为参数。 （<a href="https://github.com/go-sql-driver/mysql#parameters" target="_blank" >更多支持的参数</a>）</p>
 <pre><code class="language-go">import (
     "github.com/jinzhu/gorm"
@@ -160,7 +160,7 @@ func main() {
   defer db.Close()
 }
 </code></pre>
-<h3 id='212-postgresql' ><a href='#anchor_212-postgresql' id='anchor_212-postgresql' class='anchor'>2.1.2. PostgreSQL</a></h3>
+<a class="hiddenanchor" id="212-postgresql"></a><h3 id='212-postgresql' ><a href='#212-postgresql'>2.1.2. PostgreSQL</a></h3>
 <pre><code class="language-go">import (
     "github.com/jinzhu/gorm"
     _ "github.com/jinzhu/gorm/dialects/postgres"
@@ -171,7 +171,7 @@ func main() {
   defer db.Close()
 }
 </code></pre>
-<h3 id='213-sqlite3' ><a href='#anchor_213-sqlite3' id='anchor_213-sqlite3' class='anchor'>2.1.3. Sqlite3</a></h3>
+<a class="hiddenanchor" id="213-sqlite3"></a><h3 id='213-sqlite3' ><a href='#213-sqlite3'>2.1.3. Sqlite3</a></h3>
 <pre><code>import (
     "github.com/jinzhu/gorm"
     _ "github.com/jinzhu/gorm/dialects/sqlite"
@@ -182,10 +182,10 @@ func main() {
   defer db.Close()
 }
 </code></pre>
-<h3 id='214-不支持的数据库' ><a href='#anchor_214-不支持的数据库' id='anchor_214-不支持的数据库' class='anchor'>2.1.4. 不支持的数据库</a></h3>
+<a class="hiddenanchor" id="214-不支持的数据库"></a><h3 id='214-不支持的数据库' ><a href='#214-不支持的数据库'>2.1.4. 不支持的数据库</a></h3>
 <p>GORM 正式支持上述的数据库，如果您使用的是不受支持的数据库请按照下面的连接编写对应数据库支持文件。<br><a href="https://github.com/jinzhu/gorm/blob/master/dialect.go" target="_blank" >https://github.com/jinzhu/gorm/blob/master/dialect.go</a></p>
-<h2 id='m' ><a href='#anchor_m' id='anchor_m' class='anchor'>2.2. 迁移</a></h2>
-<h3 id='221-自动迁移' ><a href='#anchor_221-自动迁移' id='anchor_221-自动迁移' class='anchor'>2.2.1. 自动迁移</a></h3>
+<a class="hiddenanchor" id="m"></a><h2 id='m' ><a href='#m'>2.2. 迁移</a></h2>
+<a class="hiddenanchor" id="221-自动迁移"></a><h3 id='221-自动迁移' ><a href='#221-自动迁移'>2.2.1. 自动迁移</a></h3>
 <p>自动迁移模式将保持更新到最新。</p>
 <p><span style="color:red;">警告：</span>自动迁移<strong>仅仅</strong>会创建表，缺少列和索引，并且不会改变现有列的类型或删除未使用的列以保护数据。</p>
 <pre><code class="language-go">db.AutoMigrate(&User{})
@@ -195,21 +195,21 @@ db.AutoMigrate(&User{}, &Product{}, &Order{})
 // 创建表时添加表后缀
 db.Set("gorm:table_options", "ENGINE=InnoDB").AutoMigrate(&User{})
 </code></pre>
-<h3 id='222-检查表是否存在' ><a href='#anchor_222-检查表是否存在' id='anchor_222-检查表是否存在' class='anchor'>2.2.2. 检查表是否存在</a></h3>
+<a class="hiddenanchor" id="222-检查表是否存在"></a><h3 id='222-检查表是否存在' ><a href='#222-检查表是否存在'>2.2.2. 检查表是否存在</a></h3>
 <pre><code class="language-go">// 检查模型`User`表是否存在
 db.HasTable(&User{})
 
 // 检查表`users`是否存在
 db.HasTable("users")
 </code></pre>
-<h3 id='223-创建表' ><a href='#anchor_223-创建表' id='anchor_223-创建表' class='anchor'>2.2.3. 创建表</a></h3>
+<a class="hiddenanchor" id="223-创建表"></a><h3 id='223-创建表' ><a href='#223-创建表'>2.2.3. 创建表</a></h3>
 <pre><code class="language-go">// 为模型`User`创建表
 db.CreateTable(&User{})
 
 // 创建表`users'时将“ENGINE = InnoDB”附加到SQL语句
 db.Set("gorm:table_options", "ENGINE=InnoDB").CreateTable(&User{})
 </code></pre>
-<h3 id='224-删除表' ><a href='#anchor_224-删除表' id='anchor_224-删除表' class='anchor'>2.2.4. 删除表</a></h3>
+<a class="hiddenanchor" id="224-删除表"></a><h3 id='224-删除表' ><a href='#224-删除表'>2.2.4. 删除表</a></h3>
 <pre><code class="language-go">// 删除模型`User`的表
 db.DropTable(&User{})
 
@@ -219,16 +219,16 @@ db.DropTable("users")
 // 删除模型`User`的表和表`products`
 db.DropTableIfExists(&User{}, "products")
 </code></pre>
-<h3 id='225-修改列' ><a href='#anchor_225-修改列' id='anchor_225-修改列' class='anchor'>2.2.5. 修改列</a></h3>
+<a class="hiddenanchor" id="225-修改列"></a><h3 id='225-修改列' ><a href='#225-修改列'>2.2.5. 修改列</a></h3>
 <p>修改列的类型为给定值</p>
 <pre><code class="language-go">// 修改模型`User`的description列的数据类型为`text`
 db.Model(&User{}).ModifyColumn("description", "text")
 </code></pre>
-<h3 id='226-删除列' ><a href='#anchor_226-删除列' id='anchor_226-删除列' class='anchor'>2.2.6. 删除列</a></h3>
+<a class="hiddenanchor" id="226-删除列"></a><h3 id='226-删除列' ><a href='#226-删除列'>2.2.6. 删除列</a></h3>
 <pre><code class="language-go">// 删除模型`User`的description列
 db.Model(&User{}).DropColumn("description")
 </code></pre>
-<h3 id='227-添加外键' ><a href='#anchor_227-添加外键' id='anchor_227-添加外键' class='anchor'>2.2.7. 添加外键</a></h3>
+<a class="hiddenanchor" id="227-添加外键"></a><h3 id='227-添加外键' ><a href='#227-添加外键'>2.2.7. 添加外键</a></h3>
 <pre><code class="language-go">// 添加主键
 // 1st param : 外键字段
 // 2nd param : 外键表(字段)
@@ -236,7 +236,7 @@ db.Model(&User{}).DropColumn("description")
 // 4th param : ONUPDATE
 db.Model(&User{}).AddForeignKey("city_id", "cities(id)", "RESTRICT", "RESTRICT")
 </code></pre>
-<h3 id='228-索引' ><a href='#anchor_228-索引' id='anchor_228-索引' class='anchor'>2.2.8. 索引</a></h3>
+<a class="hiddenanchor" id="228-索引"></a><h3 id='228-索引' ><a href='#228-索引'>2.2.8. 索引</a></h3>
 <pre><code class="language-go">// 为`name`列添加索引`idx_user_name`
 db.Model(&User{}).AddIndex("idx_user_name", "name")
 
@@ -252,7 +252,7 @@ db.Model(&User{}).AddUniqueIndex("idx_user_name_age", "name", "age")
 // 删除索引
 db.Model(&User{}).RemoveIndex("idx_user_name")
 </code></pre>
-</article>
+
           </article>
         </section>
       </div>

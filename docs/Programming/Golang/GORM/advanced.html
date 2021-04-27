@@ -137,8 +137,8 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-23 19:30 </div></div><h1 id='6-高级用法' ><a href='#anchor_6-高级用法' id='anchor_6-高级用法' class='anchor'>6. 高级用法</a></h1>
-<h2 id='eh' ><a href='#anchor_eh' id='anchor_eh' class='anchor'>6.1. 错误处理</a></h2>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-23 19:30 </div></div><a class="hiddenanchor" id="6-高级用法"></a><h1 id='6-高级用法' ><a href='#6-高级用法'>6. 高级用法</a></h1>
+<a class="hiddenanchor" id="eh"></a><h2 id='eh' ><a href='#eh'>6.1. 错误处理</a></h2>
 <p>执行任何操作后，如果发生任何错误，GORM 将其设置为<code>*DB</code>的<code>Error</code>字段</p>
 <pre><code class="language-go">if err := db.Where("name = ?", "jinzhu").First(&user).Error; err != nil {
     // 错误处理...
@@ -154,7 +154,7 @@ if db.Model(&user).Related(&credit_card).RecordNotFound() {
     // 没有信用卡被发现处理...
 }
 </code></pre>
-<h2 id='t' ><a href='#anchor_t' id='anchor_t' class='anchor'>6.2. 事务</a></h2>
+<a class="hiddenanchor" id="t"></a><h2 id='t' ><a href='#t'>6.2. 事务</a></h2>
 <p>要在事务中执行一组操作，一般流程如下。</p>
 <pre><code class="language-go">// 开始事务
 tx := db.Begin()
@@ -170,7 +170,7 @@ tx.Rollback()
 // 或提交事务
 tx.Commit()
 </code></pre>
-<h3 id='621-一个具体的例子' ><a href='#anchor_621-一个具体的例子' id='anchor_621-一个具体的例子' class='anchor'>6.2.1. 一个具体的例子</a></h3>
+<a class="hiddenanchor" id="621-一个具体的例子"></a><h3 id='621-一个具体的例子' ><a href='#621-一个具体的例子'>6.2.1. 一个具体的例子</a></h3>
 <pre><code class="language-go">func CreateAnimals(db *gorm.DB) err {
   tx := db.Begin()
   // 注意，一旦你在一个事务中，使用tx作为数据库句柄
@@ -189,8 +189,8 @@ tx.Commit()
   return nil
 }
 </code></pre>
-<h2 id='sb' ><a href='#anchor_sb' id='anchor_sb' class='anchor'>6.3. SQL 构建</a></h2>
-<h3 id='631-执行原生-sql' ><a href='#anchor_631-执行原生-sql' id='anchor_631-执行原生-sql' class='anchor'>6.3.1. 执行原生 SQL</a></h3>
+<a class="hiddenanchor" id="sb"></a><h2 id='sb' ><a href='#sb'>6.3. SQL 构建</a></h2>
+<a class="hiddenanchor" id="631-执行原生-sql"></a><h3 id='631-执行原生-sql' ><a href='#631-执行原生-sql'>6.3.1. 执行原生 SQL</a></h3>
 <pre><code class="language-go">db.Exec("DROP TABLE users;")
 db.Exec("UPDATE orders SET shipped_at=? WHERE id IN (?)", time.Now, []int64{11,22,33})
 
@@ -203,7 +203,7 @@ type Result struct {
 var result Result
 db.Raw("SELECT name, age FROM users WHERE name = ?", 3).Scan(&result)
 </code></pre>
-<h3 id='632-sqlrow--sqlrows' ><a href='#anchor_632-sqlrow--sqlrows' id='anchor_632-sqlrow--sqlrows' class='anchor'>6.3.2. sql.Row &amp; sql.Rows</a></h3>
+<a class="hiddenanchor" id="632-sqlrow--sqlrows"></a><h3 id='632-sqlrow--sqlrows' ><a href='#632-sqlrow--sqlrows'>6.3.2. sql.Row &amp; sql.Rows</a></h3>
 <p>获取查询结果为<code>*sql.Row</code>或<code>*sql.Rows</code></p>
 <pre><code class="language-go">row := db.Table("users").Where("name = ?", "jinzhu").Select("name, age").Row() // (*sql.Row)
 row.Scan(&name, &age)
@@ -225,7 +225,7 @@ for rows.Next() {
     ...
 }
 </code></pre>
-<h3 id='633-迭代中使用-sqlrows-的-scan' ><a href='#anchor_633-迭代中使用-sqlrows-的-scan' id='anchor_633-迭代中使用-sqlrows-的-scan' class='anchor'>6.3.3. 迭代中使用 sql.Rows 的 Scan</a></h3>
+<a class="hiddenanchor" id="633-迭代中使用-sqlrows-的-scan"></a><h3 id='633-迭代中使用-sqlrows-的-scan' ><a href='#633-迭代中使用-sqlrows-的-scan'>6.3.3. 迭代中使用 sql.Rows 的 Scan</a></h3>
 <pre><code class="language-go">rows, err := db.Model(&User{}).Where("name = ?", "jinzhu").Select("name, age, email").Rows() // (*sql.Rows, error)
 defer rows.Close()
 
@@ -235,7 +235,7 @@ for rows.Next() {
   // do something
 }
 </code></pre>
-<h2 id='g' ><a href='#anchor_g' id='anchor_g' class='anchor'>6.4. 通用数据库接口 sql.DB</a></h2>
+<a class="hiddenanchor" id="g"></a><h2 id='g' ><a href='#g'>6.4. 通用数据库接口 sql.DB</a></h2>
 <p>从<code>*gorm.DB</code>连接获取通用数据库接口<a href="http://golang.org/pkg/database/sql/#DB" target="_blank" >*sql.DB</a></p>
 <pre><code class="language-go">// 获取通用数据库对象`*sql.DB`以使用其函数
 db.DB()
@@ -243,18 +243,18 @@ db.DB()
 // Ping
 db.DB().Ping()
 </code></pre>
-<h3 id='641-连接池' ><a href='#anchor_641-连接池' id='anchor_641-连接池' class='anchor'>6.4.1. 连接池</a></h3>
+<a class="hiddenanchor" id="641-连接池"></a><h3 id='641-连接池' ><a href='#641-连接池'>6.4.1. 连接池</a></h3>
 <pre><code class="language-go">db.DB().SetMaxIdleConns(10)
 db.DB().SetMaxOpenConns(100)
 </code></pre>
-<h2 id='cpk' ><a href='#anchor_cpk' id='anchor_cpk' class='anchor'>6.5. 复合主键</a></h2>
+<a class="hiddenanchor" id="cpk"></a><h2 id='cpk' ><a href='#cpk'>6.5. 复合主键</a></h2>
 <p>将多个字段设置为主键以启用复合主键</p>
 <pre><code class="language-go">type Product struct {
     ID           string `gorm:"primary_key"`
     LanguageCode string `gorm:"primary_key"`
 }
 </code></pre>
-<h2 id='l' ><a href='#anchor_l' id='anchor_l' class='anchor'>6.6. 日志</a></h2>
+<a class="hiddenanchor" id="l"></a><h2 id='l' ><a href='#l'>6.6. 日志</a></h2>
 <p>Gorm 有内置的日志记录器支持，默认情况下，它会打印发生的错误</p>
 <pre><code class="language-go">// 启用Logger，显示详细日志
 db.LogMode(true)
@@ -265,12 +265,12 @@ db.LogMode(false)
 // 调试单个操作，显示此操作的详细日志
 db.Debug().Where("name = ?", "jinzhu").First(&User{})
 </code></pre>
-<h3 id='661-自定义日志' ><a href='#anchor_661-自定义日志' id='anchor_661-自定义日志' class='anchor'>6.6.1. 自定义日志</a></h3>
+<a class="hiddenanchor" id="661-自定义日志"></a><h3 id='661-自定义日志' ><a href='#661-自定义日志'>6.6.1. 自定义日志</a></h3>
 <p>参考 GORM 的默认记录器如何自定义它<a href="https://github.com/jinzhu/gorm/blob/master/logger.go" target="_blank" >https://github.com/jinzhu/gorm/blob/master/logger.go</a></p>
 <pre><code class="language-go">db.SetLogger(gorm.Logger{revel.TRACE})
 db.SetLogger(log.New(os.Stdout, "\r\n", 0))
 </code></pre>
-</article>
+
           </article>
         </section>
       </div>

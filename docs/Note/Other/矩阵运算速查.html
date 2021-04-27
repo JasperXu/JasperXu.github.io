@@ -96,18 +96,18 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:11 </div></div><h1 id='矩阵运算速查' ><a href='#anchor_矩阵运算速查' id='anchor_矩阵运算速查' class='anchor'>矩阵运算速查</a></h1>
-<h2 id='线性代数基础-linear-algebra' ><a href='#anchor_线性代数基础-linear-algebra' id='anchor_线性代数基础-linear-algebra' class='anchor'>线性代数基础 Linear Algebra</a></h2>
-<h3 id='1-矩阵和向量-matrices-and-vectors' ><a href='#anchor_1-矩阵和向量-matrices-and-vectors' id='anchor_1-矩阵和向量-matrices-and-vectors' class='anchor'>1. 矩阵和向量 Matrices and Vectors</a></h3>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:11 </div></div><a class="hiddenanchor" id="矩阵运算速查"></a><h1 id='矩阵运算速查' ><a href='#矩阵运算速查'>矩阵运算速查</a></h1>
+<a class="hiddenanchor" id="线性代数基础-linear-algebra"></a><h2 id='线性代数基础-linear-algebra' ><a href='#线性代数基础-linear-algebra'>线性代数基础 Linear Algebra</a></h2>
+<a class="hiddenanchor" id="1-矩阵和向量-matrices-and-vectors"></a><h3 id='1-矩阵和向量-matrices-and-vectors' ><a href='#1-矩阵和向量-matrices-and-vectors'>1. 矩阵和向量 Matrices and Vectors</a></h3>
 <p>矩阵（Matrix）尺寸：行 x 列。 $ \left[ \begin{matrix} a &amp; b \ c &amp; d \ e &amp; f \end{matrix} \right ] $ 为 3×2 矩阵。</p>
 <p>向量（Vector）：尺寸为 n×1 的矩阵。</p>
 <p>标量（Scalar）：单一值。</p>
-<h3 id='2-加法和标量乘法' ><a href='#anchor_2-加法和标量乘法' id='anchor_2-加法和标量乘法' class='anchor'>2. 加法和标量乘法</a></h3>
+<a class="hiddenanchor" id="2-加法和标量乘法"></a><h3 id='2-加法和标量乘法' ><a href='#2-加法和标量乘法'>2. 加法和标量乘法</a></h3>
 <p>加法矩阵尺寸必须一致，矩阵中各个位置对应相加。</p>
 <p>$<br>\left[ \begin{matrix}<br>a &amp; b \<br>c &amp; d \<br>e &amp; f<br>\end{matrix} \right ]<br>+<br>\left[ \begin{matrix}<br>u &amp; v \<br>w &amp; x \<br>y &amp; z<br>\end{matrix} \right ]<br>=<br>\left[ \begin{matrix}<br>a+u &amp; b+v \<br>c+w &amp; d+x \<br>e+y &amp; f+z<br>\end{matrix} \right ]<br>$</p>
 <p>标量乘法，矩阵中的值一一计算即可。</p>
 <p>$<br>\left[ \begin{matrix}<br>a &amp; b \<br>c &amp; d \<br>e &amp; f<br>\end{matrix} \right ]<br>\times<br>x=<br>\left[ \begin{matrix}<br>ax &amp; bx \<br>cx &amp; dx \<br>ex &amp; fx<br>\end{matrix} \right ]<br>$</p>
-<h3 id='3-矩阵和向量乘法' ><a href='#anchor_3-矩阵和向量乘法' id='anchor_3-矩阵和向量乘法' class='anchor'>3. 矩阵和向量乘法</a></h3>
+<a class="hiddenanchor" id="3-矩阵和向量乘法"></a><h3 id='3-矩阵和向量乘法' ><a href='#3-矩阵和向量乘法'>3. 矩阵和向量乘法</a></h3>
 <p>矩阵和向量的乘法必须满足：$<code>A_{m \times n} * B_{n \times o} = C_{m \times o}</code>$</p>
 <p>即：A 的列数必须等于 B 的行数。结果 C 的行数等于 A 的行数，C 的列数等于 B 的列数。</p>
 <p>$<br>\left[ \begin{matrix}<br>a &amp; b \<br>c &amp; d \<br>e &amp; f<br>\end{matrix} \right ]<br>\times<br>\left[ \begin{matrix}<br>w &amp; x \<br>y &amp; z<br>\end{matrix} \right ]<br>=<br>\left[ \begin{matrix}<br>aw+by &amp; ax+bz \<br>cw+dy &amp; cx+dz \<br>ew+fy &amp; ex+fz<br>\end{matrix} \right ]<br>$</p>
@@ -115,12 +115,12 @@
 <p>!!! 符合结合律：$ \left ( A \times B \right ) \times C = A \times \left ( B \times C \right ) $</p>
 <p>如果符合：$ A \times I = I \times A = A$ 则 $I$ 为单位矩阵（identity matrix）</p>
 <p>$<br>\left[ \begin{matrix}<br>1<br>\end{matrix} \right ]<br>\quad<br>\left[ \begin{matrix}<br>1 &amp; 0 \<br>0 &amp; 1 \<br>\end{matrix} \right ]<br>\quad<br>\left[ \begin{matrix}<br>1 &amp; 0 &amp; 0 \<br>0 &amp; 1 &amp; 0\<br>0 &amp; 0 &amp; 1<br>\end{matrix} \right ]<br>$</p>
-<h3 id='4-翻转和置换-inverse-and-transpose' ><a href='#anchor_4-翻转和置换-inverse-and-transpose' id='anchor_4-翻转和置换-inverse-and-transpose' class='anchor'>4. 翻转和置换 Inverse and Transpose</a></h3>
+<a class="hiddenanchor" id="4-翻转和置换-inverse-and-transpose"></a><h3 id='4-翻转和置换-inverse-and-transpose' ><a href='#4-翻转和置换-inverse-and-transpose'>4. 翻转和置换 Inverse and Transpose</a></h3>
 <p>逆矩阵：不是所有矩阵都存在逆矩阵。$A$的逆矩阵记为 $A^{-1}$ 。</p>
 <p>$<br>AA^{-1} = A^{-1}A = I<br>$</p>
 <p>置换：$A$的置换矩阵记为 $A^{T}$ 。</p>
 <p>$<br>A = \left[ \begin{matrix}<br>a &amp; b \<br>c &amp; d \<br>e &amp; f<br>\end{matrix} \right ]<br>\quad<br>A^{T} = \left[ \begin{matrix}<br>a &amp; c &amp; e \<br>b &amp; d &amp; f<br>\end{matrix} \right ]<br>$</p>
-</article>
+
           </article>
         </section>
       </div>

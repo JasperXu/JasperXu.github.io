@@ -96,12 +96,12 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:13 </div></div><h1 id='npm-上传自己的包' ><a href='#anchor_npm-上传自己的包' id='anchor_npm-上传自己的包' class='anchor'>npm 上传自己的包</a></h1>
-<h2 id='1-新建项目' ><a href='#anchor_1-新建项目' id='anchor_1-新建项目' class='anchor'>1. 新建项目</a></h2>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:13 </div></div><a class="hiddenanchor" id="npm-上传自己的包"></a><h1 id='npm-上传自己的包' ><a href='#npm-上传自己的包'>npm 上传自己的包</a></h1>
+<a class="hiddenanchor" id="1-新建项目"></a><h2 id='1-新建项目' ><a href='#1-新建项目'>1. 新建项目</a></h2>
 <pre><code class="language-bash">npm init
 </code></pre>
 <p>中间会让你填写一些东西，自己填就行了。</p>
-<h2 id='2-登陆-npm' ><a href='#anchor_2-登陆-npm' id='anchor_2-登陆-npm' class='anchor'>2. 登陆 npm</a></h2>
+<a class="hiddenanchor" id="2-登陆-npm"></a><h2 id='2-登陆-npm' ><a href='#2-登陆-npm'>2. 登陆 npm</a></h2>
 <pre><code class="language-bash"># 设置到原始的npm源，如果你改了国内源就需要这个
 npm config set registry http://registry.npmjs.org
 # 登陆
@@ -111,10 +111,10 @@ Password：这里填你的npm密码
 Email：(this IS public)这里填你的邮箱
 Logged xxxxxxxxxxxxx
 </code></pre>
-<h2 id='3-发布' ><a href='#anchor_3-发布' id='anchor_3-发布' class='anchor'>3. 发布</a></h2>
+<a class="hiddenanchor" id="3-发布"></a><h2 id='3-发布' ><a href='#3-发布'>3. 发布</a></h2>
 <pre><code class="language-bash">npm publish
 </code></pre>
-<h2 id='4-维护' ><a href='#anchor_4-维护' id='anchor_4-维护' class='anchor'>4. 维护</a></h2>
+<a class="hiddenanchor" id="4-维护"></a><h2 id='4-维护' ><a href='#4-维护'>4. 维护</a></h2>
 <p>下次使用 publish 必须要修改版本号。</p>
 <p>X.Y.Z 分别代表主版本号、次版本号和补丁版本号。</p>
 <ul>
@@ -127,14 +127,14 @@ Logged xxxxxxxxxxxxx
 npm unpublish 包名 --force    //强制撤销
 npm unpublish 包名@1.0.0    //可以撤销指定版本 
 </code></pre>
-<h2 id='5-通过-cdn-访问' ><a href='#anchor_5-通过-cdn-访问' id='anchor_5-通过-cdn-访问' class='anchor'>5. 通过 CDN 访问</a></h2>
-<h3 id='jsdelivr' ><a href='#anchor_jsdelivr' id='anchor_jsdelivr' class='anchor'>jsdelivr</a></h3>
+<a class="hiddenanchor" id="5-通过-cdn-访问"></a><h2 id='5-通过-cdn-访问' ><a href='#5-通过-cdn-访问'>5. 通过 CDN 访问</a></h2>
+<a class="hiddenanchor" id="jsdelivr"></a><h3 id='jsdelivr' ><a href='#jsdelivr'>jsdelivr</a></h3>
 <pre><code>https://cdn.jsdelivr.net/npm/包名@1.0.0/dist/文件名.min.js
 </code></pre>
-<h3 id='unpkg' ><a href='#anchor_unpkg' id='anchor_unpkg' class='anchor'>unpkg</a></h3>
+<a class="hiddenanchor" id="unpkg"></a><h3 id='unpkg' ><a href='#unpkg'>unpkg</a></h3>
 <pre><code>https://unpkg.com/npm/包名@1.0.0/dist/文件名.min.js
 </code></pre>
-</article>
+
           </article>
         </section>
       </div>

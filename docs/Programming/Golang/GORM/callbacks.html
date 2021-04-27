@@ -137,9 +137,9 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-23 19:31 </div></div><h1 id='5-callbacks' ><a href='#anchor_5-callbacks' id='anchor_5-callbacks' class='anchor'>5. Callbacks</a></h1>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-23 19:31 </div></div><a class="hiddenanchor" id="5-callbacks"></a><h1 id='5-callbacks' ><a href='#5-callbacks'>5. Callbacks</a></h1>
 <p>您可以将回调方法定义为模型结构的指针，在创建，更新，查询，删除时将被调用，如果任何回调返回错误，gorm 将停止未来操作并回滚所有更改。</p>
-<h2 id='51-创建对象' ><a href='#anchor_51-创建对象' id='anchor_51-创建对象' class='anchor'>5.1. 创建对象</a></h2>
+<a class="hiddenanchor" id="51-创建对象"></a><h2 id='51-创建对象' ><a href='#51-创建对象'>5.1. 创建对象</a></h2>
 <p>创建过程中可用的回调</p>
 <pre><code class="language-go">// begin transaction 开始事物
 BeforeSave
@@ -153,7 +153,7 @@ AfterCreate
 AfterSave
 // commit or rollback transaction 提交或回滚事务
 </code></pre>
-<h2 id='52-更新对象' ><a href='#anchor_52-更新对象' id='anchor_52-更新对象' class='anchor'>5.2. 更新对象</a></h2>
+<a class="hiddenanchor" id="52-更新对象"></a><h2 id='52-更新对象' ><a href='#52-更新对象'>5.2. 更新对象</a></h2>
 <p>更新过程中可用的回调</p>
 <pre><code class="language-go">// begin transaction 开始事物
 BeforeSave
@@ -166,7 +166,7 @@ AfterUpdate
 AfterSave
 // commit or rollback transaction 提交或回滚事务
 </code></pre>
-<h2 id='53-删除对象' ><a href='#anchor_53-删除对象' id='anchor_53-删除对象' class='anchor'>5.3. 删除对象</a></h2>
+<a class="hiddenanchor" id="53-删除对象"></a><h2 id='53-删除对象' ><a href='#53-删除对象'>5.3. 删除对象</a></h2>
 <p>删除过程中可用的回调</p>
 <pre><code class="language-go">// begin transaction 开始事物
 BeforeDelete
@@ -174,13 +174,13 @@ BeforeDelete
 AfterDelete
 // commit or rollback transaction 提交或回滚事务
 </code></pre>
-<h2 id='querying-an-object' ><a href='#anchor_querying-an-object' id='anchor_querying-an-object' class='anchor'>5.4. 查询对象</a></h2>
+<a class="hiddenanchor" id="querying-an-object"></a><h2 id='querying-an-object' ><a href='#querying-an-object'>5.4. 查询对象</a></h2>
 <p>查询过程中可用的回调</p>
 <pre><code class="language-go">// load data from database 从数据库加载数据
 // Preloading (edger loading) 预加载（加载）
 AfterFind
 </code></pre>
-<h2 id='55-回调示例' ><a href='#anchor_55-回调示例' id='anchor_55-回调示例' class='anchor'>5.5. 回调示例</a></h2>
+<a class="hiddenanchor" id="55-回调示例"></a><h2 id='55-回调示例' ><a href='#55-回调示例'>5.5. 回调示例</a></h2>
 <pre><code class="language-go">func (u *User) BeforeUpdate() (err error) {
     if u.readonly() {
         err = errors.New("read only user")
@@ -207,7 +207,7 @@ func (u *User) AfterCreate() (err error) {
     return
 }
 </code></pre>
-</article>
+
           </article>
         </section>
       </div>

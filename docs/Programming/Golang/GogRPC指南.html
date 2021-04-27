@@ -96,19 +96,19 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-25 16:13 </div></div><h1 id='go-grpc-指南' ><a href='#anchor_go-grpc-指南' id='anchor_go-grpc-指南' class='anchor'>Go gRPC 指南</a></h1>
-<h2 id='1-准备工作' ><a href='#anchor_1-准备工作' id='anchor_1-准备工作' class='anchor'>1. 准备工作</a></h2>
-<h3 id='11-安装-protocol-buffers' ><a href='#anchor_11-安装-protocol-buffers' id='anchor_11-安装-protocol-buffers' class='anchor'>1.1. 安装 Protocol Buffers</a></h3>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-25 16:13 </div></div><a class="hiddenanchor" id="go-grpc-指南"></a><h1 id='go-grpc-指南' ><a href='#go-grpc-指南'>Go gRPC 指南</a></h1>
+<a class="hiddenanchor" id="1-准备工作"></a><h2 id='1-准备工作' ><a href='#1-准备工作'>1. 准备工作</a></h2>
+<a class="hiddenanchor" id="11-安装-protocol-buffers"></a><h3 id='11-安装-protocol-buffers' ><a href='#11-安装-protocol-buffers'>1.1. 安装 Protocol Buffers</a></h3>
 <p><a href="https://developers.google.com/protocol-buffers/" target="_blank" >https://developers.google.com/protocol-buffers/</a></p>
 <p>直接下载对应二进制版本即可。将<code>protoc</code>放到 Path 目录中。</p>
-<h3 id='12-安装下面的包' ><a href='#anchor_12-安装下面的包' id='anchor_12-安装下面的包' class='anchor'>1.2. 安装下面的包</a></h3>
+<a class="hiddenanchor" id="12-安装下面的包"></a><h3 id='12-安装下面的包' ><a href='#12-安装下面的包'>1.2. 安装下面的包</a></h3>
 <pre><code class="language-bash">go get -u github.com/golang/protobuf/proto
 go get -u github.com/golang/protobuf/protoc-gen-go
 go get -u google.golang.org/grpc
 go get -u golang.org/x/net/context
 </code></pre>
-<h2 id='2-实现' ><a href='#anchor_2-实现' id='anchor_2-实现' class='anchor'>2. 实现</a></h2>
-<h3 id='21-proto' ><a href='#anchor_21-proto' id='anchor_21-proto' class='anchor'>2.1. Proto</a></h3>
+<a class="hiddenanchor" id="2-实现"></a><h2 id='2-实现' ><a href='#2-实现'>2. 实现</a></h2>
+<a class="hiddenanchor" id="21-proto"></a><h3 id='21-proto' ><a href='#21-proto'>2.1. Proto</a></h3>
 <p>创建文件<code>protos/helloworld.proto</code></p>
 <pre><code class="language-protobuf">syntax = "proto3";
 
@@ -134,7 +134,7 @@ message HelloReply {
 <pre><code class="language-bash">protoc --go_out=plugins=grpc:. *.proto
 </code></pre>
 <p>即可生成 <code>protos/helloworld.pb.go</code> 文件</p>
-<h3 id='22-server' ><a href='#anchor_22-server' id='anchor_22-server' class='anchor'>2.2. Server</a></h3>
+<a class="hiddenanchor" id="22-server"></a><h3 id='22-server' ><a href='#22-server'>2.2. Server</a></h3>
 <pre><code class="language-go">package main
 
 import (
@@ -174,7 +174,7 @@ func main() {
     }
 }
 </code></pre>
-<h3 id='23-client' ><a href='#anchor_23-client' id='anchor_23-client' class='anchor'>2.3. Client</a></h3>
+<a class="hiddenanchor" id="23-client"></a><h3 id='23-client' ><a href='#23-client'>2.3. Client</a></h3>
 <pre><code class="language-go">package main
 
 import (
@@ -213,13 +213,13 @@ func main() {
     log.Printf("Greeting: %s", r.Message)
 }
 </code></pre>
-<h2 id='3-其他' ><a href='#anchor_3-其他' id='anchor_3-其他' class='anchor'>3. 其他</a></h2>
-<h3 id='31-proto-指南' ><a href='#anchor_31-proto-指南' id='anchor_31-proto-指南' class='anchor'>3.1. Proto 指南</a></h3>
+<a class="hiddenanchor" id="3-其他"></a><h2 id='3-其他' ><a href='#3-其他'>3. 其他</a></h2>
+<a class="hiddenanchor" id="31-proto-指南"></a><h3 id='31-proto-指南' ><a href='#31-proto-指南'>3.1. Proto 指南</a></h3>
 <p>中文：<a href="http://blog.csdn.net/u011518120/article/details/54604615#PackagesandNameResolution" target="_blank" >http://blog.csdn.net/u011518120/article/details/54604615#PackagesandNameResolution</a></p>
 <p>原版：<a href="https://developers.google.com/protocol-buffers/docs/overview?hl=zh-cn" target="_blank" >https://developers.google.com/protocol-buffers/docs/overview?hl=zh-cn</a></p>
 <p>go 语言：<a href="https://developers.google.com/protocol-buffers/docs/gotutorial?hl=zh-cn" target="_blank" >https://developers.google.com/protocol-buffers/docs/gotutorial?hl=zh-cn</a></p>
 <p>API 部分：<a href="https://developers.google.com/protocol-buffers/docs/reference/overview?hl=zh-cn" target="_blank" >https://developers.google.com/protocol-buffers/docs/reference/overview?hl=zh-cn</a></p>
-</article>
+
           </article>
         </section>
       </div>

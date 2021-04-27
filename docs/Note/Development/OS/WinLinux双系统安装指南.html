@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>JasperXu's 笔记本</title>
-    <meta name="keywords" content="开发环境设置,Win,Linux,双系统" />
+    <meta name="keywords" content="Development,Win,Linux,双系统" />
     <meta name="description" content="Win Linux 双系统安装指南" />
     <meta name="tags" content="Win, Linux, 双系统" />
-    <meta name="categories" content="开发环境设置, 系统设置" />
+    <meta name="categories" content="Development, 系统" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
     <meta name="description" content="JasperXu's 笔记本" />
@@ -59,7 +59,7 @@
 
 <ul>
 <li><a href="/">首页</a></li>
-<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
 <li><a href="/Note/Development/#OS">系统设置</a><ul>
 <li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
 <li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
@@ -75,9 +75,15 @@
 <li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
 </ul>
 </li>
-<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
 <li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
 <li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
 </ul>
 </li>
 </ul>
@@ -97,7 +103,7 @@
 
 <ul>
 <li><a href="/">首页</a></li>
-<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
 <li><a href="/Note/Development/#OS">系统设置</a><ul>
 <li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
 <li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
@@ -113,9 +119,15 @@
 <li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
 </ul>
 </li>
-<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
 <li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
 <li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
 </ul>
 </li>
 </ul>
@@ -124,15 +136,15 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:20 </div></div><h1 id='win-linux-双系统安装指南' ><a href='#anchor_win-linux-双系统安装指南' id='anchor_win-linux-双系统安装指南' class='anchor'>Win Linux 双系统安装指南</a></h1>
-<h2 id='环境说明' ><a href='#anchor_环境说明' id='anchor_环境说明' class='anchor'>环境说明</a></h2>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-27 17:52 </div></div><a class="hiddenanchor" id="win-linux-双系统安装指南"></a><h1 id='win-linux-双系统安装指南' ><a href='#win-linux-双系统安装指南'>Win Linux 双系统安装指南</a></h1>
+<a class="hiddenanchor" id="环境说明"></a><h2 id='环境说明' ><a href='#环境说明'>环境说明</a></h2>
 <p>硬件：一块 240G NVMe，一块 240G SSD，一块 2T 的 HDD。</p>
 <p>系统：Linux Mint 18.2，Windows 10 Enterprise Version 1703 Update June 2017</p>
 <p>分配：由于工作原因，我的主系统为 Linux Mint 所以我的分配方式如下：</p>
 <p>Mint 安装在 NVMe 上，Win10 安装在 SSD 上。</p>
 <p>HDD 分成两个 1T 的盘一个 NTFS 一个 Ext4。</p>
 <p>安装顺序：先装 Win10，再装 Mint</p>
-<h2 id='安装-win10' ><a href='#anchor_安装-win10' id='anchor_安装-win10' class='anchor'>安装 Win10</a></h2>
+<a class="hiddenanchor" id="安装-win10"></a><h2 id='安装-win10' ><a href='#安装-win10'>安装 Win10</a></h2>
 <p>进入系统安装后，首先在 NVMe 上新建分区，会提示需要自动建立几个分区。点继续。</p>
 <p>之后再顺次将 SSD 和 HDD 都建立分区。最后分区如下。</p>
 <p>NVMe：MSR 分区(16M)，恢复分区(450M)，EFI 分区(100M)，一个主分区</p>
@@ -140,13 +152,13 @@
 <p>HDD：MSR 分区(16M)，主分区</p>
 <p>建立好之后，选择 SSD 主分区，继续安装。</p>
 <p>进入系统后，进磁盘管理，将 HDD 上的分区删除，再建立一个 1T 的分区格式化。</p>
-<h2 id='安装-mint' ><a href='#anchor_安装-mint' id='anchor_安装-mint' class='anchor'>安装 Mint</a></h2>
+<a class="hiddenanchor" id="安装-mint"></a><h2 id='安装-mint' ><a href='#安装-mint'>安装 Mint</a></h2>
 <p>进入系统安装后，选择自定义分区。建立主分区，不要建立逻辑分区！</p>
 <p>在 NVMe 上将 200G 的分区删除，然后建立一个 2G 的分区挂载 Swap，再建立一个最大分区挂载/。</p>
 <p>这里 Swap 分区可以和内存一样大，如果内存较大则可以只建立很小的 swap 即可。</p>
 <p>可以将 HDD 挂载到你喜欢的目录，我这里直接挂载到/data 目录。</p>
 <p><strong>安装引导区 记得选 NVMe 上的引导区 好像是 EFI 分区</strong></p>
-<h2 id='其他说明和调整' ><a href='#anchor_其他说明和调整' id='anchor_其他说明和调整' class='anchor'>其他说明和调整</a></h2>
+<a class="hiddenanchor" id="其他说明和调整"></a><h2 id='其他说明和调整' ><a href='#其他说明和调整'>其他说明和调整</a></h2>
 <ul>
 <li><p>硬盘设置问题，所有硬盘必须使用 GTP 分区。否则会有读取不正常状态，默认为 MBR 分区方式。</p>
 </li>
@@ -173,7 +185,7 @@
 <ul>
 <li>Win 读写 Ext4 文件，需要安装 Ext2Fsd 软件。</li>
 </ul>
-</article>
+
           </article>
         </section>
       </div>

@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>JasperXu's 笔记本</title>
-    <meta name="keywords" content="开发环境设置,程序静默运行" />
+    <meta name="keywords" content="Development,程序静默运行" />
     <meta name="description" content="程序静默运行" />
     <meta name="tags" content="程序静默运行" />
-    <meta name="categories" content="开发环境设置, 系统设置" />
+    <meta name="categories" content="Development, 系统" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
     <meta name="description" content="JasperXu's 笔记本" />
@@ -59,7 +59,7 @@
 
 <ul>
 <li><a href="/">首页</a></li>
-<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
 <li><a href="/Note/Development/#OS">系统设置</a><ul>
 <li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
 <li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
@@ -75,9 +75,15 @@
 <li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
 </ul>
 </li>
-<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
 <li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
 <li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
 </ul>
 </li>
 </ul>
@@ -97,7 +103,7 @@
 
 <ul>
 <li><a href="/">首页</a></li>
-<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
 <li><a href="/Note/Development/#OS">系统设置</a><ul>
 <li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
 <li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
@@ -113,9 +119,15 @@
 <li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
 </ul>
 </li>
-<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
 <li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
 <li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
 </ul>
 </li>
 </ul>
@@ -124,17 +136,17 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 23:40 </div></div><h1 id='程序静默运行' ><a href='#anchor_程序静默运行' id='anchor_程序静默运行' class='anchor'>程序静默运行</a></h1>
-<h2 id='1-静默执行' ><a href='#anchor_1-静默执行' id='anchor_1-静默执行' class='anchor'>1. 静默执行</a></h2>
-<h3 id='11-windows' ><a href='#anchor_11-windows' id='anchor_11-windows' class='anchor'>1.1. Windows</a></h3>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-27 17:52 </div></div><a class="hiddenanchor" id="程序静默运行"></a><h1 id='程序静默运行' ><a href='#程序静默运行'>程序静默运行</a></h1>
+<a class="hiddenanchor" id="1-静默执行"></a><h2 id='1-静默执行' ><a href='#1-静默执行'>1. 静默执行</a></h2>
+<a class="hiddenanchor" id="11-windows"></a><h3 id='11-windows' ><a href='#11-windows'>1.1. Windows</a></h3>
 <p>编译时调整为<code>go build - ldflags=&quot;-H windows&quot;</code></p>
 <p>或使用 <a href="https://github.com/jasperxu/NotificationTool" target="_blank" >NotificationTool</a> 包一次。</p>
-<h3 id='12-linux' ><a href='#anchor_12-linux' id='anchor_12-linux' class='anchor'>1.2. Linux</a></h3>
+<a class="hiddenanchor" id="12-linux"></a><h3 id='12-linux' ><a href='#12-linux'>1.2. Linux</a></h3>
 <pre><code class="language-bash"># 静默启动，日志保存到app.log
 nohup ./app > app.log 2>&1 &
 </code></pre>
-<h2 id='2-以服务方式随系统启动' ><a href='#anchor_2-以服务方式随系统启动' id='anchor_2-以服务方式随系统启动' class='anchor'>2. 以服务方式随系统启动</a></h2>
-<h3 id='21-windows' ><a href='#anchor_21-windows' id='anchor_21-windows' class='anchor'>2.1. Windows</a></h3>
+<a class="hiddenanchor" id="2-以服务方式随系统启动"></a><h2 id='2-以服务方式随系统启动' ><a href='#2-以服务方式随系统启动'>2. 以服务方式随系统启动</a></h2>
+<a class="hiddenanchor" id="21-windows"></a><h3 id='21-windows' ><a href='#21-windows'>2.1. Windows</a></h3>
 <p>使用 <a href="https://github.com/winsw/winsw" target="_blank" >WinSW</a> 包一次。</p>
 <pre><code class="language-bash"># 安装服务
 WinSW install
@@ -158,7 +170,7 @@ WinSW uninstall
   <workingdirectory>%BASE%</workingdirectory>
 </configuration>
 </code></pre>
-<h3 id='22-linux' ><a href='#anchor_22-linux' id='anchor_22-linux' class='anchor'>2.2. Linux</a></h3>
+<a class="hiddenanchor" id="22-linux"></a><h3 id='22-linux' ><a href='#22-linux'>2.2. Linux</a></h3>
 <p>示例中服务为 <code>gofs</code> ，路径为 <code>/data/gofs</code> ， 执行文件名为 <code>gofs_linux_amd64</code> 。</p>
 <pre><code class="language-bash"># 编辑启动文件
 sudo vi /etc/init.d/gofs
@@ -303,7 +315,7 @@ status)
 esac
 exit 0
 </code></pre>
-</article>
+
           </article>
         </section>
       </div>

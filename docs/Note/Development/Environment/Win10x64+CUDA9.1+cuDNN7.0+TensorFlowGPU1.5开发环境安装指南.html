@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>JasperXu's 笔记本</title>
-    <meta name="keywords" content="{ inject-keywords }" />
-    <meta name="description" content="{ inject-description }" />
-    <meta name="tags" content="{ inject-tags }" />
-    <meta name="categories" content="{ inject-categories }" />
+    <meta name="keywords" content="Development,Win,CUDA,cuDNN,TensorFlow,安装" />
+    <meta name="description" content="Win10 x64 + CUDA 10.0 + cuDNN v7.5 + TensorFlow GPU 1.15 安装指南" />
+    <meta name="tags" content="Win, CUDA, cuDNN, TensorFlow" />
+    <meta name="categories" content="Development, 环境" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
     <meta name="description" content="JasperXu's 笔记本" />
@@ -59,7 +59,7 @@
 
 <ul>
 <li><a href="/">首页</a></li>
-<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
 <li><a href="/Note/Development/#OS">系统设置</a><ul>
 <li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
 <li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
@@ -75,9 +75,15 @@
 <li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
 </ul>
 </li>
-<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
 <li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
 <li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
 </ul>
 </li>
 </ul>
@@ -97,7 +103,7 @@
 
 <ul>
 <li><a href="/">首页</a></li>
-<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
 <li><a href="/Note/Development/#OS">系统设置</a><ul>
 <li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
 <li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
@@ -113,9 +119,15 @@
 <li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
 </ul>
 </li>
-<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
 <li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
 <li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
 </ul>
 </li>
 </ul>
@@ -124,36 +136,36 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;</div><h1 id='win10-x64--cuda-100--cudnn-v75--tensorflow-gpu-113-安装指南' ><a href='#anchor_win10-x64--cuda-100--cudnn-v75--tensorflow-gpu-113-安装指南' id='anchor_win10-x64--cuda-100--cudnn-v75--tensorflow-gpu-113-安装指南' class='anchor'>Win10 x64 + CUDA 10.0 + cuDNN v7.5 + TensorFlow GPU 1.13 安装指南</a></h1>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-27 21:53 </div></div><a class="hiddenanchor" id="win10-x64--cuda-100--cudnn-v75--tensorflow-gpu-115-安装指南"></a><h1 id='win10-x64--cuda-100--cudnn-v75--tensorflow-gpu-115-安装指南' ><a href='#win10-x64--cuda-100--cudnn-v75--tensorflow-gpu-115-安装指南'>Win10 x64 + CUDA 10.0 + cuDNN v7.5 + TensorFlow GPU 1.15 安装指南</a></h1>
 <p>Update : 2019.03.08</p>
-<h2 id='0-环境说明' ><a href='#anchor_0-环境说明' id='anchor_0-环境说明' class='anchor'>0. 环境说明</a></h2>
+<a class="hiddenanchor" id="0-环境说明"></a><h2 id='0-环境说明' ><a href='#0-环境说明'>0. 环境说明</a></h2>
 <p>硬件：Ryzen R7 1700x + GTX 1080Ti</p>
 <p>系统：Windows 10 Enterprise Version 1809 Update March 2019</p>
-<h2 id='1-前期工作' ><a href='#anchor_1-前期工作' id='anchor_1-前期工作' class='anchor'>1. 前期工作</a></h2>
+<a class="hiddenanchor" id="1-前期工作"></a><h2 id='1-前期工作' ><a href='#1-前期工作'>1. 前期工作</a></h2>
 <p>NVIDIA 419.35 驱动</p>
 <p>Visual Studio 2017 （需要 C++部分）</p>
 <p>Python 3.6.x x64</p>
-<h2 id='2-安装-cuda-和-cudnn' ><a href='#anchor_2-安装-cuda-和-cudnn' id='anchor_2-安装-cuda-和-cudnn' class='anchor'>2. 安装 CUDA 和 cuDNN</a></h2>
-<h3 id='21-cuda-100' ><a href='#anchor_21-cuda-100' id='anchor_21-cuda-100' class='anchor'>2.1. CUDA 10.0</a></h3>
+<a class="hiddenanchor" id="2-安装-cuda-和-cudnn"></a><h2 id='2-安装-cuda-和-cudnn' ><a href='#2-安装-cuda-和-cudnn'>2. 安装 CUDA 和 cuDNN</a></h2>
+<a class="hiddenanchor" id="21-cuda-100"></a><h3 id='21-cuda-100' ><a href='#21-cuda-100'>2.1. CUDA 10.0</a></h3>
 <p>下载地址：<a href="https://developer.nvidia.com/cuda-10.0-download-archive" target="_blank" >https://developer.nvidia.com/cuda-10.0-download-archive</a></p>
-<h3 id='22-cudnn-v75-for-cuda-100' ><a href='#anchor_22-cudnn-v75-for-cuda-100' id='anchor_22-cudnn-v75-for-cuda-100' class='anchor'>2.2. cuDNN v7.5 for CUDA 10.0</a></h3>
+<a class="hiddenanchor" id="22-cudnn-v75-for-cuda-100"></a><h3 id='22-cudnn-v75-for-cuda-100' ><a href='#22-cudnn-v75-for-cuda-100'>2.2. cuDNN v7.5 for CUDA 10.0</a></h3>
 <p>下载地址：<a href="https://developer.nvidia.com/rdp/cudnn-download" target="_blank" >https://developer.nvidia.com/rdp/cudnn-download</a></p>
 <p>解压后覆盖到<code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0</code>目录即可。</p>
-<h3 id='23-cuda-profiler-tools-interface-cupti可选' ><a href='#anchor_23-cuda-profiler-tools-interface-cupti可选' id='anchor_23-cuda-profiler-tools-interface-cupti可选' class='anchor'>2.3. CUDA Profiler Tools Interface (CUPTI)[可选]</a></h3>
+<a class="hiddenanchor" id="23-cuda-profiler-tools-interface-cupti可选"></a><h3 id='23-cuda-profiler-tools-interface-cupti可选' ><a href='#23-cuda-profiler-tools-interface-cupti可选'>2.3. CUDA Profiler Tools Interface (CUPTI)[可选]</a></h3>
 <p>下载地址：<a href="https://developer.nvidia.com/CUPTI" target="_blank" >https://developer.nvidia.com/CUPTI</a></p>
 <p>CUDA 工具包附带</p>
-<h3 id='24-ncll-24可选' ><a href='#anchor_24-ncll-24可选' id='anchor_24-ncll-24可选' class='anchor'>2.4. NCLL 2.4[可选]</a></h3>
+<a class="hiddenanchor" id="24-ncll-24可选"></a><h3 id='24-ncll-24可选' ><a href='#24-ncll-24可选'>2.4. NCLL 2.4[可选]</a></h3>
 <p>下载地址：<a href="https://developer.nvidia.com/nccl/nccl-download" target="_blank" >https://developer.nvidia.com/nccl/nccl-download</a></p>
 <p>可实现多 GPU 支持。仅支持 Linux。</p>
-<h3 id='25-tensorrt-50可选' ><a href='#anchor_25-tensorrt-50可选' id='anchor_25-tensorrt-50可选' class='anchor'>2.5. TensorRT 5.0[可选]</a></h3>
+<a class="hiddenanchor" id="25-tensorrt-50可选"></a><h3 id='25-tensorrt-50可选' ><a href='#25-tensorrt-50可选'>2.5. TensorRT 5.0[可选]</a></h3>
 <p>下载地址：<a href="https://developer.nvidia.com/nvidia-tensorrt-download" target="_blank" >https://developer.nvidia.com/nvidia-tensorrt-download</a></p>
 <p>可缩短在某些模型上进行推断的延迟并提高吞吐量。仅支持 Linux。</p>
-<h2 id='3-安装-dxsdk_jun10【不确定是否必须】' ><a href='#anchor_3-安装-dxsdk_jun10【不确定是否必须】' id='anchor_3-安装-dxsdk_jun10【不确定是否必须】' class='anchor'>3. 安装 DXSDK_Jun10【不确定是否必须】</a></h2>
+<a class="hiddenanchor" id="3-安装-dxsdk_jun10【不确定是否必须】"></a><h2 id='3-安装-dxsdk_jun10【不确定是否必须】' ><a href='#3-安装-dxsdk_jun10【不确定是否必须】'>3. 安装 DXSDK_Jun10【不确定是否必须】</a></h2>
 <p>DXSDK_Jun10.exe 下载地址：<a href="https://www.microsoft.com/en-us/download/details.aspx?id=6812" target="_blank" >https://www.microsoft.com/en-us/download/details.aspx?id=6812</a></p>
 <p>Win10 安装时会提示 S1023 的错误，不用管。<code>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\d3dx9.h</code> ，<code>d3dx10.h</code> ，<code>d3dx11.h</code> 文件存在就可以。</p>
 <p>这些都装完了就可以到<code>C:\ProgramData\NVIDIA Corporation\CUDA Samples\v8.0</code>中打开项目。</p>
 <p>一共 155 个，都编译成功即可。然后到<code>C:\ProgramData\NVIDIA Corporation\CUDA Samples\v8.0\bin\win64\</code>下的<code>Debug</code>或<code>Release</code>内找到<code>deviceQuery.exe</code>，用命令行运行，不报错说明 CUDA 安装成功。</p>
-<h2 id='4-安装-tensorflow-gpu-1131' ><a href='#anchor_4-安装-tensorflow-gpu-1131' id='anchor_4-安装-tensorflow-gpu-1131' class='anchor'>4. 安装 Tensorflow GPU 1.13.1</a></h2>
+<a class="hiddenanchor" id="4-安装-tensorflow-gpu-1131"></a><h2 id='4-安装-tensorflow-gpu-1131' ><a href='#4-安装-tensorflow-gpu-1131'>4. 安装 Tensorflow GPU 1.13.1</a></h2>
 <pre><code class="language-bash">pip install --upgrade tensorflow-gpu
 </code></pre>
 <p>使用下列代码测试安装正确性</p>
@@ -162,17 +174,17 @@
 >>> sess = tf.Session()
 >>> print(sess.run(hello))
 </code></pre>
-<h2 id='5-常用库' ><a href='#anchor_5-常用库' id='anchor_5-常用库' class='anchor'>5. 常用库</a></h2>
+<a class="hiddenanchor" id="5-常用库"></a><h2 id='5-常用库' ><a href='#5-常用库'>5. 常用库</a></h2>
 <pre><code class="language-bash">pip install --upgrade numpy
 pip install --upgrade scipy
 pip install --upgrade pandas
 pip install --upgrade keras
 pip install --upgrade matplotlib
 </code></pre>
-<h2 id='6-其他' ><a href='#anchor_6-其他' id='anchor_6-其他' class='anchor'>6. 其他</a></h2>
+<a class="hiddenanchor" id="6-其他"></a><h2 id='6-其他' ><a href='#6-其他'>6. 其他</a></h2>
 <p>Ryzen R7 1700x 支持：SSE、SSE2、SSE4.1、SSE4.2、AVX、AVX2、FMA。</p>
 <p>Win10 下的<code>nvidia-smi</code>在 <code>C:\Program Files\NVIDIA Corporation\NVSMI</code> 目录内。</p>
-</article>
+
           </article>
         </section>
       </div>

@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>JasperXu's 笔记本</title>
-    <meta name="keywords" content="开发环境设置,镜像,代理" />
+    <meta name="keywords" content="Development,镜像,代理" />
     <meta name="description" content="镜像设置或代理设置" />
     <meta name="tags" content="镜像, 代理" />
-    <meta name="categories" content="开发环境设置, 系统设置" />
+    <meta name="categories" content="Development, 系统" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="baidu_union_verify" content="e433cc4f7710de79eb4383e0ab66872f" />
     <meta name="description" content="JasperXu's 笔记本" />
@@ -59,7 +59,7 @@
 
 <ul>
 <li><a href="/">首页</a></li>
-<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
 <li><a href="/Note/Development/#OS">系统设置</a><ul>
 <li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
 <li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
@@ -75,9 +75,15 @@
 <li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
 </ul>
 </li>
-<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
 <li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
 <li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
 </ul>
 </li>
 </ul>
@@ -97,7 +103,7 @@
 
 <ul>
 <li><a href="/">首页</a></li>
-<li><a href="/Note/Development/">开发环境设置</a></li>
+<li><a href="/Note/Development/">开发类文章</a></li>
 <li><a href="/Note/Development/#OS">系统设置</a><ul>
 <li><a href="/Note/Development/OS/环境变量.html">环境变量</a></li>
 <li><a href="/Note/Development/OS/镜像设置或代理设置.html">镜像设置或代理设置</a></li>
@@ -113,9 +119,15 @@
 <li><a href="/Note/Development/Environment/Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5开发环境安装指南.html">Win10x64+CUDA9.1+cuDNN7.0+TensorFlowGPU1.5 开发环境安装指南</a></li>
 </ul>
 </li>
-<li><a href="/Note/Development/#Tools.md">工具设置</a><ul>
+<li><a href="/Note/Development/#Tools">工具设置</a><ul>
 <li><a href="/Note/Development/Tools/让vscode支持region和endregion.html">让 vs code 支持 region 和 endregion</a></li>
 <li><a href="/Note/Development/Tools/Homebrew常用命令.html">Homebrew 常用命令</a></li>
+</ul>
+</li>
+<li><a href="/Note/Development/#Server">服务器相关</a><ul>
+<li><a href="/Note/Development/Server/Debian安装gogs.html">Debian 安装 gogs</a></li>
+<li><a href="/Note/Development/Server/Debian安装phpmyadmin.html">Debian 安装 phpmyadmin</a></li>
+<li><a href="/Note/Development/Server/Debian安装最新的Git.html">Debian 安装最新的 Git</a></li>
 </ul>
 </li>
 </ul>
@@ -124,8 +136,8 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:19 </div></div><h1 id='镜像设置或代理设置' ><a href='#anchor_镜像设置或代理设置' id='anchor_镜像设置或代理设置' class='anchor'>镜像设置或代理设置</a></h1>
-<h3 id='1-ubuntu' ><a href='#anchor_1-ubuntu' id='anchor_1-ubuntu' class='anchor'>1. Ubuntu</a></h3>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-27 17:52 </div></div><a class="hiddenanchor" id="镜像设置或代理设置"></a><h1 id='镜像设置或代理设置' ><a href='#镜像设置或代理设置'>镜像设置或代理设置</a></h1>
+<a class="hiddenanchor" id="1-ubuntu"></a><h3 id='1-ubuntu' ><a href='#1-ubuntu'>1. Ubuntu</a></h3>
 <p><code>sudo vi /etc/apt/sources.list</code> 替换 <code>archive.ubuntu.com</code> 为 <code>mirrors.aliyun.com</code> .</p>
 <p><strong>ubuntu 16.04(xenial)</strong></p>
 <pre><code class="language-bash">deb http://mirrors.aliyun.com/ubuntu/ xenial main
@@ -160,7 +172,7 @@ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted univer
 deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
 deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
 </code></pre>
-<h3 id='2-python' ><a href='#anchor_2-python' id='anchor_2-python' class='anchor'>2. Python</a></h3>
+<a class="hiddenanchor" id="2-python"></a><h3 id='2-python' ><a href='#2-python'>2. Python</a></h3>
 <p><code>sudo vi ~/.pip/pip.conf</code> 中添加或修改，Windows 中为用户目录中创建 <code>pip/pip.ini</code> 文件。</p>
 <pre><code class="language-bash">[global]
 index-url = https://mirrors.aliyun.com/pypi/simple/
@@ -168,7 +180,7 @@ index-url = https://mirrors.aliyun.com/pypi/simple/
 [install]
 trusted-host=mirrors.aliyun.com
 </code></pre>
-<h3 id='3-golang' ><a href='#anchor_3-golang' id='anchor_3-golang' class='anchor'>3. Golang</a></h3>
+<a class="hiddenanchor" id="3-golang"></a><h3 id='3-golang' ><a href='#3-golang'>3. Golang</a></h3>
 <p>设置 go 的环境变量：</p>
 <pre><code class="language-bash">$ go env -w GO111MODULE=on
 $ go env -w GOPROXY=https://goproxy.cn,direct
@@ -181,8 +193,8 @@ C:\> $env:GOPROXY = "https://goproxy.cn"
 $ echo "export GOPROXY=https://goproxy.cn" >> ~/.profile
 $ source ~/.profile
 </code></pre>
-<h3 id='4-node' ><a href='#anchor_4-node' id='anchor_4-node' class='anchor'>4. Node</a></h3>
-<h4 id='41-npm' ><a href='#anchor_41-npm' id='anchor_41-npm' class='anchor'>4.1. npm</a></h4>
+<a class="hiddenanchor" id="4-node"></a><h3 id='4-node' ><a href='#4-node'>4. Node</a></h3>
+<a class="hiddenanchor" id="41-npm"></a><h4 id='41-npm' ><a href='#41-npm'>4.1. npm</a></h4>
 <p>直接安装 cnpm 然后用其替代 npm</p>
 <pre><code class="language-bash">npm install -g cnpm --registry=https://registry.npm.taobao.org
 </code></pre>
@@ -198,7 +210,7 @@ $ echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npm.taoba
   --disturl=https://npm.taobao.org/dist \
   --userconfig=$HOME/.cnpmrc"' >> ~/.zshrc && source ~/.zshrc
 </code></pre>
-<h4 id='42-yarn' ><a href='#anchor_42-yarn' id='anchor_42-yarn' class='anchor'>4.2. yarn</a></h4>
+<a class="hiddenanchor" id="42-yarn"></a><h4 id='42-yarn' ><a href='#42-yarn'>4.2. yarn</a></h4>
 <pre><code class="language-bash"># 安装yarn
 cnpm install -g yarn
 # 查看当前源
@@ -208,7 +220,7 @@ yarn config set registry https://registry.npm.taobao.org
 # 切换回默认源
 yarn config set registry https://registry.yarnpkg.com
 </code></pre>
-</article>
+
           </article>
         </section>
       </div>

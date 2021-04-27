@@ -137,9 +137,9 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-27 00:11 </div></div><h1 id='4-crud读写数据' ><a href='#anchor_4-crud读写数据' id='anchor_4-crud读写数据' class='anchor'>4. CRUD:读写数据</a></h1>
-<h2 id='c' ><a href='#anchor_c' id='anchor_c' class='anchor'>4.1. 创建</a></h2>
-<h3 id='411-创建记录' ><a href='#anchor_411-创建记录' id='anchor_411-创建记录' class='anchor'>4.1.1. 创建记录</a></h3>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-27 00:11 </div></div><a class="hiddenanchor" id="4-crud读写数据"></a><h1 id='4-crud读写数据' ><a href='#4-crud读写数据'>4. CRUD:读写数据</a></h1>
+<a class="hiddenanchor" id="c"></a><h2 id='c' ><a href='#c'>4.1. 创建</a></h2>
+<a class="hiddenanchor" id="411-创建记录"></a><h3 id='411-创建记录' ><a href='#411-创建记录'>4.1.1. 创建记录</a></h3>
 <pre><code class="language-go">user := User{Name: "Jinzhu", Age: 18, Birthday: time.Now()}
 
 db.NewRecord(user) // => 主键为空返回`true`
@@ -148,7 +148,7 @@ db.Create(&user)
 
 db.NewRecord(user) // => 创建`user`后返回`false`
 </code></pre>
-<h3 id='412-默认值' ><a href='#anchor_412-默认值' id='anchor_412-默认值' class='anchor'>4.1.2. 默认值</a></h3>
+<a class="hiddenanchor" id="412-默认值"></a><h3 id='412-默认值' ><a href='#412-默认值'>4.1.2. 默认值</a></h3>
 <p>您可以在 gorm tag 中定义默认值，然后插入 SQL 将忽略具有默认值的这些字段，并且其值为空，并且在将记录插入数据库后，gorm 将从数据库加载这些字段的值。</p>
 <pre><code class="language-go">type Animal struct {
     ID   int64
@@ -162,19 +162,19 @@ db.Create(&animal)
 // SELECT name from animals WHERE ID=111; // 返回主键为 111
 // animal.Name => 'galeone'
 </code></pre>
-<h3 id='413-在-callbacks-中设置主键' ><a href='#anchor_413-在-callbacks-中设置主键' id='anchor_413-在-callbacks-中设置主键' class='anchor'>4.1.3. 在 Callbacks 中设置主键</a></h3>
+<a class="hiddenanchor" id="413-在-callbacks-中设置主键"></a><h3 id='413-在-callbacks-中设置主键' ><a href='#413-在-callbacks-中设置主键'>4.1.3. 在 Callbacks 中设置主键</a></h3>
 <p>如果要在 BeforeCreate 回调中设置主字段的值，可以使用 scope.SetColumn，例如：</p>
 <pre><code class="language-go">func (user *User) BeforeCreate(scope *gorm.Scope) error {
   scope.SetColumn("ID", uuid.New())
   return nil
 }
 </code></pre>
-<h3 id='414-扩展创建选项' ><a href='#anchor_414-扩展创建选项' id='anchor_414-扩展创建选项' class='anchor'>4.1.4. 扩展创建选项</a></h3>
+<a class="hiddenanchor" id="414-扩展创建选项"></a><h3 id='414-扩展创建选项' ><a href='#414-扩展创建选项'>4.1.4. 扩展创建选项</a></h3>
 <pre><code class="language-go">// 为Instert语句添加扩展SQL选项
 db.Set("gorm:insert_option", "ON CONFLICT").Create(&product)
 // INSERT INTO products (name, code) VALUES ("name", "code") ON CONFLICT;
 </code></pre>
-<h2 id='q' ><a href='#anchor_q' id='anchor_q' class='anchor'>4.2. 查询</a></h2>
+<a class="hiddenanchor" id="q"></a><h2 id='q' ><a href='#q'>4.2. 查询</a></h2>
 <pre><code class="language-go">// 获取第一条记录，按主键排序
 db.First(&user)
 //// SELECT * FROM users ORDER BY id LIMIT 1;
@@ -191,7 +191,7 @@ db.Find(&users)
 db.First(&user, 10)
 //// SELECT * FROM users WHERE id = 10;
 </code></pre>
-<h3 id='421-where-查询条件-简单-sql' ><a href='#anchor_421-where-查询条件-简单-sql' id='anchor_421-where-查询条件-简单-sql' class='anchor'>4.2.1. Where 查询条件 (简单 SQL)</a></h3>
+<a class="hiddenanchor" id="421-where-查询条件-简单-sql"></a><h3 id='421-where-查询条件-简单-sql' ><a href='#421-where-查询条件-简单-sql'>4.2.1. Where 查询条件 (简单 SQL)</a></h3>
 <pre><code class="language-go">// 获取第一个匹配记录
 db.Where("name = ?", "jinzhu").First(&user)
 //// SELECT * FROM users WHERE name = 'jinzhu' limit 1;
@@ -216,7 +216,7 @@ db.Where("updated_at > ?", lastWeek).Find(&users)
 
 db.Where("created_at BETWEEN ? AND ?", lastWeek, today).Find(&users)
 </code></pre>
-<h3 id='422-where-查询条件-struct--map' ><a href='#anchor_422-where-查询条件-struct--map' id='anchor_422-where-查询条件-struct--map' class='anchor'>4.2.2. Where 查询条件 (Struct &amp; Map)</a></h3>
+<a class="hiddenanchor" id="422-where-查询条件-struct--map"></a><h3 id='422-where-查询条件-struct--map' ><a href='#422-where-查询条件-struct--map'>4.2.2. Where 查询条件 (Struct &amp; Map)</a></h3>
 <p>注意：当使用 struct 查询时，GORM 将只查询那些具有值的字段</p>
 <pre><code class="language-go">// Struct
 db.Where(&User{Name: "jinzhu", Age: 20}).First(&user)
@@ -230,7 +230,7 @@ db.Where(map[string]interface{}{"name": "jinzhu", "age": 20}).Find(&users)
 db.Where([]int64{20, 21, 22}).Find(&users)
 //// SELECT * FROM users WHERE id IN (20, 21, 22);
 </code></pre>
-<h3 id='423-not-条件查询' ><a href='#anchor_423-not-条件查询' id='anchor_423-not-条件查询' class='anchor'>4.2.3. Not 条件查询</a></h3>
+<a class="hiddenanchor" id="423-not-条件查询"></a><h3 id='423-not-条件查询' ><a href='#423-not-条件查询'>4.2.3. Not 条件查询</a></h3>
 <pre><code class="language-go">db.Not("name", "jinzhu").First(&user)
 //// SELECT * FROM users WHERE name <> "jinzhu" LIMIT 1;
 
@@ -253,7 +253,7 @@ db.Not("name = ?", "jinzhu").First(&user)
 db.Not(User{Name: "jinzhu"}).First(&user)
 //// SELECT * FROM users WHERE name <> "jinzhu";
 </code></pre>
-<h3 id='424-带内联条件的查询' ><a href='#anchor_424-带内联条件的查询' id='anchor_424-带内联条件的查询' class='anchor'>4.2.4. 带内联条件的查询</a></h3>
+<a class="hiddenanchor" id="424-带内联条件的查询"></a><h3 id='424-带内联条件的查询' ><a href='#424-带内联条件的查询'>4.2.4. 带内联条件的查询</a></h3>
 <p>注意：使用主键查询时，应仔细检查所传递的值是否为有效主键，以避免 SQL 注入</p>
 <pre><code class="language-go">// 按主键获取
 db.First(&user, 23)
@@ -274,7 +274,7 @@ db.Find(&users, User{Age: 20})
 db.Find(&users, map[string]interface{}{"age": 20})
 //// SELECT * FROM users WHERE age = 20;
 </code></pre>
-<h3 id='425-or-条件查询' ><a href='#anchor_425-or-条件查询' id='anchor_425-or-条件查询' class='anchor'>4.2.5. Or 条件查询</a></h3>
+<a class="hiddenanchor" id="425-or-条件查询"></a><h3 id='425-or-条件查询' ><a href='#425-or-条件查询'>4.2.5. Or 条件查询</a></h3>
 <pre><code class="language-go">db.Where("role = ?", "admin").Or("role = ?", "super_admin").Find(&users)
 //// SELECT * FROM users WHERE role = 'admin' OR role = 'super_admin';
 
@@ -285,19 +285,19 @@ db.Where("name = 'jinzhu'").Or(User{Name: "jinzhu 2"}).Find(&users)
 // Map
 db.Where("name = 'jinzhu'").Or(map[string]interface{}{"name": "jinzhu 2"}).Find(&users)
 </code></pre>
-<h3 id='426-查询链' ><a href='#anchor_426-查询链' id='anchor_426-查询链' class='anchor'>4.2.6. 查询链</a></h3>
+<a class="hiddenanchor" id="426-查询链"></a><h3 id='426-查询链' ><a href='#426-查询链'>4.2.6. 查询链</a></h3>
 <p>Gorm 有一个可链接的 API，你可以这样使用它</p>
 <pre><code class="language-go">db.Where("name <> ?","jinzhu").Where("age >= ? and role <> ?",20,"admin").Find(&users)
 //// SELECT * FROM users WHERE name <> 'jinzhu' AND age >= 20 AND role <> 'admin';
 
 db.Where("role = ?", "admin").Or("role = ?", "super_admin").Not("name = ?", "jinzhu").Find(&users)
 </code></pre>
-<h3 id='427-扩展查询选项' ><a href='#anchor_427-扩展查询选项' id='anchor_427-扩展查询选项' class='anchor'>4.2.7. 扩展查询选项</a></h3>
+<a class="hiddenanchor" id="427-扩展查询选项"></a><h3 id='427-扩展查询选项' ><a href='#427-扩展查询选项'>4.2.7. 扩展查询选项</a></h3>
 <pre><code class="language-go">// 为Select语句添加扩展SQL选项
 db.Set("gorm:query_option", "FOR UPDATE").First(&user, 10)
 //// SELECT * FROM users WHERE id = 10 FOR UPDATE;
 </code></pre>
-<h3 id='428-firstorinit' ><a href='#anchor_428-firstorinit' id='anchor_428-firstorinit' class='anchor'>4.2.8. FirstOrInit</a></h3>
+<a class="hiddenanchor" id="428-firstorinit"></a><h3 id='428-firstorinit' ><a href='#428-firstorinit'>4.2.8. FirstOrInit</a></h3>
 <p>获取第一个匹配的记录，或者使用给定的条件初始化一个新的记录（仅适用于 struct，map 条件）</p>
 <pre><code class="language-go">// Unfound
 db.FirstOrInit(&user, User{Name: "non_existing"})
@@ -309,7 +309,7 @@ db.Where(User{Name: "Jinzhu"}).FirstOrInit(&user)
 db.FirstOrInit(&user, map[string]interface{}{"name": "jinzhu"})
 //// user -> User{Id: 111, Name: "Jinzhu", Age: 20}
 </code></pre>
-<h3 id='429-attrs' ><a href='#anchor_429-attrs' id='anchor_429-attrs' class='anchor'>4.2.9. Attrs</a></h3>
+<a class="hiddenanchor" id="429-attrs"></a><h3 id='429-attrs' ><a href='#429-attrs'>4.2.9. Attrs</a></h3>
 <p>如果未找到记录，则使用参数初始化结构</p>
 <pre><code class="language-go">// Unfound
 db.Where(User{Name: "non_existing"}).Attrs(User{Age: 20}).FirstOrInit(&user)
@@ -325,7 +325,7 @@ db.Where(User{Name: "Jinzhu"}).Attrs(User{Age: 30}).FirstOrInit(&user)
 //// SELECT * FROM USERS WHERE name = jinzhu';
 //// user -> User{Id: 111, Name: "Jinzhu", Age: 20}
 </code></pre>
-<h3 id='4210-assign' ><a href='#anchor_4210-assign' id='anchor_4210-assign' class='anchor'>4.2.10. Assign</a></h3>
+<a class="hiddenanchor" id="4210-assign"></a><h3 id='4210-assign' ><a href='#4210-assign'>4.2.10. Assign</a></h3>
 <p>将参数分配给结果，不管它是否被找到</p>
 <pre><code class="language-go">// Unfound
 db.Where(User{Name: "non_existing"}).Assign(User{Age: 20}).FirstOrInit(&user)
@@ -336,7 +336,7 @@ db.Where(User{Name: "Jinzhu"}).Assign(User{Age: 30}).FirstOrInit(&user)
 //// SELECT * FROM USERS WHERE name = jinzhu';
 //// user -> User{Id: 111, Name: "Jinzhu", Age: 30}
 </code></pre>
-<h3 id='4211-firstorcreate' ><a href='#anchor_4211-firstorcreate' id='anchor_4211-firstorcreate' class='anchor'>4.2.11. FirstOrCreate</a></h3>
+<a class="hiddenanchor" id="4211-firstorcreate"></a><h3 id='4211-firstorcreate' ><a href='#4211-firstorcreate'>4.2.11. FirstOrCreate</a></h3>
 <p>获取第一个匹配的记录，或创建一个具有给定条件的新记录（仅适用于 struct, map 条件）</p>
 <pre><code class="language-go">// Unfound
 db.FirstOrCreate(&user, User{Name: "non_existing"})
@@ -347,7 +347,7 @@ db.FirstOrCreate(&user, User{Name: "non_existing"})
 db.Where(User{Name: "Jinzhu"}).FirstOrCreate(&user)
 //// user -> User{Id: 111, Name: "Jinzhu"}
 </code></pre>
-<h3 id='4212-attrs' ><a href='#anchor_4212-attrs' id='anchor_4212-attrs' class='anchor'>4.2.12. Attrs</a></h3>
+<a class="hiddenanchor" id="4212-attrs"></a><h3 id='4212-attrs' ><a href='#4212-attrs'>4.2.12. Attrs</a></h3>
 <p>如果未找到记录，则为参数分配结构</p>
 <pre><code class="language-go">// Unfound
 db.Where(User{Name: "non_existing"}).Attrs(User{Age: 20}).FirstOrCreate(&user)
@@ -360,7 +360,7 @@ db.Where(User{Name: "jinzhu"}).Attrs(User{Age: 30}).FirstOrCreate(&user)
 //// SELECT * FROM users WHERE name = 'jinzhu';
 //// user -> User{Id: 111, Name: "jinzhu", Age: 20}
 </code></pre>
-<h3 id='4213-assign' ><a href='#anchor_4213-assign' id='anchor_4213-assign' class='anchor'>4.2.13. Assign</a></h3>
+<a class="hiddenanchor" id="4213-assign"></a><h3 id='4213-assign' ><a href='#4213-assign'>4.2.13. Assign</a></h3>
 <p>将其分配给记录，而不管它是否被找到，并保存回数据库。</p>
 <pre><code class="language-go">// Unfound
 db.Where(User{Name: "non_existing"}).Assign(User{Age: 20}).FirstOrCreate(&user)
@@ -374,7 +374,7 @@ db.Where(User{Name: "jinzhu"}).Assign(User{Age: 30}).FirstOrCreate(&user)
 //// UPDATE users SET age=30 WHERE id = 111;
 //// user -> User{Id: 111, Name: "jinzhu", Age: 30}
 </code></pre>
-<h3 id='4214-select' ><a href='#anchor_4214-select' id='anchor_4214-select' class='anchor'>4.2.14. Select</a></h3>
+<a class="hiddenanchor" id="4214-select"></a><h3 id='4214-select' ><a href='#4214-select'>4.2.14. Select</a></h3>
 <p>指定要从数据库检索的字段，默认情况下，将选择所有字段;</p>
 <pre><code class="language-go">db.Select("name, age").Find(&users)
 //// SELECT name, age FROM users;
@@ -385,7 +385,7 @@ db.Select([]string{"name", "age"}).Find(&users)
 db.Table("users").Select("COALESCE(age,?)", 42).Rows()
 //// SELECT COALESCE(age,'42') FROM users;
 </code></pre>
-<h3 id='4215-order' ><a href='#anchor_4215-order' id='anchor_4215-order' class='anchor'>4.2.15. Order</a></h3>
+<a class="hiddenanchor" id="4215-order"></a><h3 id='4215-order' ><a href='#4215-order'>4.2.15. Order</a></h3>
 <p>在从数据库检索记录时指定顺序，将重排序设置为<code>true</code>以覆盖定义的条件</p>
 <pre><code class="language-go">db.Order("age desc, name").Find(&users)
 //// SELECT * FROM users ORDER BY age desc, name;
@@ -399,7 +399,7 @@ db.Order("age desc").Find(&users1).Order("age", true).Find(&users2)
 //// SELECT * FROM users ORDER BY age desc; (users1)
 //// SELECT * FROM users ORDER BY age; (users2)
 </code></pre>
-<h3 id='4216-limit' ><a href='#anchor_4216-limit' id='anchor_4216-limit' class='anchor'>4.2.16. Limit</a></h3>
+<a class="hiddenanchor" id="4216-limit"></a><h3 id='4216-limit' ><a href='#4216-limit'>4.2.16. Limit</a></h3>
 <p>指定要检索的记录数</p>
 <pre><code class="language-go">db.Limit(3).Find(&users)
 //// SELECT * FROM users LIMIT 3;
@@ -409,7 +409,7 @@ db.Limit(10).Find(&users1).Limit(-1).Find(&users2)
 //// SELECT * FROM users LIMIT 10; (users1)
 //// SELECT * FROM users; (users2)
 </code></pre>
-<h3 id='4217-offset' ><a href='#anchor_4217-offset' id='anchor_4217-offset' class='anchor'>4.2.17. Offset</a></h3>
+<a class="hiddenanchor" id="4217-offset"></a><h3 id='4217-offset' ><a href='#4217-offset'>4.2.17. Offset</a></h3>
 <p>指定在开始返回记录之前要跳过的记录数</p>
 <pre><code class="language-go">db.Offset(3).Find(&users)
 //// SELECT * FROM users OFFSET 3;
@@ -419,7 +419,7 @@ db.Offset(10).Find(&users1).Offset(-1).Find(&users2)
 //// SELECT * FROM users OFFSET 10; (users1)
 //// SELECT * FROM users; (users2)
 </code></pre>
-<h3 id='4218-count' ><a href='#anchor_4218-count' id='anchor_4218-count' class='anchor'>4.2.18. Count</a></h3>
+<a class="hiddenanchor" id="4218-count"></a><h3 id='4218-count' ><a href='#4218-count'>4.2.18. Count</a></h3>
 <p>获取模型的记录数</p>
 <pre><code class="language-go">db.Where("name = ?", "jinzhu").Or("name = ?", "jinzhu 2").Find(&users).Count(&count)
 //// SELECT * from USERS WHERE name = 'jinzhu' OR name = 'jinzhu 2'; (users)
@@ -431,7 +431,7 @@ db.Model(&User{}).Where("name = ?", "jinzhu").Count(&count)
 db.Table("deleted_users").Count(&count)
 //// SELECT count(*) FROM deleted_users;
 </code></pre>
-<h3 id='4219-group--having' ><a href='#anchor_4219-group--having' id='anchor_4219-group--having' class='anchor'>4.2.19. Group &amp; Having</a></h3>
+<a class="hiddenanchor" id="4219-group--having"></a><h3 id='4219-group--having' ><a href='#4219-group--having'>4.2.19. Group &amp; Having</a></h3>
 <pre><code class="language-go">rows, err := db.Table("orders").Select("date(created_at) as date, sum(amount) as total").Group("date(created_at)").Rows()
 for rows.Next() {
     ...
@@ -448,7 +448,7 @@ type Result struct {
 }
 db.Table("orders").Select("date(created_at) as date, sum(amount) as total").Group("date(created_at)").Having("sum(amount) > ?", 100).Scan(&results)
 </code></pre>
-<h3 id='4220-join' ><a href='#anchor_4220-join' id='anchor_4220-join' class='anchor'>4.2.20. Join</a></h3>
+<a class="hiddenanchor" id="4220-join"></a><h3 id='4220-join' ><a href='#4220-join'>4.2.20. Join</a></h3>
 <p>指定连接条件</p>
 <pre><code class="language-go">rows, err := db.Table("users").Select("users.name, emails.email").Joins("left join emails on emails.user_id = users.id").Rows()
 for rows.Next() {
@@ -460,7 +460,7 @@ db.Table("users").Select("users.name, emails.email").Joins("left join emails on 
 // 多个连接与参数
 db.Joins("JOIN emails ON emails.user_id = users.id AND emails.email = ?", "jinzhu@example.org").Joins("JOIN credit_cards ON credit_cards.user_id = users.id").Where("credit_cards.number = ?", "411111111111").Find(&user)
 </code></pre>
-<h3 id='4221-pluck' ><a href='#anchor_4221-pluck' id='anchor_4221-pluck' class='anchor'>4.2.21. Pluck</a></h3>
+<a class="hiddenanchor" id="4221-pluck"></a><h3 id='4221-pluck' ><a href='#4221-pluck'>4.2.21. Pluck</a></h3>
 <p>将模型中的单个列作为地图查询，如果要查询多个列，可以使用<a href="#Scan.html">Scan</a></p>
 <pre><code class="language-go">var ages []int64
 db.Find(&users).Pluck("age", &ages)
@@ -473,7 +473,7 @@ db.Table("deleted_users").Pluck("name", &names)
 // 要返回多个列，做这样：
 db.Select("name, age").Find(&users)
 </code></pre>
-<h3 id='Scan' ><a href='#anchor_Scan' id='anchor_Scan' class='anchor'>4.2.22. Scan</a></h3>
+<a class="hiddenanchor" id="Scan"></a><h3 id='Scan' ><a href='#Scan'>4.2.22. Scan</a></h3>
 <p>将结果扫描到另一个结构中。</p>
 <pre><code class="language-go">type Result struct {
     Name string
@@ -486,7 +486,7 @@ db.Table("users").Select("name, age").Where("name = ?", 3).Scan(&result)
 // Raw SQL
 db.Raw("SELECT name, age FROM users WHERE name = ?", 3).Scan(&result)
 </code></pre>
-<h3 id='Scopes' ><a href='#anchor_Scopes' id='anchor_Scopes' class='anchor'>4.2.23. Scopes</a></h3>
+<a class="hiddenanchor" id="Scopes"></a><h3 id='Scopes' ><a href='#Scopes'>4.2.23. Scopes</a></h3>
 <p>将当前数据库连接传递到<code>func(*DB) *DB</code>，可以用于动态添加条件</p>
 <pre><code class="language-go">func AmountGreaterThan1000(db *gorm.DB) *gorm.DB {
     return db.Where("amount > ?", 1000)
@@ -515,7 +515,7 @@ db.Scopes(AmountGreaterThan1000, PaidWithCod).Find(&orders)
 db.Scopes(OrderStatus([]string{"paid", "shipped"})).Find(&orders)
 // 查找所有付费，发货订单
 </code></pre>
-<h3 id='4224-指定表名' ><a href='#anchor_4224-指定表名' id='anchor_4224-指定表名' class='anchor'>4.2.24. 指定表名</a></h3>
+<a class="hiddenanchor" id="4224-指定表名"></a><h3 id='4224-指定表名' ><a href='#4224-指定表名'>4.2.24. 指定表名</a></h3>
 <pre><code class="language-go">// 使用User结构定义创建`deleted_users`表
 db.Table("deleted_users").CreateTable(&User{})
 
@@ -526,7 +526,7 @@ db.Table("deleted_users").Find(&deleted_users)
 db.Table("deleted_users").Where("name = ?", "jinzhu").Delete()
 //// DELETE FROM deleted_users WHERE name = 'jinzhu';
 </code></pre>
-<h2 id='p' ><a href='#anchor_p' id='anchor_p' class='anchor'>4.3. 预加载</a></h2>
+<a class="hiddenanchor" id="p"></a><h2 id='p' ><a href='#p'>4.3. 预加载</a></h2>
 <pre><code class="language-go">db.Preload("Orders").Find(&users)
 //// SELECT * FROM users;
 //// SELECT * FROM orders WHERE user_id IN (1,2,3,4);
@@ -545,7 +545,7 @@ db.Preload("Orders").Preload("Profile").Preload("Role").Find(&users)
 //// SELECT * FROM profiles WHERE user_id IN (1,2,3,4); // has one
 //// SELECT * FROM roles WHERE id IN (4,5,6); // belongs to
 </code></pre>
-<h3 id='431-自定义预加载-sql' ><a href='#anchor_431-自定义预加载-sql' id='anchor_431-自定义预加载-sql' class='anchor'>4.3.1. 自定义预加载 SQL</a></h3>
+<a class="hiddenanchor" id="431-自定义预加载-sql"></a><h3 id='431-自定义预加载-sql' ><a href='#431-自定义预加载-sql'>4.3.1. 自定义预加载 SQL</a></h3>
 <p>您可以通过传递<code>func(db *gorm.DB) *gorm.DB</code>（与<a href="#Scopes.html">Scopes</a>的使用方法相同）来自定义预加载 SQL，例如：</p>
 <pre><code class="language-go">db.Preload("Orders", func(db *gorm.DB) *gorm.DB {
     return db.Order("orders.amount DESC")
@@ -553,12 +553,12 @@ db.Preload("Orders").Preload("Profile").Preload("Role").Find(&users)
 //// SELECT * FROM users;
 //// SELECT * FROM orders WHERE user_id IN (1,2,3,4) order by orders.amount DESC;
 </code></pre>
-<h3 id='432-嵌套预加载' ><a href='#anchor_432-嵌套预加载' id='anchor_432-嵌套预加载' class='anchor'>4.3.2. 嵌套预加载</a></h3>
+<a class="hiddenanchor" id="432-嵌套预加载"></a><h3 id='432-嵌套预加载' ><a href='#432-嵌套预加载'>4.3.2. 嵌套预加载</a></h3>
 <pre><code class="language-go">db.Preload("Orders.OrderItems").Find(&users)
 db.Preload("Orders", "state = ?", "paid").Preload("Orders.OrderItems").Find(&users)
 </code></pre>
-<h2 id='u' ><a href='#anchor_u' id='anchor_u' class='anchor'>4.4. 更新</a></h2>
-<h3 id='441-更新全部字段' ><a href='#anchor_441-更新全部字段' id='anchor_441-更新全部字段' class='anchor'>4.4.1. 更新全部字段</a></h3>
+<a class="hiddenanchor" id="u"></a><h2 id='u' ><a href='#u'>4.4. 更新</a></h2>
+<a class="hiddenanchor" id="441-更新全部字段"></a><h3 id='441-更新全部字段' ><a href='#441-更新全部字段'>4.4.1. 更新全部字段</a></h3>
 <p><code>Save</code>将包括执行更新 SQL 时的所有字段，即使它没有更改</p>
 <pre><code class="language-go">db.First(&user)
 
@@ -568,7 +568,7 @@ db.Save(&user)
 
 //// UPDATE users SET name='jinzhu 2', age=100, birthday='2016-01-01', updated_at = '2013-11-17 21:34:10' WHERE id=111;
 </code></pre>
-<h3 id='442-更新更改字段' ><a href='#anchor_442-更新更改字段' id='anchor_442-更新更改字段' class='anchor'>4.4.2. 更新更改字段</a></h3>
+<a class="hiddenanchor" id="442-更新更改字段"></a><h3 id='442-更新更改字段' ><a href='#442-更新更改字段'>4.4.2. 更新更改字段</a></h3>
 <p>如果只想更新更改的字段，可以使用<code>Update</code>, <code>Updates</code></p>
 <pre><code class="language-go">// 更新单个属性（如果更改）
 db.Model(&user).Update("name", "hello")
@@ -590,7 +590,7 @@ db.Model(&user).Updates(User{Name: "hello", Age: 18})
 // 对于下面的更新，什么都不会更新为""，0，false是其类型的空白值
 db.Model(&user).Updates(User{Name: "", Age: 0, Actived: false})
 </code></pre>
-<h3 id='443-更新选择的字段' ><a href='#anchor_443-更新选择的字段' id='anchor_443-更新选择的字段' class='anchor'>4.4.3. 更新选择的字段</a></h3>
+<a class="hiddenanchor" id="443-更新选择的字段"></a><h3 id='443-更新选择的字段' ><a href='#443-更新选择的字段'>4.4.3. 更新选择的字段</a></h3>
 <p>如果您只想在更新时更新或忽略某些字段，可以使用<code>Select</code>, <code>Omit</code></p>
 <pre><code class="language-go">db.Model(&user).Select("name").Updates(map[string]interface{}{"name": "hello", "age": 18, "actived": false})
 //// UPDATE users SET name='hello', updated_at='2013-11-17 21:34:10' WHERE id=111;
@@ -598,7 +598,7 @@ db.Model(&user).Updates(User{Name: "", Age: 0, Actived: false})
 db.Model(&user).Omit("name").Updates(map[string]interface{}{"name": "hello", "age": 18, "actived": false})
 //// UPDATE users SET age=18, actived=false, updated_at='2013-11-17 21:34:10' WHERE id=111;
 </code></pre>
-<h3 id='444-更新更改字段但不进行-callbacks' ><a href='#anchor_444-更新更改字段但不进行-callbacks' id='anchor_444-更新更改字段但不进行-callbacks' class='anchor'>4.4.4. 更新更改字段但不进行 Callbacks</a></h3>
+<a class="hiddenanchor" id="444-更新更改字段但不进行-callbacks"></a><h3 id='444-更新更改字段但不进行-callbacks' ><a href='#444-更新更改字段但不进行-callbacks'>4.4.4. 更新更改字段但不进行 Callbacks</a></h3>
 <p>以上更新操作将执行模型的<code>BeforeUpdate</code>, <code>AfterUpdate</code>方法，更新其<code>UpdatedAt</code>时间戳，在更新时保存它的<code>Associations </code>，如果不想调用它们，可以使用<code>UpdateColumn</code>, <code>UpdateColumns</code></p>
 <pre><code class="language-go">// 更新单个属性，类似于`Update`
 db.Model(&user).UpdateColumn("name", "hello")
@@ -608,7 +608,7 @@ db.Model(&user).UpdateColumn("name", "hello")
 db.Model(&user).UpdateColumns(User{Name: "hello", Age: 18})
 //// UPDATE users SET name='hello', age=18 WHERE id = 111;
 </code></pre>
-<h3 id='445-batch-updates-批量更新' ><a href='#anchor_445-batch-updates-批量更新' id='anchor_445-batch-updates-批量更新' class='anchor'>4.4.5. Batch Updates 批量更新</a></h3>
+<a class="hiddenanchor" id="445-batch-updates-批量更新"></a><h3 id='445-batch-updates-批量更新' ><a href='#445-batch-updates-批量更新'>4.4.5. Batch Updates 批量更新</a></h3>
 <p><code>Callbacks</code>在批量更新时不会运行</p>
 <pre><code class="language-go">db.Table("users").Where("id IN (?)", []int{10, 11}).Updates(map[string]interface{}{"name": "hello", "age": 18})
 //// UPDATE users SET name='hello', age=18 WHERE id IN (10, 11);
@@ -620,7 +620,7 @@ db.Model(User{}).Updates(User{Name: "hello", Age: 18})
 // 使用`RowsAffected`获取更新记录计数
 db.Model(User{}).Updates(User{Name: "hello", Age: 18}).RowsAffected
 </code></pre>
-<h3 id='446-使用-sql-表达式更新' ><a href='#anchor_446-使用-sql-表达式更新' id='anchor_446-使用-sql-表达式更新' class='anchor'>4.4.6. 使用 SQL 表达式更新</a></h3>
+<a class="hiddenanchor" id="446-使用-sql-表达式更新"></a><h3 id='446-使用-sql-表达式更新' ><a href='#446-使用-sql-表达式更新'>4.4.6. 使用 SQL 表达式更新</a></h3>
 <pre><code class="language-go">DB.Model(&product).Update("price", gorm.Expr("price * ? + ?", 2, 100))
 //// UPDATE "products" SET "price" = price * '2' + '100', "updated_at" = '2013-11-17 21:34:10' WHERE "id" = '2';
 
@@ -633,7 +633,7 @@ DB.Model(&product).UpdateColumn("quantity", gorm.Expr("quantity - ?", 1))
 DB.Model(&product).Where("quantity > 1").UpdateColumn("quantity", gorm.Expr("quantity - ?", 1))
 //// UPDATE "products" SET "quantity" = quantity - 1 WHERE "id" = '2' AND quantity > 1;
 </code></pre>
-<h3 id='447-在-callbacks-中更改更新值' ><a href='#anchor_447-在-callbacks-中更改更新值' id='anchor_447-在-callbacks-中更改更新值' class='anchor'>4.4.7. 在 Callbacks 中更改更新值</a></h3>
+<a class="hiddenanchor" id="447-在-callbacks-中更改更新值"></a><h3 id='447-在-callbacks-中更改更新值' ><a href='#447-在-callbacks-中更改更新值'>4.4.7. 在 Callbacks 中更改更新值</a></h3>
 <p>如果要使用<code>BeforeUpdate</code>, <code>BeforeSave</code>更改回调中的更新值，可以使用<code>scope.SetColumn</code>，例如</p>
 <pre><code class="language-go">func (user *User) BeforeSave(scope *gorm.Scope) (err error) {
   if pw, err := bcrypt.GenerateFromPassword(user.Password, 0); err == nil {
@@ -641,12 +641,12 @@ DB.Model(&product).Where("quantity > 1").UpdateColumn("quantity", gorm.Expr("qua
   }
 }
 </code></pre>
-<h3 id='448-额外更新选项' ><a href='#anchor_448-额外更新选项' id='anchor_448-额外更新选项' class='anchor'>4.4.8. 额外更新选项</a></h3>
+<a class="hiddenanchor" id="448-额外更新选项"></a><h3 id='448-额外更新选项' ><a href='#448-额外更新选项'>4.4.8. 额外更新选项</a></h3>
 <pre><code class="language-go">// 为Update语句添加额外的SQL选项
 db.Model(&user).Set("gorm:update_option", "OPTION (OPTIMIZE FOR UNKNOWN)").Update("name, "hello")
 //// UPDATE users SET name='hello', updated_at = '2013-11-17 21:34:10' WHERE id=111 OPTION (OPTIMIZE FOR UNKNOWN);
 </code></pre>
-<h2 id='d' ><a href='#anchor_d' id='anchor_d' class='anchor'>4.5. 删除/软删除</a></h2>
+<a class="hiddenanchor" id="d"></a><h2 id='d' ><a href='#d'>4.5. 删除/软删除</a></h2>
 <p><strong>警告</strong> 删除记录时，需要确保其主要字段具有值，GORM 将使用主键删除记录，如果主要字段为空，GORM 将删除模型的所有记录</p>
 <pre><code class="language-go">// 删除存在的记录
 db.Delete(&email)
@@ -656,7 +656,7 @@ db.Delete(&email)
 db.Set("gorm:delete_option", "OPTION (OPTIMIZE FOR UNKNOWN)").Delete(&email)
 //// DELETE from emails where id=10 OPTION (OPTIMIZE FOR UNKNOWN);
 </code></pre>
-<h3 id='451-批量删除' ><a href='#anchor_451-批量删除' id='anchor_451-批量删除' class='anchor'>4.5.1. 批量删除</a></h3>
+<a class="hiddenanchor" id="451-批量删除"></a><h3 id='451-批量删除' ><a href='#451-批量删除'>4.5.1. 批量删除</a></h3>
 <p>删除所有匹配记录</p>
 <pre><code class="language-go">db.Where("email LIKE ?", "%jinzhu%").Delete(Email{})
 //// DELETE from emails where email LIKE "%jinhu%";
@@ -664,7 +664,7 @@ db.Set("gorm:delete_option", "OPTION (OPTIMIZE FOR UNKNOWN)").Delete(&email)
 db.Delete(Email{}, "email LIKE ?", "%jinzhu%")
 //// DELETE from emails where email LIKE "%jinhu%";
 </code></pre>
-<h3 id='452-软删除' ><a href='#anchor_452-软删除' id='anchor_452-软删除' class='anchor'>4.5.2. 软删除</a></h3>
+<a class="hiddenanchor" id="452-软删除"></a><h3 id='452-软删除' ><a href='#452-软删除'>4.5.2. 软删除</a></h3>
 <p>如果模型有<code>DeletedAt</code>字段，它将自动获得软删除功能！ 那么在调用<code>Delete</code>时不会从数据库中永久删除，而是只将字段<code>DeletedAt</code>的值设置为当前时间。</p>
 <pre><code class="language-go">db.Delete(&user)
 //// UPDATE users SET deleted_at="2013-10-29 10:23" WHERE id = 111;
@@ -685,7 +685,7 @@ db.Unscoped().Where("age = 20").Find(&users)
 db.Unscoped().Delete(&order)
 //// DELETE FROM orders WHERE id=10;
 </code></pre>
-<h2 id='a' ><a href='#anchor_a' id='anchor_a' class='anchor'>4.6. 关联</a></h2>
+<a class="hiddenanchor" id="a"></a><h2 id='a' ><a href='#a'>4.6. 关联</a></h2>
 <p>默认情况下，当创建/更新记录时，GORM 将保存其关联，如果关联具有主键，GORM 将调用 Update 来保存它，否则将被创建。</p>
 <pre><code class="language-go">user := User{
     Name:            "jinzhu",
@@ -717,13 +717,13 @@ db.Create(&user)
 db.Save(&user)
 </code></pre>
 <p>参考<a href="Programming/Golang/GORM/associations.html">Associations</a>更多详细信息</p>
-<h3 id='461-创建更新时跳过保存关联' ><a href='#anchor_461-创建更新时跳过保存关联' id='anchor_461-创建更新时跳过保存关联' class='anchor'>4.6.1. 创建/更新时跳过保存关联</a></h3>
+<a class="hiddenanchor" id="461-创建更新时跳过保存关联"></a><h3 id='461-创建更新时跳过保存关联' ><a href='#461-创建更新时跳过保存关联'>4.6.1. 创建/更新时跳过保存关联</a></h3>
 <p>默认情况下保存记录时，GORM 也会保存它的关联，你可以通过设置<code>gorm:save_associations</code>为<code>false</code>跳过它。</p>
 <pre><code class="language-go">db.Set("gorm:save_associations", false).Create(&user)
 
 db.Set("gorm:save_associations", false).Save(&user)
 </code></pre>
-<h3 id='462-tag-设置跳过保存关联' ><a href='#anchor_462-tag-设置跳过保存关联' id='anchor_462-tag-设置跳过保存关联' class='anchor'>4.6.2. tag 设置跳过保存关联</a></h3>
+<a class="hiddenanchor" id="462-tag-设置跳过保存关联"></a><h3 id='462-tag-设置跳过保存关联' ><a href='#462-tag-设置跳过保存关联'>4.6.2. tag 设置跳过保存关联</a></h3>
 <p>您可以使用 tag 来配置您的 struct，以便在创建/更新时不会保存关联</p>
 <pre><code class="language-go">type User struct {
   gorm.Model
@@ -737,7 +737,7 @@ type Company struct {
   Name string
 }
 </code></pre>
-</article>
+
           </article>
         </section>
       </div>

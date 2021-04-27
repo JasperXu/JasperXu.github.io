@@ -96,8 +96,8 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 23:12 </div></div><h1 id='go-执行-sql-语句' ><a href='#anchor_go-执行-sql-语句' id='anchor_go-执行-sql-语句' class='anchor'>go 执行 sql 语句</a></h1>
-<h2 id='〇、一次执行' ><a href='#anchor_〇、一次执行' id='anchor_〇、一次执行' class='anchor'>〇、一次执行</a></h2>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 23:12 </div></div><a class="hiddenanchor" id="go-执行-sql-语句"></a><h1 id='go-执行-sql-语句' ><a href='#go-执行-sql-语句'>go 执行 sql 语句</a></h1>
+<a class="hiddenanchor" id="〇、一次执行"></a><h2 id='〇、一次执行' ><a href='#〇、一次执行'>〇、一次执行</a></h2>
 <pre><code class="language-go">result, err := db.Exec("INSERT INTO `table`(`field1`, `field2`) VALUES (?, ?);", item.field1, item.field2)
 if err != nil {
     return err
@@ -105,7 +105,7 @@ if err != nil {
 result.LastInsertId() // 自增列可获取，返回值为(int64, error)
 result.RowsAffected() // 影响行数，返回值为(int64, error)
 </code></pre>
-<h2 id='一、预声明，重复执行执行' ><a href='#anchor_一、预声明，重复执行执行' id='anchor_一、预声明，重复执行执行' class='anchor'>一、预声明，重复执行执行</a></h2>
+<a class="hiddenanchor" id="一、预声明，重复执行执行"></a><h2 id='一、预声明，重复执行执行' ><a href='#一、预声明，重复执行执行'>一、预声明，重复执行执行</a></h2>
 <pre><code class="language-go">// 声明部分
 stmt, err := db.Prepare("INSERT INTO `table`(`field1`, `field2`) VALUES (?, ?);")
 if err != nil {
@@ -120,7 +120,7 @@ if err != nil {
 result.LastInsertId() // 自增列可获取，返回值为(int64, error)
 result.RowsAffected() // 影响行数，返回值为(int64, error)
 </code></pre>
-<h2 id='二、查询返回一行' ><a href='#anchor_二、查询返回一行' id='anchor_二、查询返回一行' class='anchor'>二、查询返回一行</a></h2>
+<a class="hiddenanchor" id="二、查询返回一行"></a><h2 id='二、查询返回一行' ><a href='#二、查询返回一行'>二、查询返回一行</a></h2>
 <pre><code class="language-go">item := models.Table{}
 tmpBool1 := []uint8{} // 用于接受数据库中的bit类型然后再转换成bool
 
@@ -141,7 +141,7 @@ func Bit2Bool(value []uint8) bool {
     }
 }
 </code></pre>
-<h2 id='三、查询多行' ><a href='#anchor_三、查询多行' id='anchor_三、查询多行' class='anchor'>三、查询多行</a></h2>
+<a class="hiddenanchor" id="三、查询多行"></a><h2 id='三、查询多行' ><a href='#三、查询多行'>三、查询多行</a></h2>
 <pre><code class="language-go">var items []interface{} = make([]interface{}, 0)
 rows, err := db.Query("SELECT `UUID`, `IsAdmin` FROM `table` WHERE 1;")
 if err != nil {
@@ -161,7 +161,7 @@ for rows.Next() {
     items = append(items, item)
 }
 </code></pre>
-</article>
+
           </article>
         </section>
       </div>

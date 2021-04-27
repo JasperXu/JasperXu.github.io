@@ -116,6 +116,12 @@ body > main div .content article.article h6 > a {
 body > main div .content article.article a {
   word-break: break-all;
 }
+body > main div .content article.article a.hiddenanchor {
+  display: block;
+  position: relative;
+  top: -6rem;
+  visibility: hidden;
+}
 body > main div .cover {
   background-blend-mode: normal;
   background-color: #809eb3;

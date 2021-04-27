@@ -96,8 +96,8 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <article class='markdown-section' id='main'><div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:12 </div></div><h1 id='树莓派-4b一安装-omv' ><a href='#anchor_树莓派-4b一安装-omv' id='anchor_树莓派-4b一安装-omv' class='anchor'>树莓派 4b(一)安装 OMV</a></h1>
-<h2 id='查看设备版本' ><a href='#anchor_查看设备版本' id='anchor_查看设备版本' class='anchor'>查看设备版本</a></h2>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2021-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 02:12 </div></div><a class="hiddenanchor" id="树莓派-4b一安装-omv"></a><h1 id='树莓派-4b一安装-omv' ><a href='#树莓派-4b一安装-omv'>树莓派 4b(一)安装 OMV</a></h1>
+<a class="hiddenanchor" id="查看设备版本"></a><h2 id='查看设备版本' ><a href='#查看设备版本'>查看设备版本</a></h2>
 <pre><code class="language-bash"># 查看设备型号
 $ cat /proc/device-tree/model
 Raspberry Pi 4 Model B Rev 1.2
@@ -143,7 +143,7 @@ lsusb
 lsmod
 </code></pre>
 <p>设备信息：Raspberry Pi 4b 4G v1.2</p>
-<h2 id='安装系统' ><a href='#anchor_安装系统' id='anchor_安装系统' class='anchor'>安装系统</a></h2>
+<a class="hiddenanchor" id="安装系统"></a><h2 id='安装系统' ><a href='#安装系统'>安装系统</a></h2>
 <p><a href="https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit" target="_blank" >下载地址</a> 推荐下载 <strong>Raspberry Pi OS with desktop</strong> 下面是安装后的默认值。</p>
 <pre><code class="language-bash">设备名：raspberrypi
 账户：pi
@@ -152,24 +152,24 @@ lsmod
 <p>然后使用 Rufus 软件写入到 TF 卡中。</p>
 <p>TF 卡根目录创建文件名为 <code>ssh</code> 的空文件，不要有后缀。可以自动打开 ssh。</p>
 <p>然后装上 tf 卡，连上网线，显示器，键盘，鼠标，通电开机。</p>
-<h2 id='设置系统' ><a href='#anchor_设置系统' id='anchor_设置系统' class='anchor'>设置系统</a></h2>
+<a class="hiddenanchor" id="设置系统"></a><h2 id='设置系统' ><a href='#设置系统'>设置系统</a></h2>
 <p>一开始选中文就完事了，然后一路 next，完毕后重启 <code>sudo shutdown -r now</code> 。</p>
 <p>然后系统就是中文了。</p>
-<h3 id='设置-vnc-和-ssh' ><a href='#anchor_设置-vnc-和-ssh' id='anchor_设置-vnc-和-ssh' class='anchor'>设置 VNC 和 SSH</a></h3>
+<a class="hiddenanchor" id="设置-vnc-和-ssh"></a><h3 id='设置-vnc-和-ssh' ><a href='#设置-vnc-和-ssh'>设置 VNC 和 SSH</a></h3>
 <p>左上角 &gt; 首选项 &gt; Raspberry Pi Configuration &gt; Interfaces</p>
 <p>将 SSH 和 VNC 选到 Enable。</p>
 <p>然后重启 <code>sudo shutdown -r now</code> 。</p>
-<h4 id='cannot-currently-show-the-desktop-问题修复' ><a href='#anchor_cannot-currently-show-the-desktop-问题修复' id='anchor_cannot-currently-show-the-desktop-问题修复' class='anchor'>Cannot currently show the desktop 问题修复</a></h4>
+<a class="hiddenanchor" id="cannot-currently-show-the-desktop-问题修复"></a><h4 id='cannot-currently-show-the-desktop-问题修复' ><a href='#cannot-currently-show-the-desktop-问题修复'>Cannot currently show the desktop 问题修复</a></h4>
 <p>VNC 显示 Cannot currently show the desktop 则进行如下设置</p>
 <pre><code>sudo raspi-config
 选择 【2 Display Options】
 选择 【D1 Resolution】
 选择 【只要不选第一个就行，我这里选的1440x900 60Hz 16:10】
 </code></pre>
-<h3 id='设置网络' ><a href='#anchor_设置网络' id='anchor_设置网络' class='anchor'>设置网络</a></h3>
+<a class="hiddenanchor" id="设置网络"></a><h3 id='设置网络' ><a href='#设置网络'>设置网络</a></h3>
 <p>右上角设置网络，<strong>隐藏网络是无法连接的</strong> 。反正我用的有线网络无所谓。</p>
 <p>打开终端输入 <code>ifconfig</code> 查看下你的 IP 地址，我这里是 <code>192.168.199.2</code> 后面都会用这个地址。</p>
-<h3 id='设置清华的源' ><a href='#anchor_设置清华的源' id='anchor_设置清华的源' class='anchor'>设置清华的源</a></h3>
+<a class="hiddenanchor" id="设置清华的源"></a><h3 id='设置清华的源' ><a href='#设置清华的源'>设置清华的源</a></h3>
 <pre><code class="language-bash"># 编辑 `/etc/apt/sources.list` 文件，删除原文件所有内容，用以下内容取代：
 deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib rpi
 deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib rpi
@@ -185,7 +185,7 @@ sudo rm -f /etc/systemd/network/99-default.link
 # 重启
 sudo reboot
 </code></pre>
-<h2 id='安装-omv' ><a href='#anchor_安装-omv' id='anchor_安装-omv' class='anchor'>安装 OMV</a></h2>
+<a class="hiddenanchor" id="安装-omv"></a><h2 id='安装-omv' ><a href='#安装-omv'>安装 OMV</a></h2>
 <pre><code>wget -O - https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install | sudo bash
 </code></pre>
 <p>如果连接失败，请设置下代理。</p>
@@ -206,16 +206,16 @@ sudo reboot
 NFS    这个Apple系和Linux连接较快
 SMB/CIFS    这个主要给Windows连接
 </code></pre>
-<h3 id='共享文件夹-设置' ><a href='#anchor_共享文件夹-设置' id='anchor_共享文件夹-设置' class='anchor'>共享文件夹 设置</a></h3>
+<a class="hiddenanchor" id="共享文件夹-设置"></a><h3 id='共享文件夹-设置' ><a href='#共享文件夹-设置'>共享文件夹 设置</a></h3>
 <p>如果无法选择，请在 OMV 中将硬盘里面先卸载，再挂载即可。</p>
 <p>在<strong>共享文件夹</strong>中为每个目录的<strong>ACL</strong>增加 <strong>读/写/执行</strong>并<strong>应用到文件与子文件夹</strong>然后应用即可。</p>
-<h3 id='服务设置' ><a href='#anchor_服务设置' id='anchor_服务设置' class='anchor'>服务设置</a></h3>
+<a class="hiddenanchor" id="服务设置"></a><h3 id='服务设置' ><a href='#服务设置'>服务设置</a></h3>
 <p>FTP：开启匿名（内网用方便）</p>
 <p>NFS：无法设置匿名。</p>
 <p>SMB/CIFS：设置公开 <strong>允许访客</strong> （内网用方便）</p>
-<h3 id='flashmemory' ><a href='#anchor_flashmemory' id='anchor_flashmemory' class='anchor'>flashmemory</a></h3>
+<a class="hiddenanchor" id="flashmemory"></a><h3 id='flashmemory' ><a href='#flashmemory'>flashmemory</a></h3>
 <p>这个插件一定要装，要不 U 盘或者 tf 卡很容易就挂了。</p>
-<h3 id='最后' ><a href='#anchor_最后' id='anchor_最后' class='anchor'>最后</a></h3>
+<a class="hiddenanchor" id="最后"></a><h3 id='最后' ><a href='#最后'>最后</a></h3>
 <pre><code class="language-bash"># 删除代理
 sudo raspi-config
 选择 【6 Advanced Options】
@@ -224,16 +224,16 @@ sudo raspi-config
 设置为空【】
 然后会自动重启。
 </code></pre>
-<h3 id='omv-中设置休眠' ><a href='#anchor_omv-中设置休眠' id='anchor_omv-中设置休眠' class='anchor'>OMV 中设置休眠</a></h3>
+<a class="hiddenanchor" id="omv-中设置休眠"></a><h3 id='omv-中设置休眠' ><a href='#omv-中设置休眠'>OMV 中设置休眠</a></h3>
 <pre><code class="language-bash">高级电源管理：1-待机状态时最低功耗(磁头停转)
 自动声音管理：关闭
 停转时间：10分钟
 写入缓存：关闭(硬盘支持的话可以开启)
 </code></pre>
-<h2 id='性能' ><a href='#anchor_性能' id='anchor_性能' class='anchor'>性能</a></h2>
+<a class="hiddenanchor" id="性能"></a><h2 id='性能' ><a href='#性能'>性能</a></h2>
 <p>电脑 -&gt; 树莓派 -&gt; USB3.0 移动硬盘 写入数据：约 30MB/s</p>
 <p>USB3.0 移动硬盘 -&gt; 树莓派 -&gt; 电脑 读取数据：约 90MB/s</p>
-</article>
+
           </article>
         </section>
       </div>
