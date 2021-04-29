@@ -62,7 +62,7 @@
    * Cover部分为空时，直接删除Cover部分。
    */
   function clearCover() {
-    let temp = document.querySelector("section.cover > div");
+    let temp = document.querySelector("section.cover > div.covermd");
     if (temp.innerHTML.trim() === "") {
       document.querySelector("section.cover").remove();
       return false;
@@ -156,7 +156,7 @@
         break;
       }
     }
-    let PrevNext = '<div class="d-flex justify-content-between prev-next">' + '<div class="prev">';
+    let PrevNext = '<div class="prev">';
     if (prevLink != undefined) {
       PrevNext += '<a href="' + prevLink.attr("href") + '">' + "<div class='pn-nav'>&lt; 上一章节</div>" + "<div><h3>" + prevLink.text() + "</h3></div></a>";
     }
@@ -164,8 +164,8 @@
     if (nextLink != undefined) {
       PrevNext += '<a href="' + nextLink.attr("href") + '">' + "<div class='pn-nav'>下一章节 &gt;</div>" + "<div><h3>" + nextLink.text() + "</h3></div></a>";
     }
-    PrevNext += "</div></div>";
-    $("section.content").append(PrevNext);
+    PrevNext += "</div>";
+    $("section.content .prev-next").append(PrevNext);
   }
 
   /**
@@ -366,8 +366,6 @@
    * 为文章添加评论功能
    */
   function addGitalk() {
-    $("section.content").append('<div id="gitalk-container"></div>');
-
     const gitalk = new Gitalk({
       clientID: "f4138bcafcce8b3e2a62",
       clientSecret: "bf3da43a9e862fca8252bf83491d103021eec268",

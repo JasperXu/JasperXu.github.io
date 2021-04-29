@@ -62,8 +62,8 @@
 <li><a href="/Programming/Golang/">Golang</a></li>
 <li><a href="/Programming/Golang/GORM/">GORM 中文文档</a></li>
 <li>单章<ul>
-<li><a href="/Programming/Golang/go执行sql语句.html">go 执行 sql 语句</a></li>
-<li><a href="/Programming/Golang/GogRPC指南.html">Go gRPC 指南</a></li>
+<li><a href="/Programming/Golang/go-执行-sql-语句.html">go 执行 sql 语句</a></li>
+<li><a href="/Programming/Golang/Go-gRPC-指南.html">Go gRPC 指南</a></li>
 </ul>
 </li>
 </ul>
@@ -73,8 +73,13 @@
     <main class="container-fluid">
       <div class="row flex-xl-nowrap">
         <section class="cover d-flex">
-          <div>
+          <div class="covermd">
             
+          </div>
+          <div class="footer text-black-50">
+            备案号：<a href="http://beian.miit.gov.cn/" target="_blank">鄂ICP备14003260号-1</a> <br />
+            Copyright © 2007-present JasperXu <br />
+            powered by JXDocs
           </div>
         </section>
         <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
@@ -86,8 +91,8 @@
 <li><a href="/Programming/Golang/">Golang</a></li>
 <li><a href="/Programming/Golang/GORM/">GORM 中文文档</a></li>
 <li>单章<ul>
-<li><a href="/Programming/Golang/go执行sql语句.html">go 执行 sql 语句</a></li>
-<li><a href="/Programming/Golang/GogRPC指南.html">Go gRPC 指南</a></li>
+<li><a href="/Programming/Golang/go-执行-sql-语句.html">go 执行 sql 语句</a></li>
+<li><a href="/Programming/Golang/Go-gRPC-指南.html">Go gRPC 指南</a></li>
 </ul>
 </li>
 </ul>
@@ -96,7 +101,7 @@
         </aside>
         <section class="content col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 col-sm-12">
           <article class="article">
-            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2017-01-11 17:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-26 23:12 </div></div><a class="hiddenanchor" id="go-执行-sql-语句"></a><h1 id='go-执行-sql-语句' ><a href='#go-执行-sql-语句'>go 执行 sql 语句</a></h1>
+            <div style="font-size: 0.75rem;"> &nbsp;<div class="float-left">发布时间：<i class='far fa-calendar-alt'></i> 2016-11-18 09:00 </div><div class="float-right">修订时间：<i class='far fa-calendar-alt'></i> 2021-04-29 21:00 </div></div><a class="hiddenanchor" id="go-执行-sql-语句"></a><h1 id='go-执行-sql-语句' ><a href='#go-执行-sql-语句'>go 执行 sql 语句</a></h1>
 <a class="hiddenanchor" id="〇、一次执行"></a><h2 id='〇、一次执行' ><a href='#〇、一次执行'>〇、一次执行</a></h2>
 <pre><code class="language-go">result, err := db.Exec("INSERT INTO `table`(`field1`, `field2`) VALUES (?, ?);", item.field1, item.field2)
 if err != nil {
@@ -163,6 +168,13 @@ for rows.Next() {
 </code></pre>
 
           </article>
+          <div class="d-flex justify-content-between prev-next"></div>
+          <div id="gitalk-container"></div>
+          <div class="footer text-black-50">
+            备案号：<a href="http://beian.miit.gov.cn/" target="_blank">鄂ICP备14003260号-1</a> <br />
+            Copyright © 2007-present JasperXu <br />
+            powered by JXDocs
+          </div>
         </section>
       </div>
     </main>

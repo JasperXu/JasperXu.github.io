@@ -62,8 +62,8 @@
 <li><a href="/Programming/Golang/">Golang</a></li>
 <li><a href="/Programming/Golang/GORM/">GORM 中文文档</a></li>
 <li>单章<ul>
-<li><a href="/Programming/Golang/go执行sql语句.html">go 执行 sql 语句</a></li>
-<li><a href="/Programming/Golang/GogRPC指南.html">Go gRPC 指南</a></li>
+<li><a href="/Programming/Golang/go-执行-sql-语句.html">go 执行 sql 语句</a></li>
+<li><a href="/Programming/Golang/Go-gRPC-指南.html">Go gRPC 指南</a></li>
 </ul>
 </li>
 </ul>
@@ -73,8 +73,13 @@
     <main class="container-fluid">
       <div class="row flex-xl-nowrap">
         <section class="cover d-flex">
-          <div>
+          <div class="covermd">
             
+          </div>
+          <div class="footer text-black-50">
+            备案号：<a href="http://beian.miit.gov.cn/" target="_blank">鄂ICP备14003260号-1</a> <br />
+            Copyright © 2007-present JasperXu <br />
+            powered by JXDocs
           </div>
         </section>
         <aside class="aside col-12 col-md-3 col-xl-2 d-none d-md-block">
@@ -172,7 +177,7 @@ func main() {
 }
 </code></pre>
 <a class="hiddenanchor" id="213-sqlite3"></a><h3 id='213-sqlite3' ><a href='#213-sqlite3'>2.1.3. Sqlite3</a></h3>
-<pre><code>import (
+<pre><code class="language-">import (
     "github.com/jinzhu/gorm"
     _ "github.com/jinzhu/gorm/dialects/sqlite"
 )
@@ -254,6 +259,13 @@ db.Model(&User{}).RemoveIndex("idx_user_name")
 </code></pre>
 
           </article>
+          <div class="d-flex justify-content-between prev-next"></div>
+          <div id="gitalk-container"></div>
+          <div class="footer text-black-50">
+            备案号：<a href="http://beian.miit.gov.cn/" target="_blank">鄂ICP备14003260号-1</a> <br />
+            Copyright © 2007-present JasperXu <br />
+            powered by JXDocs
+          </div>
         </section>
       </div>
     </main>
